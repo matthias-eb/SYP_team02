@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>100</x>
+      <y>10</y>
+      <w>450</w>
+      <h>560</h>
+    </coordinates>
+    <panel_attributes>*driving-e-car.de*
+halign=center
+fontsize=18</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>10</x>
+      <y>220</y>
+      <w>60</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>Admin</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>160</x>
+      <y>70</y>
+      <w>190</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes> /LF10/
+Elektroautos anzeigen</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>160</x>
+      <y>150</y>
+      <w>190</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes> /LF20/
+Elektroautos editieren</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>160</x>
+      <y>230</y>
+      <w>190</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes> /LF30/
+Elektroauto löschen</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>160</x>
+      <y>310</y>
+      <w>190</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes> /LF40/
+Elektroauto hinzufügen</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>160</x>
+      <y>390</y>
+      <w>190</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes> /LF50/
+Elektroauto-Datensätze
+aktivieren/deaktivieren</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>160</x>
+      <y>470</y>
+      <w>190</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes> /LF60/
+Kriterien
+aktivieren/deaktivieren</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>410</x>
+      <y>20</y>
+      <w>130</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>Nur Administrator
+bg=orange
+halign=center
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>60</x>
+      <y>100</y>
+      <w>120</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;160.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>60</x>
+      <y>180</y>
+      <w>120</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;80.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>60</x>
+      <y>240</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;100.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>60</x>
+      <y>250</y>
+      <w>120</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;100.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>60</x>
+      <y>250</y>
+      <w>120</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;100.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>60</x>
+      <y>250</y>
+      <w>120</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;100.0;250.0</additional_attributes>
+  </element>
+</diagram>
