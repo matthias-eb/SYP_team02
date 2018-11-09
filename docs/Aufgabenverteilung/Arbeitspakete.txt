@@ -1,0 +1,14 @@
+Anmelden/Abmelden/Registrieren
+	Anmelden
+	Abmelden
+	Registrieren
+Startseite
+	Einfache Suche
+	Karrussell/Begrüßung
+Erweiterte Suche
+	Filter
+	Muss/kann Suche
+Ergebnisanzeige
+	Alle Ergebnisse
+	Autoansicht
+		Bewertung
