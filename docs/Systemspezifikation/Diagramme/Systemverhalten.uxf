@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>13</zoom_level>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>442</x>
+      <y>377</y>
+      <w>130</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;benutzer&gt;&gt;
+angemeldet</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>494</x>
+      <y>104</y>
+      <w>26</w>
+      <h>26</h>
+    </coordinates>
+    <panel_attributes>type=initial</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>117</x>
+      <y>247</y>
+      <w>130</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;admin&gt;&gt;
+angemeldet
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>442</x>
+      <y>221</y>
+      <w>130</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;besucher&gt;&gt;
+besucht</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>494</x>
+      <y>91</y>
+      <w>247</w>
+      <h>156</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+Der Besucher besucht die
+Webseite / startet die App</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>494</x>
+      <y>260</y>
+      <w>195</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+Besucher meldet
+sich als Benutzer an
+ /LF200/</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>169</x>
+      <y>104</y>
+      <w>26</w>
+      <h>26</h>
+    </coordinates>
+    <panel_attributes>type=initial
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>169</x>
+      <y>117</y>
+      <w>247</w>
+      <h>156</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+Der Admin besucht die
+Administratoren Webseite
+und meldet sich an.
+group=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>169</x>
+      <y>390</y>
+      <w>26</w>
+      <h>26</h>
+    </coordinates>
+    <panel_attributes>type=final
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>169</x>
+      <y>286</y>
+      <w>273</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+Der Admin verlässt die Seite
+group=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>780</x>
+      <y>312</y>
+      <w>26</w>
+      <h>26</h>
+    </coordinates>
+    <panel_attributes>type=final</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>559</x>
+      <y>325</y>
+      <w>260</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+Der Benutzer verlässt
+die Seite / App</panel_attributes>
+    <additional_attributes>10.0;60.0;180.0;60.0;180.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>559</x>
+      <y>221</y>
+      <w>260</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+Der Besucher verlässt
+die Seite / App</panel_attributes>
+    <additional_attributes>10.0;20.0;180.0;20.0;180.0;70.0</additional_attributes>
+  </element>
+</diagram>
