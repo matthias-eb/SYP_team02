@@ -1,0 +1,10 @@
+@import './theme/reset.scss';
+@import './theme/variables.scss';
+
+body {
+  /**
+   * Set global background-color (default).
+   * This is necessary for mobile version. Otherwise mobile default is black.
+   */
+  background-color: $background-color;
+}

@@ -1,0 +1,28 @@
+{
+  "name": "server",
+  "description": "NodeJS RESTful API with MariaDB",
+  "version": "0.0.1",
+  "author": {
+    "name": "Florian Heinrich",
+    "email": "florian.heinrich@smail.th-koeln.de",
+    "url": "http://gerona.nt.fh-koeln.de/gitlab/syp18/team02/server"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mariadb": "^2.0.0-alpha",
+    "morgan": "^1.9.1",
+    "mysql": "^2.16.0",
+    "mysql2": "^1.6.1",
+    "sequelize": "^4.41.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4",
+    "jshint": "^2.9.6"
+  }
+}

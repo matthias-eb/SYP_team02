@@ -5,10 +5,15 @@ Elektroautos sind in aller Munde. Lohnt sich für mich ein Elektroauto? Welches 
 Diese Frage soll durch ein datenbankbasiertes Beratungssystem gelöst werden.
 
 
-## Tools
+## Technologies / Architecture
 
-### UML
+This example developed with [AngularJS](https://angular.io/), [Ionic](https://ionicframework.com/) ([Cordova](https://cordova.apache.org/)) and [Electron](https://electronjs.org/).
+The communication between frondend and backend is based on an RESTful API.
 
-[UMLet](https://www.umlet.com/) ist ein kostenloses, quelloffenes UML-Tool mit einer einfachen Benutzeroberfläche: Zeichnen Sie UML-Diagramme schnell, erstellen Sie Sequenz- und Aktivitätsdiagramme aus Klartext, exportieren Sie Diagramme nach eps, pdf, jpg, svg und Clipboard, teilen Sie Diagramme mit Eclipse und erstellen Sie neue, benutzerdefinierte UML-Elemente. UMLet läuft eigenständig oder als Eclipse-Plugin unter Windows, OS X und Linux. 
+### Default Architecture
 
-[UMLetino](http://www.umletino.com/) ist eine Web-Applikation, welches auf UMLet basiert.
+![Default Architecture](docs/Readme/architecture/architecture-default.png "Default Architecture")
+
+### Browser App Architecture
+
+![Default Architecture](docs/Readme/architecture/architecture-browser.png "Default Architecture")

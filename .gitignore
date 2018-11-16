@@ -572,10 +572,54 @@ xcuserdata/
 *.css.map
 
 
+# ---> Other
+!vendor/*
+!docs/*
+!data/*
+/config.json
+/.vscode/chrome/*
+
+
+*~
+*.sw[mnpcod]
+*.log
+*.tmp
+*.tmp.*
+log.txt
+*.sublime-project
+*.sublime-workspace
+.vscode/
+npm-debug.log*
+
+.idea/
+.ionic/
+.sourcemaps/
+.sass-cache/
+.tmp/
+.versions/
+coverage/
+www/
+node_modules/
+tmp/
+temp/
+platforms/
+plugins/
+plugins/android.json
+plugins/ios.json
+$RECYCLE.BIN/
+
+.DS_Store
+Thumbs.db
+UserInterfaceState.xcuserstate
+
+
+# ---> Cordova
+/platforms
+/plugins
+# res
+resources/signing
+
 
 !vendor/*
 !docs/*
 !data/*
-
-
-.DS_Store

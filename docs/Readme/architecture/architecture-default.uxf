@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>20</x>
+      <y>20</y>
+      <w>480</w>
+      <h>590</h>
+    </coordinates>
+    <panel_attributes>Client-Server architecture with an RESTful API
+--
+bg=#555555
+layer=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>40</x>
+      <y>70</y>
+      <w>440</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>Frondend
+--
+bg=#DDDDDD
+layer=3
+transparency=0
+fontsize=13</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>40</x>
+      <y>340</y>
+      <w>440</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>Backend
+--
+bg=#DDDDDD
+layer=3
+transparency=0
+fontsize=13</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>120</y>
+      <w>280</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=.
+layer=4
+transparency=0
+bg=#FFFFFF
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>390</y>
+      <w>280</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=.
+layer=4
+transparency=0
+group=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>140</x>
+      <y>140</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>   App
+
+layer=5
+transparency=0
+halign=left
+
+bg=#8FBC8F</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>140</x>
+      <y>230</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>   www-Files
+
+layer=5
+transparency=0
+halign=left
+
+bg=#8FBC8F</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>140</x>
+      <y>410</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>   Business-Logic
+
+layer=5
+transparency=0
+halign=left
+
+bg=#DAA520</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>140</x>
+      <y>500</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>   Database
+
+layer=5
+transparency=0
+halign=left
+
+bg=#DAA520</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>180</x>
+      <y>160</y>
+      <w>190</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.&gt;
+local filesystem access
+
+layer=6
+transparency=0</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>180</x>
+      <y>430</y>
+      <w>190</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.&gt;
+SQL request / response
+
+layer=6
+transparency=0</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>180</x>
+      <y>250</y>
+      <w>130</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.&gt;
+REST API (http)
+
+layer=6
+transparency=0</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>330</x>
+      <y>120</y>
+      <w>70</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>/Client/
+lt=.
+layer=5
+transparency=100
+valign=center
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>330</x>
+      <y>390</y>
+      <w>70</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>/Server/
+lt=.
+layer=5
+transparency=100
+valign=center
+group=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
