@@ -1,75 +1,86 @@
-use EcarDB;
+--USE EcarDB;
 
-create table Hersteller(
-HId int,
-Name varchar(255));
+CREATE TABLE Hersteller (
+  HId int,
+  Name varchar(255)
+);
 
-create table Elektroauto(
-Eid int not null primary key,
-Hersteller_HId int not null,
-Modellname varchar(255),
-Typ varchar(45),
-PS int,
-Kaufpreis double,
-Leasingpreis double,
-Hoechstgeschwindigkeit double,
-Batteriekapazitaet double,
-Verbrauch double,
-Bild varchar(500),
-Sitze int,
-Farbe varchar(45),
-Lenkhilfe tinyint,
-Klimaanlage tinyint,
-Parkhilfe tinyint,
-Tempomat tinyint,
-Reifendrucksensor tinyint,
-Autoparkfunktion tinyint,
-Sitzheizung tinyint,
-ABS tinyint,
-Fensterheber tinyint,
-Spurhalter tinyint,
-Bluetooth tinyint,
-Bordcomputer tinyint,
-Navi tinyint,
-Sitzmaterial varchar(255),
-Garniturmaterial varchar(255),
-Beifahrerairbag tinyint,
-Rekuperation varchar(50),
-foreign key(Hersteller_HId) references Hersteller(HId));
+CREATE TABLE Elektroauto (
+  Eid int NOT NULL PRIMARY KEY,
+  Hersteller_HId int NOT NULL,
+  Modellname varchar(255),
+  Typ varchar(45),
+  PS int,
+  Kaufpreis double,
+  Leasingpreis double,
+  Hoechstgeschwindigkeit double,
+  Batteriekapazitaet double,
+  Verbrauch double,
+  Bild varchar(500),
+  Sitze int,
+  Farbe varchar(45),
+  Lenkhilfe tinyint,
+  Klimaanlage tinyint,
+  Parkhilfe tinyint,
+  Tempomat tinyint,
+  Reifendrucksensor tinyint,
+  Autoparkfunktion tinyint,
+  Sitzheizung tinyint,
+  ABS tinyint,
+  Fensterheber tinyint,
+  Spurhalter tinyint,
+  Bluetooth tinyint,
+  Bordcomputer tinyint,
+  Navi tinyint,
+  Sitzmaterial varchar(255),
+  Garniturmaterial varchar(255),
+  Beifahrerairbag tinyint,
+  Rekuperation varchar(50),
 
-create table Werkstatt(
-WId int not null primary key,
-Hersteller_HId int not null,
-Name varchar(255),
-Laengengrad int,
-Breitengrad int,
-foreign key(Hersteller_HId) references Hersteller(HId));
+  FOREIGN KEY(Hersteller_HId) REFERENCES Hersteller(HId)
+);
 
-create table Ladestation(
-LId int not null primary key,
-Hersteller_HId int not null,
-Laengengrad int,
-Breitengrad int,
-Steckertyp varchar(255),
-foreign key(Hersteller_HId) references Hersteller(HId));
+CREATE TABLE Werkstatt (
+  WId int NOT NULL PRIMARY KEY,
+  Hersteller_HId int NOT NULL,
+  Name varchar(255),
+  Laengengrad int,
+  Breitengrad int,
 
-create table Filter(
-FId int not null primary key,
-Sichtbar tinyint,
-Name varchar(255),
-Typ int,
-Daten text,
-Gewichtung int);
+  FOREIGN KEY(Hersteller_HId) REFERENCES Hersteller(HId)
+);
 
-create table Benutzer(
-BId int not null primary key,
-Benutzername varchar(45),
-Email varchar(45),
-Passwort varchar(45));
+CREATE TABLE Ladestation (
+  LId int NOT NULL PRIMARY KEY,
+  Hersteller_HId int NOT NULL,
+  Laengengrad int,
+  Breitengrad int,
+  Steckertyp varchar(255),
 
-create table Bewertung(
-BewId int not null primary key,
-Elektroauto_EId int not null,
-Benutzer_BId int not null,
-foreign key(Benutzer_BId) references Benutzer(BId),
-foreign key(Elektroauto_EId) references Elektroauto(EId));
+  FOREIGN KEY(Hersteller_HId) REFERENCES Hersteller(HId)
+);
+
+CREATE TABLE Filter (
+  FId int NOT NULL PRIMARY KEY,
+  Sichtbar tinyint,
+  Name varchar(255),
+  Typ int,
+  Daten text,
+  Gewichtung int
+);
+
+create table Benutzer (
+  BId int NOT NULL PRIMARY KEY,
+  Benutzername varchar(45),
+  Email varchar(45),
+  Passwort varchar(45)
+);
+
+create table Bewertung (
+  BewId int NOT NULL PRIMARY KEY,
+  Elektroauto_EId int NOT NULL,
+  Benutzer_BId int NOT NULL,
+
+  FOREIGN KEY(Benutzer_BId) REFERENCES Benutzer(BId),
+  FOREIGN KEY(Elektroauto_EId) REFERENCES Elektroauto(EId)
+);
