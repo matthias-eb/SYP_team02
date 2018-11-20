@@ -1,3 +1,13 @@
+---- create new database
+--CREATE DATABASE EcarDB;
+--
+---- create new user
+--CREATE USER 'ecar'@'localhost' IDENTIFIED BY '12345';
+--
+---- grant new user all premissions for the new database
+--GRANT ALL PRIVILEGES ON EcarDB . * TO 'ecar'@'localhost';
+--FLUSH PRIVILEGES;
+
 --USE EcarDB;
 
 CREATE TABLE Hersteller (
