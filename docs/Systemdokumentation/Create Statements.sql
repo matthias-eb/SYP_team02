@@ -34,20 +34,20 @@
 
 CREATE TABLE Hersteller (
   HId int AUTO_INCREMENT,
-  Name varchar(255),
+  Name varchar(255) NOT NULL,
 
   CONSTRAINT pk_hersteller PRIMARY KEY (HId)
 );
 
 CREATE TABLE Elektroauto (
-  Eid int NOT NULL AUTO_INCREMENT,
+  EId int NOT NULL AUTO_INCREMENT,
   Hersteller_HId int NOT NULL,
   Modellname varchar(255),
   Typ varchar(45),
   PS int,
   Kaufpreis double,
   Leasingpreis double,
-  Hoechstgeschwindigkeit double,
+  Hoechstgeschwindigkeit int,
   Batteriekapazitaet double,
   Verbrauch double,
   Bild varchar(500),
@@ -79,8 +79,8 @@ CREATE TABLE Werkstatt (
   WId int NOT NULL AUTO_INCREMENT,
   Hersteller_HId int NOT NULL,
   Name varchar(255),
-  Laengengrad int,
-  Breitengrad int,
+  Laengengrad double,
+  Breitengrad double,
 
   CONSTRAINT pk_werkstatt PRIMARY KEY (WId),
   CONSTRAINT fk_werkstatt_hersteller FOREIGN KEY (Hersteller_HId) REFERENCES Hersteller(HId)
@@ -89,8 +89,8 @@ CREATE TABLE Werkstatt (
 CREATE TABLE Ladestation (
   LId int NOT NULL AUTO_INCREMENT,
   Hersteller_HId int NOT NULL,
-  Laengengrad int,
-  Breitengrad int,
+  Laengengrad double,
+  Breitengrad double,
   Steckertyp varchar(255),
 
   CONSTRAINT pk_ladestation PRIMARY KEY (LId),
@@ -108,16 +108,16 @@ CREATE TABLE Filter (
   CONSTRAINT pk_filter PRIMARY KEY (FId)
 );
 
-create table Benutzer (
+CREATE TABLE Benutzer (
   BId int NOT NULL AUTO_INCREMENT,
-  Benutzername varchar(45),
-  Email varchar(45),
-  Passwort varchar(45),
+  Benutzername varchar(50) NOT NULL,
+  Email varchar(255) NOT NULL,
+  Passwort varchar(64) NOT NULL,
 
   CONSTRAINT pk_benutzer PRIMARY KEY (BId)
 );
 
-create table Bewertung (
+CREATE TABLE Bewertung (
   BewId int NOT NULL AUTO_INCREMENT,
   Elektroauto_EId int NOT NULL,
   Benutzer_BId int NOT NULL,
