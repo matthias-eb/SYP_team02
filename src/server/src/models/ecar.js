@@ -12,6 +12,7 @@ let ecar = db.sequelize.define('ecar', {
     type: Sequelize.STRING,
     field: 'Modellname',
     validate: {
+      min: 3,
       max: 255
     }
   },
@@ -19,6 +20,7 @@ let ecar = db.sequelize.define('ecar', {
     type: Sequelize.STRING,
     field: 'Typ',
     validate: {
+      min: 3,
       max: 45
     }
   },
@@ -49,10 +51,14 @@ let ecar = db.sequelize.define('ecar', {
   image: {
     type: Sequelize.STRING,
     field: 'Bild'
+    
   },
   seats: {
     type: Sequelize.INTEGER,
-    field: 'Sitze'
+    field: 'Sitze',
+    validate: {
+      min: 1
+    }
   },
   color: {
     type: Sequelize.STRING,
@@ -60,25 +66,30 @@ let ecar = db.sequelize.define('ecar', {
   },
   servoSteering: {
     type: Sequelize.TINYINT,
-    field: 'Lenkhilfe'
+    field: 'Lenkhilfe',
+    is:[ 1, 0 ]
   },
   airCon: {
-    type: Sequelize.INTEGER,
-    field: 'Klimaanlage'
+    type: Sequelize.TINYINT,
+    field: 'Klimaanlage',
+    is:[ 1, 0 ]
+  },
+  parkinghelp: {
+    type: Sequelize.TINYINT,
+    field: 'Parkhilfe',
+    is:[ 1, 0 ]
+  },
+  cruisecontrol: {
+    type: Sequelize.TINYINT,
+    field: 'Tempomat',
+    is:[ 1, 0 ]
+  },
+  tpsensor: {
+    type: Sequelize.TINYINT,
+    field: 'Reifendrucksensor',
+    is:[ 1, 0 ]
   },
   /*
-  ps: {
-    type: Sequelize.INTEGER,
-    field: 'Parkhilfe'
-  },
-  ps: {
-    type: Sequelize.INTEGER,
-    field: 'PS'
-  },
-  ps: {
-    type: Sequelize.INTEGER,
-    field: 'PS'
-  },
   ps: {
     type: Sequelize.INTEGER,
     field: 'PS'
