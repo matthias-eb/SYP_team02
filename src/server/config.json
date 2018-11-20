@@ -1,8 +1,8 @@
 {
   "db": {
     "host": "localhost",
-    "database": "demo",
-    "user": "demo",
+    "database": "EcarDB",
+    "user": "ecar",
     "password": "12345"
   },
   "server": {
