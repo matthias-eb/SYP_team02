@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 // example:  const usersRoutes = require('./src/routes/users');
 const manufacturerRoutes = require('./src/routes/manufacturer');
 const authRoutes = require('./src/routes/authentification');
+const TESTINGONLYRoutes = require('./src/routes/TESTINGONLY');
 
 //Logging
 app.use(morgan('dev'));
@@ -46,6 +47,7 @@ app.use(function(req, res, next) {
 // example:  app.use('/users', usersRoutes);
 app.use('/manufacturer', manufacturerRoutes);
 app.use('/', authRoutes);
+app.use('/TESTINGONLY', TESTINGONLYRoutes);
 
 // Errorhandling
 app.use((req, res, next) => {

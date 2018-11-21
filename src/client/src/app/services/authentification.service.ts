@@ -53,4 +53,21 @@ export class AuthentificationService {
     });
   }
 
+  /**
+   * ONLY for testing. Not  avalible in production mode.
+   * Remove user from database / Delete user account.
+   * Attention: This will only remove the user from the user table.
+   *            User data like "rating" will not be removed.
+   *
+   * @param id user id
+   *
+   * @returns observable object for login response or error
+   *
+   * @example
+   *    login('Max', 'secret').subscribe((data: any) => { ... });
+   */
+  removeUser(id: number): Observable<Object> {
+    return this.http.delete(server.ServerBaseUrl + '/TESTINGONLY/user/' + id);
+  }
+
 }
