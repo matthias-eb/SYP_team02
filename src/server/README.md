@@ -28,7 +28,7 @@ If you want to develop in Visual Studio Code we would recommend to install the f
 
 ## Config File
 
-A config file is also required. This config file should be named ```config.json``` and should lay in the root directory of the backend part.
+A config file is also required. This config file should be named ```config.json``` and should lay in the root directory of the server part.
 
 ```json
 {

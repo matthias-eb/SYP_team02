@@ -577,6 +577,7 @@ xcuserdata/
 !docs/*
 !data/*
 /src/server/config.json
+/src/client/config.json
 /.vscode/chrome/*
 
 

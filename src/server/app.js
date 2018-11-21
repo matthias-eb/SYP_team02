@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 // Import von Routen
 // example:  const usersRoutes = require('./src/routes/users');
 const manufacturerRoutes = require('./src/routes/manufacturer');
+const authRoutes = require('./src/routes/authentification');
 
 //Logging
 app.use(morgan('dev'));
@@ -44,6 +45,7 @@ app.use(function(req, res, next) {
 // Routes
 // example:  app.use('/users', usersRoutes);
 app.use('/manufacturer', manufacturerRoutes);
+app.use('/', authRoutes);
 
 // Errorhandling
 app.use((req, res, next) => {

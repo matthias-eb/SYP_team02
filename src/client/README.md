@@ -44,6 +44,16 @@ npm install
 ionic cordova platform add android
 ```
 
+### Config File
+
+A config file is also required. This config file should be named ```config.json``` and should lay in the root directory of the client part.
+
+```json
+{
+  "ServerBaseUrl": "http://localhost:3000"
+}
+```
+
 
 ## npm
 
