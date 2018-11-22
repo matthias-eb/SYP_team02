@@ -4,10 +4,10 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
 // Import von Routen
-// example:  const usersRoutes = require('./src/routes/users');
+const TESTINGONLYRoutes = require('./src/routes/TESTINGONLY');
 const manufacturerRoutes = require('./src/routes/manufacturer');
 const authRoutes = require('./src/routes/authentification');
-const TESTINGONLYRoutes = require('./src/routes/TESTINGONLY');
+const filterRoutes = require('./src/routes/auto');
 
 //Logging
 app.use(morgan('dev'));
@@ -29,7 +29,7 @@ app.use(function(req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
 
   // Request methods you wish to allow
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
 
   // Request headers you wish to allow
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
@@ -44,10 +44,11 @@ app.use(function(req, res, next) {
 
 
 // Routes
-// example:  app.use('/users', usersRoutes);
-app.use('/manufacturer', manufacturerRoutes);
-app.use('/', authRoutes);
 app.use('/TESTINGONLY', TESTINGONLYRoutes);
+app.use('/', authRoutes);
+app.use('/manufacturer', manufacturerRoutes);
+app.use('/auto', filterRoutes);
+
 
 // Errorhandling
 app.use((req, res, next) => {

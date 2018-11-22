@@ -7,8 +7,6 @@ const User   = require('../models/user');
 /**
  * Check if reqest is user authentificated.
  *
- * if authentification is 
- *
  * @param {object} req http(s) request object
  * @param {object} res http(s) response object
  * @param {function} next function to trigger if authentification is successful
