@@ -32,28 +32,37 @@
 -- CREATE TABLES
 ---------------------------------------------------------------------
 
-CREATE TABLE Hersteller (
+CREATE OR REPLACE TABLE Hersteller (
   HId int AUTO_INCREMENT,
   Name varchar(255) NOT NULL,
 
   CONSTRAINT pk_hersteller PRIMARY KEY (HId)
 );
 
-CREATE TABLE Elektroauto (
+CREATE OR REPLACE TABLE Elektroauto (
   EId int NOT NULL AUTO_INCREMENT,
-  Hersteller_HId int NOT NULL,
+  Hersteller_HId int NOT NULL DEFAULT 0,
   Modellname varchar(255),
   Typ varchar(45),
-  PS int,
+  Bild varchar(500) DEFAULT 'https://generationstrom.files.wordpress.com/2016/07/logo_allgemein_gruen.png?w=1400',
+  Leistung int,
+  Sitze int,
+  Leergewicht int,
+  Gesamtgewicht int,
+  Reichweite int,
+  MaxDrehmoment int,
+  Hoechstgeschwindigkeit int,
+  Laderaum int,
   Kaufpreis double,
   Leasingpreis double,
-  Hoechstgeschwindigkeit int,
+  Beschleunigung double,
   Batteriekapazitaet double,
   Verbrauch double,
-  Bild varchar(500),
-  Sitze int,
+  Batterieart varchar(255),
+  Sitzmaterial varchar(255),
   Farbe varchar(45),
-  Lenkhilfe tinyint,
+  Garniturmaterial varchar(255),
+  Rekuperation tinyint,
   Klimaanlage tinyint,
   Parkhilfe tinyint,
   Tempomat tinyint,
@@ -66,16 +75,13 @@ CREATE TABLE Elektroauto (
   Bluetooth tinyint,
   Bordcomputer tinyint,
   Navi tinyint,
-  Sitzmaterial varchar(255),
-  Garniturmaterial varchar(255),
   Beifahrerairbag tinyint,
-  Rekuperation varchar(50),
 
   CONSTRAINT pk_elektroauto PRIMARY KEY (Eid),
   CONSTRAINT fk_elektroauto_hersteller FOREIGN KEY (Hersteller_HId) REFERENCES Hersteller(HId)
 );
 
-CREATE TABLE Werkstatt (
+CREATE OR REPLACE TABLE Werkstatt (
   WId int NOT NULL AUTO_INCREMENT,
   Hersteller_HId int NOT NULL,
   Name varchar(255),
@@ -86,7 +92,7 @@ CREATE TABLE Werkstatt (
   CONSTRAINT fk_werkstatt_hersteller FOREIGN KEY (Hersteller_HId) REFERENCES Hersteller(HId)
 );
 
-CREATE TABLE Ladestation (
+CREATE OR REPLACE TABLE Ladestation (
   LId int NOT NULL AUTO_INCREMENT,
   Hersteller_HId int NOT NULL,
   Laengengrad double,
@@ -97,7 +103,7 @@ CREATE TABLE Ladestation (
   CONSTRAINT fk_ladestation_hersteller FOREIGN KEY (Hersteller_HId) REFERENCES Hersteller(HId)
 );
 
-CREATE TABLE Filter (
+CREATE OR REPLACE TABLE Filter (
   FId int NOT NULL AUTO_INCREMENT,
   Sichtbar tinyint,
   Name varchar(255),
@@ -108,7 +114,7 @@ CREATE TABLE Filter (
   CONSTRAINT pk_filter PRIMARY KEY (FId)
 );
 
-CREATE TABLE Benutzer (
+CREATE OR REPLACE TABLE Benutzer (
   BId int NOT NULL AUTO_INCREMENT,
   Benutzername varchar(50) NOT NULL,
   Email varchar(255) NOT NULL,
@@ -117,7 +123,7 @@ CREATE TABLE Benutzer (
   CONSTRAINT pk_benutzer PRIMARY KEY (BId)
 );
 
-CREATE TABLE Bewertung (
+CREATE OR REPLACE TABLE Bewertung (
   BewId int NOT NULL AUTO_INCREMENT,
   Elektroauto_EId int NOT NULL,
   Benutzer_BId int NOT NULL,
