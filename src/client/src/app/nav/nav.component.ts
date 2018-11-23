@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
+  private logopath = './assets/icon/DEC_logo.png';
   public isCollapsed:boolean;
   constructor() {
     this.isCollapsed=true;
