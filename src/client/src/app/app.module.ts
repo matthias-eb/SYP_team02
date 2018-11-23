@@ -11,8 +11,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
-import { MainComponent } from './main/main.component';
 import { FootbarComponent } from './footbar/footbar.component';
+import { MainComponent } from './main/main.component';
 import { AnmeldenComponent } from './pages/anmelden/anmelden.component';
 import { RegistrierenComponent } from './pages/registrieren/registrieren.component';
 
@@ -20,8 +20,8 @@ import { RegistrierenComponent } from './pages/registrieren/registrieren.compone
   declarations: [
     AppComponent,
     NavComponent,
-    MainComponent,
     FootbarComponent,
+    MainComponent,
     AnmeldenComponent,
     RegistrierenComponent
   ],
