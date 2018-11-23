@@ -3,18 +3,14 @@
 <div class="container-fluid">
   <!--only visible when window is bigger than sm=540px-->
   <div class="d-none d-sm-block">
-
     <div class="m-6 pt-5 pb-5">
-      <nav>
-        <ul class="menu-web d-flex justify-content-between">
-
+        <nav class="menu-bar d-flex justify-content-between align-items-center">
           <a class="d-flex align-items-center" href="/">
             <img src="{{logopath}}" width="150" height="150" class="d-inline-block align-top" alt="">
-            <p class="menu-web-text">
-              DRIVING E CAR
-            </p>  
+            <h1 class="menu-web-text">
+              {{navtitle}}
+            </h1>  
           </a>
-          
           <div class="btn-group" role="group">
             <button type="button" class="btn btn-outline-secondary menu-button-border menu-web-text menu-web-button">
               Anmelden
@@ -23,38 +19,32 @@
               Registrieren
             </button>
           </div>
-        </ul>
-      </nav>
+        </nav>
     </div>
-
   </div>
 
   <!--only visible when window is smaller than sm=540px-->
   <div class="d-inline d-sm-none">
     <div class="container menu-container">
-      <div class="d-flex justify-content-between align-items-center">
-       
-          <a class="navbar-brand inline-block" href="#">
-            <img src="../../assets/icon/DEC_logo.png" width="60" height="60" class="d-inline-block align-top" alt="">
-          </a>
-
-          <p>
-            DRIVING E CAR
-          </p>
-
-          <button type="button" class="btn btn-outline-secondary" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
-            <div *ngIf="isCollapsed == true">
-              <i class="material-icons md-36">menu</i>
-            </div>
-            <div *ngIf="isCollapsed == false">
-                <i class="material-icons md-36">cancel</i>
-            </div>
-          </button>
-
-      </div>
+      <nav class="d-flex justify-content-between align-items-center">
+        <a class="d-flex align-items-center" href="/">
+          <img src="{{logopath}}" width="60" height="60" class="d-inline-block align-top" alt="">
+        </a>
+        <h1 class="h1-app">
+          {{navtitle}}
+        </h1>  
+        <button type="button" class="btn btn-outline-secondary" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+          <div *ngIf="isCollapsed == true">
+            <i class="material-icons md-36">menu</i>
+          </div>
+          <div *ngIf="isCollapsed == false">
+              <i class="material-icons md-36">cancel</i>
+          </div>
+        </button>
+      </nav>
     </div>
+    <hr class="hr-menu">
     <div id="collapseExample" [ngbCollapse]="isCollapsed">
-
       <div class="card">
         <a href="/anmelden">
           <div class="card-body btn-outline-secondary btn-lg" >

@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class NavComponent implements OnInit {
   private logopath = './assets/icon/DEC_logo.png';
   public isCollapsed:boolean;
+  private navtitle = 'DRIVING E CAR';
   constructor() {
     this.isCollapsed=true;
    }
