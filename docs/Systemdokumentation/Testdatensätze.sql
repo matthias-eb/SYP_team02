@@ -117,4 +117,15 @@ INSERT INTO
 			1,
 			1,
 			1,
-			1)
+			1);
+
+INSERT INTO Benutzer(Benutzername, Email, Passwort)
+VALUES
+	('Georg', 'georg@hotmail.de', 'D6E075AD15048C12F2974D121A25C3D9FC5898072C7A4236FE5245D342A41C7D'),
+	('Gettopunk96', 'messdiener22@gmail.com', '3F16A9535055AC7E33E184FAC4B148B90C6B0233F24F5E44DAB094E474087409'),
+	('XxGruftixX', 'grufti@grufti.com', 'A66FB722C08488CD9B54349529CAB266FEF869181713C29D52EF495D6D992C57');
+
+INSERT INTO Filter(Name, Typ, Daten, Gewichtung, Sichtbar)
+VALUES
+	('Volkswagen', 3, 'Hersteller_HId=HId AND Hersteller.Name=''Volkswagen''', 8, 1),
+	
