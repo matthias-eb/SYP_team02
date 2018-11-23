@@ -16,8 +16,11 @@
     height: 3em;
     background-color: #666666;
 }
-.menu-web-text{
+.menu-text-light{
     color: #f5f5f5;
+}
+.menu-text-dark{
+    color: #666666;
 }
 .menu-button-border{
     border: white;
@@ -30,5 +33,9 @@
 
 
 .h1-app{
-    font-size: 1.2em;
+    font-size: 1.3em;
+}
+a:link {
+
+    text-decoration: none;
 }

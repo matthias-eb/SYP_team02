@@ -6,15 +6,15 @@
         <nav class="menu-bar d-flex justify-content-between align-items-center">
           <a class="d-flex align-items-center" href="/">
             <img src="{{logopath}}" width="150" height="150" class="d-inline-block align-top" alt="">
-            <h1 class="menu-web-text">
+            <h1 class="menu-text-light">
               {{navtitle}}
-            </h1>  
+            </h1> 
           </a>
           <div class="btn-group" role="group">
-            <button type="button" class="btn btn-outline-secondary menu-button-border menu-web-text menu-web-button">
+            <button type="button" class="btn btn-outline-secondary menu-button-border menu-text-light menu-web-button">
               Anmelden
             </button>
-            <button type="button" class="btn btn-outline-secondary menu-button-border menu-web-text menu-web-button">
+            <button type="button" class="btn btn-outline-secondary menu-button-border menu-text-light menu-web-button">
               Registrieren
             </button>
           </div>
@@ -25,12 +25,14 @@
   <!--only visible when window is smaller than sm=540px-->
   <div class="d-inline d-sm-none">
     <nav class="mt-4 d-flex justify-content-between align-items-center ">
-      <a class="d-flex align-items-center" href="/">
+      <a href="/">
         <img src="{{logopath}}" width="60" height="60" class="d-inline-block align-top" alt="">
       </a>
-      <h1 class="h1-app">
-        {{navtitle}}
-      </h1>  
+      <a href="/">
+        <h1 class="h1-app menu-text-dark pb-4">
+          {{navtitle}}
+        </h1>  
+      </a>
       <button type="button" class="btn btn-outline-secondary" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
         <div *ngIf="isCollapsed == true">
           <i class="material-icons md-36">menu</i>
