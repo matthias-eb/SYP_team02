@@ -1,3 +1,49 @@
-<p>
-  main works!
-</p>
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Elektroautos sind in aller Munde.</h1>
+      <h1>Lohnt sich für mich ein Elektroauto?</h1>
+      <h1>Welches ist für mich das Richtige?</h1>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <ngb-carousel *ngIf="images">
+          <ng-template ngbSlide>
+            <div class="col-xs-4"><a href="#1"><img [src]="images[0]"
+                                                    class="img-responsive"></a></div>
+            <div class="col-xs-4"><a href="#1"><img [src]="images[1]"
+                                                    class="img-responsive"></a></div>
+            <div class="col-xs-4"><a href="#1"><img [src]="images[2]"
+                                                    class="img-responsive"></a></div>
+          </ng-template>
+
+          <ng-template ngbSlide>
+
+            <!--
+             <li *ngFor="let image of images">
+               {{ images }}
+             </li>
+            -->
+
+            <div class="col-xs-4"><a href="#1"><img [src]="images[3]"
+                                                    class="img-responsive"></a></div>
+            <div class="col-xs-4"><a href="#1"><img [src]="images[4]"
+                                                    class="img-responsive"></a></div>
+            <div class="col-xs-4"><a href="#1"><img [src]="images[5]"
+                                                    class="img-responsive"></a></div>
+          </ng-template>
+        </ngb-carousel>
+      </div>
+    </div>
+  </div>
+</div>
+
