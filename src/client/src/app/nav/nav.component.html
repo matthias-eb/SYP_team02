@@ -1,6 +1,5 @@
 
  
-<div class="container-fluid">
   <!--only visible when window is bigger than sm=540px-->
   <div class="d-none d-sm-block">
     <div class="m-6 pt-5 pb-5">
@@ -25,24 +24,22 @@
 
   <!--only visible when window is smaller than sm=540px-->
   <div class="d-inline d-sm-none">
-    <div class="container menu-container">
-      <nav class="d-flex justify-content-between align-items-center">
-        <a class="d-flex align-items-center" href="/">
-          <img src="{{logopath}}" width="60" height="60" class="d-inline-block align-top" alt="">
-        </a>
-        <h1 class="h1-app">
-          {{navtitle}}
-        </h1>  
-        <button type="button" class="btn btn-outline-secondary" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
-          <div *ngIf="isCollapsed == true">
-            <i class="material-icons md-36">menu</i>
-          </div>
-          <div *ngIf="isCollapsed == false">
-              <i class="material-icons md-36">cancel</i>
-          </div>
-        </button>
-      </nav>
-    </div>
+    <nav class="mt-4 d-flex justify-content-between align-items-center ">
+      <a class="d-flex align-items-center" href="/">
+        <img src="{{logopath}}" width="60" height="60" class="d-inline-block align-top" alt="">
+      </a>
+      <h1 class="h1-app">
+        {{navtitle}}
+      </h1>  
+      <button type="button" class="btn btn-outline-secondary" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+        <div *ngIf="isCollapsed == true">
+          <i class="material-icons md-36">menu</i>
+        </div>
+        <div *ngIf="isCollapsed == false">
+            <i class="material-icons md-36">cancel</i>
+        </div>
+      </button>
+    </nav>
     <hr class="hr-menu">
     <div id="collapseExample" [ngbCollapse]="isCollapsed">
       <div class="card">
@@ -71,7 +68,5 @@
         </a>
       </div>
     </div>
-  <!--visible when window greater than -->
+    <!--visible when...end-->
  </div>
- <!--container ende-->
-</div>

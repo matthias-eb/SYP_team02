@@ -1,0 +1,10 @@
+
+.fill {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    //margin: 0 auto -42px; /* the bottom margin is the negative value of the footer's height */
+    margin-top:0;
+    margin-bottom:-42px;
+    position: relative;
+}
