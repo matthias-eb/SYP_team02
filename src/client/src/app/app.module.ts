@@ -12,12 +12,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { MainComponent } from './main/main.component';
+import { FootbarComponent } from './footbar/footbar.component';
+import { AnmeldenComponent } from './pages/anmelden/anmelden.component';
+import { RegistrierenComponent } from './pages/registrieren/registrieren.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    MainComponent
+    MainComponent,
+    FootbarComponent,
+    AnmeldenComponent,
+    RegistrierenComponent
   ],
   imports: [
     BrowserModule,
