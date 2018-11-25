@@ -1,8 +1,3 @@
-
-
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
 <div class="container">
   <div class="row">
     <div class="col-md-12">
@@ -12,7 +7,7 @@
     </div>
   </div>
 
-
+  <!--Bilderkarusell -->
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -43,6 +38,72 @@
           </ng-template>
         </ngb-carousel>
       </div>
+    </div>
+  </div>
+</div>
+
+<!--Filter -->
+
+<div class="container">
+
+  <div class="row">
+    
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center">
+      <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-outline-primary " id="dropdownBasic1" ngbDropdownToggle>Marke</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button class="dropdown-item">AUDI</button>
+          <button class="dropdown-item">BMW</button>
+          <button class="dropdown-item">MERCEDES</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center">
+      <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Erscheinungsjahr</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button class="dropdown-item">2010</button>
+          <button class="dropdown-item">2011</button>
+          <button class="dropdown-item">2012</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center">
+      <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Preis</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button class="dropdown-item">2010</button>
+          <button class="dropdown-item">2011</button>
+          <button class="dropdown-item">2012</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<!-- Suchen Button -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <button type="button" class="btn btn-secondary">Suchen</button>
+    </div>
+  </div>
+</div>
+
+<p>&nbsp;</p>
+
+<!-- Erweiterte Suche Button -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <button type="button" class="btn btn-secondary">Erweiterte Suche</button>
     </div>
   </div>
 </div>
