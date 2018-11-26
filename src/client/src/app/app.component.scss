@@ -5,6 +5,9 @@
     height: 100%;
     //margin: 0 auto -42px; /* the bottom margin is the negative value of the footer's height */
     margin-top:0;
-    margin-bottom:-42px;
+    //margin-bottom: -42px;
     position: relative;
+}
+.test-footbar{
+    display:grid;
 }
