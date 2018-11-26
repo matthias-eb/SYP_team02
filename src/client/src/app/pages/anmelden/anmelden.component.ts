@@ -37,7 +37,7 @@ export class AnmeldenComponent implements OnInit {
         this.password.setValue('')
         this.userId = 0;
         this.type = 'danger';
-        this.loginmessage = 'Ihr Passwort oder Benutzername waren nicht korrekt.';
+        this.loginmessage = 'Ihr Passwort oder der Benutzername war nicht korrekt.';
       });
 
     }

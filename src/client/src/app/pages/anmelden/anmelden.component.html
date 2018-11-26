@@ -24,11 +24,13 @@
 </div>
 
 <div *ngIf="loginmessage">
-  <p>
-    <ngb-alert type="{{type}}" [dismissible]="false">
-      <strong>{{loginmessage}}</strong>
-    </ngb-alert>
-  </p>
+  <div class="d-flex justify-content-center mt-3">
+    <p>
+      <ngb-alert type="{{type}}" [dismissible]="false">
+        <strong>{{loginmessage}}</strong>
+      </ngb-alert>
+    </p>
+  </div>
 </div>
 
 <div class="d-flex justify-content-center mt-3">
