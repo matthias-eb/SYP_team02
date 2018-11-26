@@ -17,11 +17,11 @@ let workshop = db.sequelize.define('workshop', {
   },
   latitude: {
     type: Sequelize.DOUBLE,
-    field: 'Laengengrad'
+    field: 'Breitengrad'
   },
   longitude: {
     type: Sequelize.DOUBLE,
-    field: 'Breitengrad'
+    field: 'Laengengrad'
   },
   manufacturerId: {
     type: Sequelize.INTEGER,
