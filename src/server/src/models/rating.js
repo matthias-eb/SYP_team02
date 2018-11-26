@@ -10,8 +10,8 @@ module.exports = db.sequelize.define('rating', {
   },
   ecar_id: {
     type: Sequelize.INTEGER,
-    field: 'Elektroauto_EId',
-    references: 'Elektroauto', // <<< Note, its table's name, not object name
+    field: 'Elektroautos_EId',
+    references: 'Elektroautos', // <<< Note, its table's name, not object name
     referencesKey: 'EId'      // <<< Note, its a column name
   },
   user_id: {
