@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { BrowserModule, Title }  from '@angular/platform-browser';
+import { Title }  from '@angular/platform-browser';
 import { AuthentificationService } from '../../services/authentification.service';
 
 
@@ -14,33 +14,32 @@ export class AnmeldenComponent implements OnInit {
   private userId=0;
   name = new FormControl('');
   password = new FormControl('');
-  private statusMessage:string;
   private loginmessage:string;
   private type:string;
 
   constructor(private titleService: Title, private authService: AuthentificationService) { }
 
-  ngOnInit() {
-    this.setTitle();
-  }
- 
-  private setTitle() {
+  ngOnInit() { 
     this.titleService.setTitle('Anmelden');
   }
-
+ 
   onSubmit(){
     if(this.name.value == '' || this.password.value == '' ){
       this.type = 'danger';
-      this.loginmessage='Bitte Namen und Passwort angeben.';
+      this.loginmessage = 'Bitte die Felder für Namen und Passwort ausfüllen.';
     }else{
 
       this.authService.login(this.name.value, this.password.value).subscribe((data:any) => {
-        
+        this.userId=data.user.id;
         this.type = 'success';
-        this.loginmessage=data.status;
+        this.loginmessage ='Einloggen erfolgreich. DEV:UserID: '+this.userId;
+      },(err:any) => {
+        this.password.setValue('')
+        this.userId = 0;
+        this.type = 'danger';
+        this.loginmessage = 'Ihr Passwort oder Benutzername waren nicht korrekt.';
       });
+
     }
   }
-
-  
 }
