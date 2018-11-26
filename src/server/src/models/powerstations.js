@@ -23,6 +23,10 @@ let powerstations = db.sequelize.define('powerstations', {
     type: Sequelize.DOUBLE,
     field: 'Laengengrad'
   },
+  plug_type: {
+    type: Sequelize.INTEGER,
+    field: 'Steckertyp'
+  },
   manufacturerId: {
     type: Sequelize.INTEGER,
     field: 'Hersteller_HId',
