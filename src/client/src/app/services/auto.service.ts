@@ -13,17 +13,26 @@ export class AutoService {
   constructor(private http: HttpClient) { }
 
   /**
-   * Log user in.
+   * Get all Filter.
    *
-   * @param name username
-   * @param pwd password
-   *
-   * @returns observable object for login response or error
+   * @returns observable object for filter response or error
    *
    * @example
-   *    login('Max', 'secret').subscribe((data: any) => { ... });
+   *    getFilter().subscribe((res: any) => { ... });
    */
   getFilter(): Observable<Object> {
-    return this.http.post(ServerBaseUrl + '/filter', { });
+    return this.http.get(ServerBaseUrl + '/filter', { });
+  }
+
+  /**
+   * Get only main filters for main page.
+   *
+   * @returns observable object for main filter response or error
+   *
+   * @example
+   *    getMainFilter().subscribe((res: any) => { ... });
+   */
+  getMainFilter(): Observable<Object> {
+    return this.http.get(ServerBaseUrl + '/mainfilter', { });
   }
 }
