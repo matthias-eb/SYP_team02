@@ -95,6 +95,7 @@ CREATE OR REPLACE TABLE Werkstatt (
 CREATE OR REPLACE TABLE Ladestation (
   LId int NOT NULL AUTO_INCREMENT,
   Hersteller_HId int NOT NULL,
+  Name varchar(255),
   Laengengrad double,
   Breitengrad double,
   Steckertyp varchar(255),
