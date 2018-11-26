@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-nav',
@@ -9,13 +11,16 @@ export class NavComponent implements OnInit {
 
   public isCollapsed: boolean;
   private logopath = './assets/icon/DEC_logo.png';
-  private navtitle = 'DRIVING E CAR';
+  private navtitle: String;
 
-  constructor() {
+  constructor(private titleService: Title) {
     this.isCollapsed = true;
   }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  public updateTitle() {
+    this.navtitle = this.titleService.getTitle();
   }
 
 }

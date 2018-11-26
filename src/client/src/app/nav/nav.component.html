@@ -9,10 +9,10 @@
           </h1> 
         </a>
         <div class="btn-group" role="group">
-          <a class="btn btn-outline-secondary menu-button-border menu-text-light menu-web-button" routerLink="/anmelden" role="button">
+          <a class="btn btn-outline-secondary menu-button-border menu-text-light menu-web-button" routerLink="/anmelden" (click)="updateTitle()" role="button">
             Anmelden
           </a>
-          <a class="btn btn-outline-secondary menu-button-border menu-text-light menu-web-button" routerLink="/registrieren" role="button">
+          <a class="btn btn-outline-secondary menu-button-border menu-text-light menu-web-button" routerLink="/registrieren"  role="button">
             Registrieren
           </a>
         </div>
@@ -23,10 +23,10 @@
 <!--only visible when window is smaller than sm=540px-->
 <div class="d-inline d-sm-none">
   <nav class="mt-4 d-flex justify-content-between align-items-center ">
-    <a routerLink="/">
+    <a routerLink="/" (click)="isCollapsed = true">
       <img src="{{logopath}}" width="60" height="60" class="d-inline-block align-top" alt="">
     </a>
-    <a routerLink="/">
+    <a routerLink="/" (click)="isCollapsed = true">
       <h1 class="h1-app menu-text-dark">
         {{navtitle}}
       </h1>  
@@ -43,25 +43,25 @@
   <hr class="hr-menu">
   <div id="collapseExample" [ngbCollapse]="isCollapsed">
     <div class="card">
-      <a routerLink="/anmelden">
+      <a routerLink="/anmelden" (click)="isCollapsed = true">
         <div class="card-body btn-outline-secondary btn-lg card-size" >
           Anmelden
         </div>
       </a>
       <hr class="hr-menu">
-      <a routerLink="/regestrieren">
+      <a routerLink="/registrieren" (click)="isCollapsed = true">
         <div class="card-body btn-outline-secondary btn-lg">
           Registrieren
         </div>
       </a>
       <hr class="hr-menu">
-      <a routerLink="/kontakt">
+      <a routerLink="/kontakt" (click)="isCollapsed = true">
         <div class="card-body btn-outline-secondary btn-lg">
           Kontakt
         </div>
       </a>
       <hr class="hr-menu">
-      <a routerLink="/impressum">
+      <a routerLink="/impressum" (click)="isCollapsed = true">
         <div class="card-body btn-outline-secondary btn-lg">
           Impressum
         </div>

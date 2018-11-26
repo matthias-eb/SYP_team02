@@ -1,6 +1,6 @@
 INSERT INTO Hersteller (Name) VALUES ('Daimler'),('Mercedes'),('Volkswagen'),('Tesla'),('Ford');
 
-INSERT INTO Werkstatt(Hersteller_HId, Name, Laengengrad, Breitengrad) 
+INSERT INTO Werkstaetten(Hersteller_HId, Name, Laengengrad, Breitengrad) 
 VALUES 
 	((SELECT HId FROM Hersteller WHERE Name='Daimler'), 'Daimler-KFZWerkstatt Neumarkt', 50.936300, 6.947830),
 	((SELECT HId FROM Hersteller WHERE Name='Daimler'), 'Daimler-KFZWerkstatt Kyotostraße', 50.9482477, 6.9449996),
@@ -11,7 +11,7 @@ VALUES
 	((SELECT HId FROM Hersteller WHERE Name='Ford'), 'Ford-KFZWerkstatt Brühl', 50.8192399, 6.9236327);
 
 INSERT INTO 
-	Elektroauto(Hersteller_HId, 
+	Elektroautos(Hersteller_HId, 
 		Modellname,
 		Typ,
 		Bild,
@@ -31,7 +31,7 @@ INSERT INTO
 		Batterieart,
 		Sitzmaterial,
 		Farbe,
-		Garniturmaterial,
+		Verkleidungsmaterial,
 		Rekuperation,
 		Klimaanlage,
 		Parkhilfe,
@@ -127,5 +127,19 @@ VALUES
 
 INSERT INTO Filter(Name, Typ, Daten, Gewichtung, Sichtbar)
 VALUES
-	('Volkswagen', 3, 'Hersteller_HId=HId AND Hersteller.Name=''Volkswagen''', 8, 1),
-	
+	("Hersteller", 1, '[ "Audi", "BWM", "Mercedes" ]', 10, 1),
+	("Erscheinungsjahr", 1, '[ 2010, 2012, 2015 ]', 20, 1),
+	("Preis", 1, '[ 15254.15, 25835.99 ]', 20, 1);
+
+INSERT INTO Ladestationen(Hersteller_HId, Name, Laengengrad, Breitengrad, Steckertyp)
+VALUES
+	((SELECT HId FROM Hersteller WHERE Name='Tesla'), 'Powerup Quickcharger', 51.2358824, 6.7790451, '["Tesla Supercharger", "Combo"]'),
+	((SELECT HId FROM Hersteller WHERE Name='Volkswagen'), 'VW EZ-Charge Deutz', 50.937605, 6.9915943, '["Combo", "Typ 2"]'),
+	((SELECT HId FROM Hersteller WHERE Name='Ford'), 'Supercharge 55', 50.937605, 6.9915943, '["Typ2"]');
+
+INSERT INTO Bewertung(Benutzer_BId, Elektroautos_HId, Bewertung)
+VALUES
+	((SELECT BId FROM Benutzer WHERE Benutzername='Gettopunk96'), (SELECT EId FROM Elektroautos WHERE Modellname='Mercedes EQC'), 8),
+	((SELECT BId FROM Benutzer WHERE Benutzername='Georg'), (SELECT EId FROM Elektroautos WHERE Modellname='Mercedes EQC'), 6),
+	((SELECT BId FROM Benutzer WHERE Benutzername='Gettopunk96'), (SELECT EId FROM Elektroautos WHERE Modellname='e-Golf'), 7),
+	((SELECT BId FROM Benutzer WHERE Benutzername='Georg'), (SELECT EId FROM Elektroautos WHERE Name='e-Golf'), 10),

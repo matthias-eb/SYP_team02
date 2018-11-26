@@ -1,12 +1,12 @@
 const Sequelize = require('sequelize');
 const db = require('../database/database');
 
-let workshop = db.sequelize.define('workshop', {
+let powerstations = db.sequelize.define('powerstations', {
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true,
     autoIncrement: true,
-    field: 'WId'
+    field: 'LId'
   },
   name: {
     type: Sequelize.STRING,
@@ -22,6 +22,10 @@ let workshop = db.sequelize.define('workshop', {
   longitude: {
     type: Sequelize.DOUBLE,
     field: 'Laengengrad'
+  },
+  plug_type: {
+    type: Sequelize.INTEGER,
+    field: 'Steckertyp'
   },
   manufacturerId: {
     type: Sequelize.INTEGER,
@@ -49,7 +53,7 @@ let workshop = db.sequelize.define('workshop', {
   freezeTableName: true,
 
   // define the table's name
-  tableName: 'Werkstaetten'
+  tableName: 'Ladestationen'
 });
 
-module.exports = workshop;
+module.exports = powerstations;

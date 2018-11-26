@@ -36,4 +36,6 @@ import { RegistrierenComponent } from './pages/registrieren/registrieren.compone
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
+
+
 export class AppModule { }

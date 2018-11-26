@@ -1,33 +1,24 @@
 const Sequelize = require('sequelize');
 const db = require('../database/database');
 
-let workshop = db.sequelize.define('workshop', {
+module.exports = db.sequelize.define('rating', {
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true,
     autoIncrement: true,
-    field: 'WId'
+    field: 'BewId'
   },
-  name: {
-    type: Sequelize.STRING,
-    field: 'Name',
-    validate: {
-      max: 255
-    }
-  },
-  latitude: {
-    type: Sequelize.DOUBLE,
-    field: 'Breitengrad'
-  },
-  longitude: {
-    type: Sequelize.DOUBLE,
-    field: 'Laengengrad'
-  },
-  manufacturerId: {
+  ecar_id: {
     type: Sequelize.INTEGER,
-    field: 'Hersteller_HId',
-    references: 'Hersteller', // <<< Note, its table's name, not object name
-    referencesKey: 'HId'      // <<< Note, its a column name
+    field: 'Elektroautos_EId',
+    references: 'Elektroautos', // <<< Note, its table's name, not object name
+    referencesKey: 'EId'      // <<< Note, its a column name
+  },
+  user_id: {
+    type: Sequelize.INTEGER,
+    field: 'Benutzer_BId',
+    references: 'Benutzer', // <<< Note, its table's name, not object name
+    referencesKey: 'BId'      // <<< Note, its a column name
   }
 }, {
   // don't add the timestamp attributes (updatedAt, createdAt)
@@ -49,7 +40,5 @@ let workshop = db.sequelize.define('workshop', {
   freezeTableName: true,
 
   // define the table's name
-  tableName: 'Werkstaetten'
+  tableName: 'Bewertungen'
 });
-
-module.exports = workshop;
