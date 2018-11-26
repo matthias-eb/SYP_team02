@@ -49,7 +49,7 @@ let workshop = db.sequelize.define('workshop', {
   freezeTableName: true,
 
   // define the table's name
-  tableName: 'Werkstatt'
+  tableName: 'Werkstaetten'
 });
 
 module.exports = workshop;

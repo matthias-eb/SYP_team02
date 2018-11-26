@@ -40,5 +40,5 @@ module.exports = db.sequelize.define('rating', {
   freezeTableName: true,
 
   // define the table's name
-  tableName: 'Bewertung'
+  tableName: 'Bewertungen'
 });

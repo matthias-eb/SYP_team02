@@ -1,6 +1,6 @@
 INSERT INTO Hersteller (Name) VALUES ('Daimler'),('Mercedes'),('Volkswagen'),('Tesla'),('Ford');
 
-INSERT INTO Werkstatt(Hersteller_HId, Name, Laengengrad, Breitengrad) 
+INSERT INTO Werkstaetten(Hersteller_HId, Name, Laengengrad, Breitengrad) 
 VALUES 
 	((SELECT HId FROM Hersteller WHERE Name='Daimler'), 'Daimler-KFZWerkstatt Neumarkt', 50.936300, 6.947830),
 	((SELECT HId FROM Hersteller WHERE Name='Daimler'), 'Daimler-KFZWerkstatt Kyotostraße', 50.9482477, 6.9449996),
@@ -11,7 +11,7 @@ VALUES
 	((SELECT HId FROM Hersteller WHERE Name='Ford'), 'Ford-KFZWerkstatt Brühl', 50.8192399, 6.9236327);
 
 INSERT INTO 
-	Elektroauto(Hersteller_HId, 
+	Elektroautos(Hersteller_HId, 
 		Modellname,
 		Typ,
 		Bild,

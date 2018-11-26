@@ -203,7 +203,7 @@ let ecar = db.sequelize.define('ecar', {
   freezeTableName: true,
 
   // define the table's name
-  tableName: 'Elektroauto'
+  tableName: 'Elektroautos'
 });
 
 module.exports = ecar;

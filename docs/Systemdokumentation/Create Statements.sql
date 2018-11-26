@@ -19,12 +19,12 @@
 -- DROP TABLES
 ---------------------------------------------------------------------
 
---DROP TABLE Bewertung;
+--DROP TABLE Bewertungen;
 --DROP TABLE Benutzer;
 --DROP TABLE Filter;
---DROP TABLE Ladestation;
---DROP TABLE Werkstatt;
---DROP TABLE Elektroauto;
+--DROP TABLE Ladestationen;
+--DROP TABLE Werkstaetten;
+--DROP TABLE Elektroautos;
 --DROP TABLE Hersteller;
 
 
@@ -39,7 +39,7 @@ CREATE OR REPLACE TABLE Hersteller (
   CONSTRAINT pk_hersteller PRIMARY KEY (HId)
 );
 
-CREATE OR REPLACE TABLE Elektroauto (
+CREATE OR REPLACE TABLE Elektroautos (
   EId int NOT NULL AUTO_INCREMENT,
   Hersteller_HId int NOT NULL DEFAULT 0,
   Modellname varchar(255),
@@ -77,22 +77,22 @@ CREATE OR REPLACE TABLE Elektroauto (
   Navi tinyint,
   Beifahrerairbag tinyint,
 
-  CONSTRAINT pk_elektroauto PRIMARY KEY (Eid),
-  CONSTRAINT fk_elektroauto_hersteller FOREIGN KEY (Hersteller_HId) REFERENCES Hersteller(HId)
+  CONSTRAINT pk_elektroautos PRIMARY KEY (Eid),
+  CONSTRAINT fk_elektroautos_hersteller FOREIGN KEY (Hersteller_HId) REFERENCES Hersteller(HId)
 );
 
-CREATE OR REPLACE TABLE Werkstatt (
+CREATE OR REPLACE TABLE Werkstaetten (
   WId int NOT NULL AUTO_INCREMENT,
   Hersteller_HId int NOT NULL,
   Name varchar(255),
   Laengengrad double,
   Breitengrad double,
 
-  CONSTRAINT pk_werkstatt PRIMARY KEY (WId),
-  CONSTRAINT fk_werkstatt_hersteller FOREIGN KEY (Hersteller_HId) REFERENCES Hersteller(HId)
+  CONSTRAINT pk_werkstaetten PRIMARY KEY (WId),
+  CONSTRAINT fk_werkstaetten_hersteller FOREIGN KEY (Hersteller_HId) REFERENCES Hersteller(HId)
 );
 
-CREATE OR REPLACE TABLE Ladestation (
+CREATE OR REPLACE TABLE Ladestationen (
   LId int NOT NULL AUTO_INCREMENT,
   Hersteller_HId int NOT NULL,
   Name varchar(255),
@@ -100,8 +100,8 @@ CREATE OR REPLACE TABLE Ladestation (
   Breitengrad double,
   Steckertyp varchar(255),
 
-  CONSTRAINT pk_ladestation PRIMARY KEY (LId),
-  CONSTRAINT fk_ladestation_hersteller FOREIGN KEY (Hersteller_HId) REFERENCES Hersteller(HId)
+  CONSTRAINT pk_ladestationen PRIMARY KEY (LId),
+  CONSTRAINT fk_ladestationen_hersteller FOREIGN KEY (Hersteller_HId) REFERENCES Hersteller(HId)
 );
 
 CREATE OR REPLACE TABLE Filter (
@@ -124,12 +124,12 @@ CREATE OR REPLACE TABLE Benutzer (
   CONSTRAINT pk_benutzer PRIMARY KEY (BId)
 );
 
-CREATE OR REPLACE TABLE Bewertung (
+CREATE OR REPLACE TABLE Bewertungen (
   BewId int NOT NULL AUTO_INCREMENT,
-  Elektroauto_EId int NOT NULL,
+  Elektroautos_EId int NOT NULL,
   Benutzer_BId int NOT NULL,
 
-  CONSTRAINT pk_bewertung PRIMARY KEY (BewId),
-  CONSTRAINT fk_bewertung_benutzer FOREIGN KEY (Benutzer_BId) REFERENCES Benutzer(BId),
-  CONSTRAINT fk_bewertung_elektroauto FOREIGN KEY (Elektroauto_EId) REFERENCES Elektroauto(EId)
+  CONSTRAINT pk_bewertungen PRIMARY KEY (BewId),
+  CONSTRAINT fk_bewertungen_benutzer FOREIGN KEY (Benutzer_BId) REFERENCES Benutzer(BId),
+  CONSTRAINT fk_bewertungen_elektroautos FOREIGN KEY (Elektroautos_EId) REFERENCES Elektroautos(EId)
 );
