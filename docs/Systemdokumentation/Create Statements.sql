@@ -61,7 +61,7 @@ CREATE OR REPLACE TABLE Elektroauto (
   Batterieart varchar(255),
   Sitzmaterial varchar(255),
   Farbe varchar(45),
-  Garniturmaterial varchar(255),
+  Verkleidungsmaterial varchar(255),
   Rekuperation tinyint,
   Klimaanlage tinyint,
   Parkhilfe tinyint,

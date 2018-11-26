@@ -31,7 +31,7 @@ INSERT INTO
 		Batterieart,
 		Sitzmaterial,
 		Farbe,
-		Garniturmaterial,
+		Verkleidungsmaterial,
 		Rekuperation,
 		Klimaanlage,
 		Parkhilfe,

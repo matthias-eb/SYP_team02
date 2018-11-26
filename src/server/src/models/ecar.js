@@ -24,9 +24,48 @@ let ecar = db.sequelize.define('ecar', {
       max: 45
     }
   },
-  ps: {
+  image: {
+    type: Sequelize.STRING,
+    field: 'Bild',
+    validate: {
+      min: 5,
+      max: 500
+    }
+  },
+  capacity: {
     type: Sequelize.INTEGER,
-    field: 'PS'
+    field: 'Leistung'
+  },
+  seats: {
+    type: Sequelize.INTEGER,
+    field: 'Sitze',
+    validate: {
+      min: 1
+    }
+  },
+  weight_empty: {
+    type: Sequelize.INTEGER,
+    field: 'Leergewicht'
+  },
+  weight_complete: {
+    type: Sequelize.INTEGER,
+    field: 'Gesamtgewicht'
+  },
+  reach: {
+    type: Sequelize.INTEGER,
+    field: 'Reichweite'
+  },
+  max_torque: {
+    type: Sequelize.INTEGER,
+    field: 'MaxDrehmoment'
+  },
+  topSpeed: {
+    type: Sequelize.INTEGER,
+    field: 'Hoechstgeschwindigkeit'
+  },
+  stowage: {
+    type: Sequelize.INTEGER,
+    field: 'Laderaum'
   },
   price: {
     type: Sequelize.DOUBLE,
@@ -36,74 +75,106 @@ let ecar = db.sequelize.define('ecar', {
     type: Sequelize.DOUBLE,
     field: 'Leasingpreis'
   },
-  topSpeed: {
-    type: Sequelize.INTEGER,
-    field: 'Hoechstgeschwindigkeit'
+  acceleration: {
+    type: Sequelize.DOUBLE,
+    field: 'Beschleunigung'
   },
-  batteryCapacity: {
+  battery_capacity: {
     type: Sequelize.DOUBLE,
     field: 'Batteriekapazitaet'
+  },
+  battery_weight: {
+    type: Sequelize.DOUBLE,
+    field: 'Batteriegewicht'
   },
   consumption: {
     type: Sequelize.DOUBLE,
     field: 'Verbrauch'
   },
-  image: {
+  battery_type: {
     type: Sequelize.STRING,
-    field: 'Bild'
-    
-  },
-  seats: {
-    type: Sequelize.INTEGER,
-    field: 'Sitze',
+    field: 'Batterieart',
     validate: {
-      min: 1
+      max: 255
+    }
+  },
+  seat_material: {
+    type: Sequelize.STRING,
+    field: 'Sitzmaterial',
+    validate: {
+      max: 255
     }
   },
   color: {
     type: Sequelize.STRING,
-    field: 'Farbe'
+    field: 'Farbe',
+    validate: {
+      max: 45
+    }
   },
-  servoSteering: {
-    type: Sequelize.TINYINT,
-    field: 'Lenkhilfe',
-    is:[ 1, 0 ]
+  paneling_material: {
+    type: Sequelize.STRING,
+    field: 'Verkleidungsmaterial',
+    validate: {
+      max: 255
+    }
+  },
+  recuperation: {
+    type: Sequelize.BOOLEAN,
+    field: 'Rekuperation'
   },
   airCon: {
-    type: Sequelize.TINYINT,
+    type: Sequelize.BOOLEAN,
     field: 'Klimaanlage',
-    is:[ 1, 0 ]
   },
   parkinghelp: {
-    type: Sequelize.TINYINT,
+    type: Sequelize.BOOLEAN,
     field: 'Parkhilfe',
-    is:[ 1, 0 ]
   },
   cruisecontrol: {
-    type: Sequelize.TINYINT,
+    type: Sequelize.BOOLEAN,
     field: 'Tempomat',
-    is:[ 1, 0 ]
   },
-  tpsensor: {
-    type: Sequelize.TINYINT,
+  tirepressure_sensor: {
+    type: Sequelize.BOOLEAN,
     field: 'Reifendrucksensor',
-    is:[ 1, 0 ]
   },
-  /*
-  ps: {
-    type: Sequelize.INTEGER,
-    field: 'PS'
+  automatic_parking: {
+    type: Sequelize.BOOLEAN,
+    field: 'Autoparkfunktion',
   },
-*/
-
-
-
-
-
-
-
-
-
+  seat_radiator: {
+    type: Sequelize.BOOLEAN,
+    field: 'Sitzheizung',
+  },
+  abs: {
+    type: Sequelize.BOOLEAN,
+    field: 'ABS',
+  },
+  window_lifter: {
+    type: Sequelize.BOOLEAN,
+    field: 'Fensterheber',
+  },
+  lane_assistant: {
+    type: Sequelize.BOOLEAN,
+    field: 'Spurhalter',
+  },
+  bluetooth: {
+    type: Sequelize.BOOLEAN,
+    field: 'Bluetooth',
+  },
+  board_computer: {
+    type: Sequelize.BOOLEAN,
+    field: 'Bordcomputer',
+  },
+  nav: {
+    type: Sequelize.BOOLEAN,
+    field: 'Navi',
+  },
+  codriver_airbag: {
+    type: Sequelize.BOOLEAN,
+    field: 'Beifahrerairbag',
+  },
 
 
   manufacturerId: {
