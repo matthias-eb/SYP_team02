@@ -14,10 +14,11 @@
     <div class="flex-row p-3">
       <div class="input-group">
         <div class="input-group-prepend">
-          <span class="span-regist input-group-text" id="inputGroup-sizing-default">E-Mail:</span>
+          <span *ngIf="!emailcheck" class="span-regist input-group-text" id="inputGroup-sizing-default">E-Mail:</span>
+          <span *ngIf="emailcheck" class="label-backgrnd-success-regist span-regist input-group-text " id="inputGroup-sizing-default">E-Mail:</span>
         </div>
         <input type="text" class="input-regist form-control" placeholder="abc@example.de" aria-describedby="basic-addon1" [formControl]="email" (keyup.enter)="onSubmit()">
-      </div> 
+      </div>
     </div>
 
     <div class="flex-row p-3">

@@ -5,11 +5,17 @@
 html {
   height:100%; 
 }
+
 body {
   /**
    * Set global background-color (default).
    * This is necessary for mobile version. Otherwise mobile default is black.
    */
   background-color: $background-color;
-  height:100%;
+}
+
+@media (min-width: 576px) {
+  .body-web {
+    height:100%;
+  }
 }
