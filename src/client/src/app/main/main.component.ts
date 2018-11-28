@@ -1,5 +1,5 @@
-import { AutoService } from './../services/auto.service';
 import { Component, OnInit } from '@angular/core';
+import {AutoService} from '../services/auto.service';
 
 @Component({
   selector: 'app-main',

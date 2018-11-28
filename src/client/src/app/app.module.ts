@@ -15,6 +15,7 @@ import { FootbarComponent } from './footbar/footbar.component';
 import { MainComponent } from './main/main.component';
 import { AnmeldenComponent } from './pages/anmelden/anmelden.component';
 import { RegistrierenComponent } from './pages/registrieren/registrieren.component';
+import { AutosComponent } from './pages/autos/autos.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { RegistrierenComponent } from './pages/registrieren/registrieren.compone
     FootbarComponent,
     MainComponent,
     AnmeldenComponent,
-    RegistrierenComponent
+    RegistrierenComponent,
+    AutosComponent
   ],
   imports: [
     BrowserModule,
