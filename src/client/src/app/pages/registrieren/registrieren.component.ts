@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Title }  from '@angular/platform-browser';
 import { AuthentificationService } from '../../services/authentification.service';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'app-registrieren',
@@ -20,10 +21,11 @@ export class RegistrierenComponent implements OnInit {
   private type:string;
   private emailcheck:boolean;
 
-  constructor(private titleService: Title, private authService: AuthentificationService) { }
+  constructor(private sharedService: SharedService, private titleService: Title, private authService: AuthentificationService) { }
   
   ngOnInit() {
     this.titleService.setTitle('Registrieren');
+    this.sharedService.emitTitleChange('Registrieren');
     this.email.valueChanges.subscribe((data: any)=>{
       this.emailcheck=this.emailSyntaxCheck(this.email.value);
     });

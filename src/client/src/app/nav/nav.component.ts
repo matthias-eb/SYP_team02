@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
-
 import { Title } from '@angular/platform-browser';
+import { SharedService } from '../services/shared.service';
 
 @Component({
   selector: 'app-nav',
@@ -8,19 +8,18 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-
+  
   public isCollapsed: boolean;
   private logopath = './assets/icon/DEC_logo.png';
   private navtitle: String;
 
-  constructor(private titleService: Title) {
+  constructor(private sharedService: SharedService) {
     this.isCollapsed = true;
+    sharedService.changeEmitted$.subscribe(newTitle => {
+      this.navtitle=newTitle
+    });
   }
 
   ngOnInit() {}
-
-  public updateTitle() {
-    this.navtitle = this.titleService.getTitle();
-  }
 
 }

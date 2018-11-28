@@ -1,26 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Title }  from '@angular/platform-browser';
 import { AuthentificationService } from '../../services/authentification.service';
-
-
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'app-anmelden',
   templateUrl: './anmelden.component.html',
   styleUrls: ['./anmelden.component.scss']
 })
+
 export class AnmeldenComponent implements OnInit {
+  
+
   private userId=0;
   name = new FormControl('');
   password = new FormControl('');
   private loginmessage:string;
   private type:string;
 
-  constructor(private titleService: Title, private authService: AuthentificationService) { }
+  constructor(private sharedService: SharedService, private titleService: Title, private authService: AuthentificationService) { }
 
   ngOnInit() { 
     this.titleService.setTitle('Anmelden');
+    this.sharedService.emitTitleChange('Anmelden');
   }
  
   onSubmit(){
