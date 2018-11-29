@@ -8,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class AutosComponent implements OnInit {
 
   private images: string[];
+    private currentRate;
+
 
   constructor() { }
 
   ngOnInit() {
-    this.images = [1, 2, 3, 4, 5, 6].map(() => `https://picsum.photos/200/200?random&t=${Math.random()}`);
+    this.images = [1, 2, 3, 4, 5, 6, 7 , 8, 9, 10].map(() => `https://picsum.photos/200/200?random&t=${Math.random()}`);
+    this.currentRate = 0;
   }
 
 }

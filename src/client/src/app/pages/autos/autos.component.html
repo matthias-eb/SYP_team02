@@ -1,80 +1,26 @@
 <div class="container">
-  <div class="row">
+  <div class="row" *ngIf="images">
 
-
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6" *ngFor="let image of images">
       <div class="thumbnail text-center">
-
-        <img [src]="images[0]"
+        <img [src]="image"
              class="img-responsive" alt="Thumbnail Image 1">
-
         <div class="caption">
           <h1>Heading</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <hr>
+          <!--Bewertungen -->
+          <p>Bewertungen: <b>{{currentRate}}</b></p>
+          <ngb-rating [(rate)]="currentRate" max="5">
+            <ng-template let-fill="fill" let-index="index">
+              <span class="star" [class.filled]="fill === 100" [class.bad]="index == 0">&#9733;</span>
+            </ng-template>
+          </ngb-rating>
           <hr>
           <p class="text-center"><a href="#" class="btn btn-success" role="button">Details</a></p>
         </div>
       </div>
     </div>
 
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-      <div class="thumbnail text-center">
-
-        <img [src]="images[1]"
-             class="img-responsive" alt="Thumbnail Image 1">
-
-        <div class="caption">
-          <h1>Heading</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-          <hr>
-          <p class="text-center"><a href="#" class="btn btn-success" role="button">Details</a></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-      <div class="thumbnail text-center">
-
-        <img [src]="images[2]"
-             class="img-responsive" alt="Thumbnail Image 1">
-
-        <div class="caption">
-          <h1>Heading</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-          <hr>
-          <p class="text-center"><a href="#" class="btn btn-success" role="button">Details</a></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-      <div class="thumbnail text-center">
-
-        <img [src]="images[3]"
-             class="img-responsive" alt="Thumbnail Image 1">
-
-        <div class="caption">
-          <h1>Heading</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-          <hr>
-          <p class="text-center"><a href="#" class="btn btn-success" role="button">Details</a></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-      <div class="thumbnail text-center">
-
-        <img [src]="images[4]"
-             class="img-responsive" alt="Thumbnail Image 1">
-
-        <div class="caption">
-          <h1>Heading</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-          <hr>
-          <p class="text-center"><a href="#" class="btn btn-success" role="button">Details</a></p>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
