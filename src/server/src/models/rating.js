@@ -19,6 +19,14 @@ module.exports = db.sequelize.define('rating', {
     field: 'Benutzer_BId',
     references: 'Benutzer', // <<< Note, its table's name, not object name
     referencesKey: 'BId'      // <<< Note, its a column name
+  },
+  rating: {
+    type: Sequelize.INTEGER,
+    field: 'Bewertung',
+    validate: {
+      min: 1,
+      max: 5
+    }
   }
 }, {
   // don't add the timestamp attributes (updatedAt, createdAt)
