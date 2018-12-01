@@ -38,16 +38,11 @@ function getFilter(req, res, next) {
 function getMainFilter(req, res, next) {
   Filter.findAll({
     where: {
+      $and: [
+        { visibility: 1 }
+      ],
       $or: [
-        {
-          id: 1
-        },
-        {
-          id: 2
-        },
-        {
-          id: 3
-        }
+        { id: [ 1, 2, 3 ] }
       ]
     }
   }).then(filters => {
@@ -83,8 +78,12 @@ function prepareFilter(filter) {
       });
     }
     else if (data.code) {
-      filter.data = eval(data.code);
-      resolve(filter);
+      try {
+        filter.data = eval(data.code);
+        resolve(filter);
+      } catch (error) {
+        reject(error);
+      }
     }
     else if (data) {
       filter.data = data;

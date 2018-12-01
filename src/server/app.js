@@ -5,9 +5,9 @@ const bodyParser = require('body-parser');
 
 // Import von Routen
 const TESTINGONLYRoutes = require('./src/routes/TESTINGONLY');
-const manufacturerRoutes = require('./src/routes/manufacturer');
 const authRoutes = require('./src/routes/authentification');
-const filterRoutes = require('./src/routes/auto');
+const autoRoutes = require('./src/routes/auto');
+const ratingRoutes = require('./src/routes/rating');
 
 //Logging
 app.use(morgan('dev'));
@@ -46,8 +46,8 @@ app.use(function(req, res, next) {
 // Routes
 app.use('/TESTINGONLY', TESTINGONLYRoutes);
 app.use('/', authRoutes);
-app.use('/manufacturer', manufacturerRoutes);
-app.use('/auto', filterRoutes);
+app.use('/auto', autoRoutes);
+app.use('/rating', ratingRoutes);
 
 
 // Errorhandling

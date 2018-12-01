@@ -1,10 +1,15 @@
 const express = require('express');
 const router = express.Router();
 
-const filter = require('../controller/filter');
+const filterService = require('../controller/filter');
+const autoService = require('../controller/auto');
 
-// filter
-router.get('/filter', filter.getFilter);
-router.get('/mainfilter', filter.getMainFilter);
+// GET filter
+router.get('/filter', filterService.getFilter);
+router.get('/mainfilter', filterService.getMainFilter);
+
+// GET auto
+// Here is post necesserry due to the many filter params!
+router.post('/', autoService.getAuto);
 
 module.exports = router;

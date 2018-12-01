@@ -16,11 +16,12 @@ router.delete('/user/:id', authService.checkAuth, function(req, res, next) {
       id: req.params.id
     }
   }).then(() => {
-    res.json({
+    res.status(200).json({
       msg: 'User deleted.'
     });
   }).catch(err => {
     res.status(500).json({
+      msg: err.message,
       error: err
     });
   });

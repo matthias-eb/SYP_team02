@@ -82,11 +82,11 @@ let ecar = db.sequelize.define('ecar', {
   battery_capacity: {
     type: Sequelize.DOUBLE,
     field: 'Batteriekapazitaet'
-  },
+  },/*
   battery_weight: {
     type: Sequelize.DOUBLE,
     field: 'Batteriegewicht'
-  },
+  },*/
   consumption: {
     type: Sequelize.DOUBLE,
     field: 'Verbrauch'
