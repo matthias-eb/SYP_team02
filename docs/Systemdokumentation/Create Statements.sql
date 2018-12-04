@@ -44,6 +44,7 @@ CREATE OR REPLACE TABLE Elektroautos (
   Hersteller_HId int NOT NULL DEFAULT 0,
   Modellname varchar(255),
   Typ varchar(45),
+  Stecker varchar(45),
   Bild varchar(500) DEFAULT 'https://generationstrom.files.wordpress.com/2016/07/logo_allgemein_gruen.png?w=1400',
   Leistung int,
   Sitze int,
@@ -100,7 +101,7 @@ CREATE OR REPLACE TABLE Ladestationen (
   Postleitzahl int,
   Stadt varchar(255),
   Strasse varchar(500),
-  Stecker varchar(50),
+  Stecker varchar(45),
 
   CONSTRAINT pk_ladestationen PRIMARY KEY (LId)
 );

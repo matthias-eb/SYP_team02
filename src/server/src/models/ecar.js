@@ -24,6 +24,13 @@ let ecar = db.sequelize.define('ecar', {
       max: 45
     }
   },
+  plug: {
+    type: Sequelize.STRING,
+    field: 'Stecker',
+    validate: {
+      max: 45
+    }
+  },
   image: {
     type: Sequelize.STRING,
     field: 'Bild',

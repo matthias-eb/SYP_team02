@@ -40,7 +40,7 @@ let powerstations = db.sequelize.define('powerstations', {
     type: Sequelize.STRING,
     field: 'Strasse',
     validate: {
-      max:255
+      max: 500
     }
   },
   post_code: {
@@ -53,7 +53,10 @@ let powerstations = db.sequelize.define('powerstations', {
   },
   plug: {
     type: Sequelize.INTEGER,
-    field: 'Stecker'
+    field: 'Stecker',
+    validate: {
+      max:45
+    }
   },
   manufacturerId: {
     type: Sequelize.INTEGER,
