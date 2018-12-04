@@ -43,7 +43,7 @@ let powerstations = db.sequelize.define('powerstations', {
       max: 500
     }
   },
-  post_code: {
+  postal_code: {
     type: Sequelize.INTEGER,
     field: "Postleitzahl",
     validate: {
