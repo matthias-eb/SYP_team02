@@ -16,6 +16,7 @@ INSERT INTO
 		Typ,
 		Stecker,
 		Bild,
+		Erscheinungsjahr,
 		Leistung,
 		Sitze,
 		Leergewicht,
