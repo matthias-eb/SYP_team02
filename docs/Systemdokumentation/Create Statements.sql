@@ -46,6 +46,7 @@ CREATE OR REPLACE TABLE Elektroautos (
   Typ varchar(45),
   Stecker varchar(45),
   Bild varchar(500) DEFAULT 'https://generationstrom.files.wordpress.com/2016/07/logo_allgemein_gruen.png?w=1400',
+  Erscheinungsjahr int,
   Leistung int,
   Sitze int,
   Leergewicht int,
