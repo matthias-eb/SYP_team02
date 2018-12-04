@@ -134,12 +134,12 @@ VALUES
 	('Erscheinungsjahr', 1, '[ 2010, 2012, 2015 ]', 20, 1),
 	('Preis', 1, '[ 15254.15, 25835.99 ]', 20, 1);
 
-INSERT INTO Bewertung(Benutzer_BId, Elektroautos_HId, Bewertung)
+INSERT INTO Bewertungen(Benutzer_BId, Elektroautos_EId, Bewertung)
 VALUES
 	((SELECT BId FROM Benutzer WHERE Benutzername='Gettopunk96'), (SELECT EId FROM Elektroautos WHERE Modellname='Mercedes EQC'), 8),
 	((SELECT BId FROM Benutzer WHERE Benutzername='Georg'), (SELECT EId FROM Elektroautos WHERE Modellname='Mercedes EQC'), 6),
 	((SELECT BId FROM Benutzer WHERE Benutzername='Gettopunk96'), (SELECT EId FROM Elektroautos WHERE Modellname='e-Golf'), 7),
-	((SELECT BId FROM Benutzer WHERE Benutzername='Georg'), (SELECT EId FROM Elektroautos WHERE Name='e-Golf'), 10),
+	((SELECT BId FROM Benutzer WHERE Benutzername='Georg'), (SELECT EId FROM Elektroautos WHERE ModellName='e-Golf'), 10);
 
 INSERT INTO Ladestationen(Netzwerk, Bezeichnung, Betreiber, Postleitzahl, Stadt, Strasse, Stecker) VALUES
 ('RheinEnergie AG', 'TankE Köln', 'TankE - RheinEnergie Kundenparkplatz', 50823, 'Köln', 'Parkgürtel 24', 'CCS Typ2'),

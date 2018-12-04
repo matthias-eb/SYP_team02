@@ -19,9 +19,9 @@
 -- DROP TABLES
 ---------------------------------------------------------------------
 
+--DROP TABLE Filter;
 --DROP TABLE Bewertungen;
 --DROP TABLE Benutzer;
---DROP TABLE Filter;
 --DROP TABLE Ladestationen;
 --DROP TABLE Werkstaetten;
 --DROP TABLE Elektroautos;
@@ -130,6 +130,7 @@ CREATE OR REPLACE TABLE Bewertungen (
   BewId int NOT NULL AUTO_INCREMENT,
   Elektroautos_EId int NOT NULL,
   Benutzer_BId int NOT NULL,
+  Bewertung int,
 
   CONSTRAINT pk_bewertungen PRIMARY KEY (BewId),
   CONSTRAINT fk_bewertungen_benutzer FOREIGN KEY (Benutzer_BId) REFERENCES Benutzer(BId),
