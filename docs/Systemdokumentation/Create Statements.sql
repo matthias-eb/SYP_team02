@@ -94,14 +94,15 @@ CREATE OR REPLACE TABLE Werkstaetten (
 
 CREATE OR REPLACE TABLE Ladestationen (
   LId int NOT NULL AUTO_INCREMENT,
-  Hersteller_HId int NOT NULL,
-  Name varchar(255),
-  Laengengrad double,
-  Breitengrad double,
-  Steckertyp varchar(255),
+  Betreiber varchar(255),
+  Netzwerk varchar(255),
+  Bezeichnung varchar(255),
+  Postleitzahl int,
+  Stadt varchar(255),
+  Strasse varchar(255),
+  Stecker varchar(255),
 
-  CONSTRAINT pk_ladestationen PRIMARY KEY (LId),
-  CONSTRAINT fk_ladestationen_hersteller FOREIGN KEY (Hersteller_HId) REFERENCES Hersteller(HId)
+  CONSTRAINT pk_ladestationen PRIMARY KEY (LId)
 );
 
 CREATE OR REPLACE TABLE Filter (

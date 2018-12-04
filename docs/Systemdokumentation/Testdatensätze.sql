@@ -127,9 +127,9 @@ VALUES
 
 INSERT INTO Filter(Name, Typ, Daten, Gewichtung, Sichtbar)
 VALUES
-	("Hersteller", 1, '[ "Audi", "BWM", "Mercedes" ]', 10, 1),
-	("Erscheinungsjahr", 1, '[ 2010, 2012, 2015 ]', 20, 1),
-	("Preis", 1, '[ 15254.15, 25835.99 ]', 20, 1);
+	('Hersteller', 1, '[ "Audi", "BWM", "Mercedes" ]', 10, 1),
+	('Erscheinungsjahr', 1, '[ 2010, 2012, 2015 ]', 20, 1),
+	('Preis', 1, '[ 15254.15, 25835.99 ]', 20, 1);
 
 INSERT INTO Ladestationen(Hersteller_HId, Name, Laengengrad, Breitengrad, Steckertyp)
 VALUES
