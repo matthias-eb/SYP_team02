@@ -96,11 +96,11 @@ CREATE OR REPLACE TABLE Ladestationen (
   LId int NOT NULL AUTO_INCREMENT,
   Betreiber varchar(255),
   Netzwerk varchar(255),
-  Bezeichnung varchar(255),
+  Bezeichnung varchar(500),
   Postleitzahl int,
   Stadt varchar(255),
-  Strasse varchar(255),
-  Stecker varchar(255),
+  Strasse varchar(500),
+  Stecker varchar(50),
 
   CONSTRAINT pk_ladestationen PRIMARY KEY (LId)
 );

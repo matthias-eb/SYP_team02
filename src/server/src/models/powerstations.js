@@ -8,24 +8,52 @@ let powerstations = db.sequelize.define('powerstations', {
     autoIncrement: true,
     field: 'LId'
   },
-  name: {
+  operator: {
     type: Sequelize.STRING,
-    field: 'Name',
+    field: 'Betreiber',
     validate: {
       max: 255
     }
   },
-  latitude: {
-    type: Sequelize.DOUBLE,
-    field: 'Breitengrad'
+  network: {
+    type: Sequelize.STRING,
+    field: 'Netzwerk',
+    validate: {
+      max: 255
+    }
   },
-  longitude: {
-    type: Sequelize.DOUBLE,
-    field: 'Laengengrad'
+  descr: {
+    type: Sequelize.STRING,
+    field: 'Beschreibung',
+    validate: {
+      max: 500
+    }
   },
-  plug_type: {
+  city: {
+    type: Sequelize.STRING,
+    field: 'Stadt',
+    validate: {
+      max: 255
+    }
+  },
+  street: {
+    type: Sequelize.STRING,
+    field: 'Strasse',
+    validate: {
+      max:255
+    }
+  },
+  post_code: {
     type: Sequelize.INTEGER,
-    field: 'Steckertyp'
+    field: "Postleitzahl",
+    validate: {
+      min: 5,
+      max: 5
+    }
+  },
+  plug: {
+    type: Sequelize.INTEGER,
+    field: 'Stecker'
   },
   manufacturerId: {
     type: Sequelize.INTEGER,
