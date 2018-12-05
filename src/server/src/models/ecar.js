@@ -39,6 +39,10 @@ let ecar = db.sequelize.define('ecar', {
       max: 500
     }
   },
+  pub_year: {
+      type: Sequelize.INTEGER,
+      field: 'Erscheinungsjahr',
+  },
   capacity: {
     type: Sequelize.INTEGER,
     field: 'Leistung'
