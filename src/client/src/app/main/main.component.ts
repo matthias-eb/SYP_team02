@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AutoService} from '../services/auto.service';
+import {SharedService} from '../services/shared.service';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-main',
@@ -15,11 +17,14 @@ export class MainComponent implements OnInit {
   private filteredAutos: Object;
 
 
-  constructor(private autoService: AutoService) {
+  constructor(private sharedService: SharedService, private titleService: Title, private autoService: AutoService) {
     this.userFilter = { };
   }
 
   ngOnInit() {
+
+    this.titleService.setTitle('Hauptseite');
+    this.sharedService.emitTitleChange('Hauptseite');
     this.autoService.getMainFilter().subscribe((res: any) => {
       this.filters = res.data;
       console.log(this.filters);
