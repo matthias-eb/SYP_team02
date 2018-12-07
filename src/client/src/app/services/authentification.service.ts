@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, Headers } from '@angular/common/http';
+import { HttpClient, /*Headers*/ } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 const server = require('./../../../config.json');
@@ -71,8 +71,8 @@ export class AuthentificationService {
   }
 
 
-  appendAuthentificationHeader(headers: Headers) {
+  /*appendAuthentificationHeader(headers: Headers) {
     // headers.append('Authorization', 'Bearer ' + btoa('username:password'));
-  }
+  }*/
 
 }
