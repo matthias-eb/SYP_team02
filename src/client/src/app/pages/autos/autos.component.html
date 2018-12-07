@@ -1,19 +1,18 @@
 <div class="container">
-  <div class="row" *ngIf="images">
+  <div class="row" *ngIf="autos">
 
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6" *ngFor="let image of images">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6" *ngFor="let auto of autos">
       <div class="thumbnail text-center">
-        <img [src]="image"
+        <img [src]="auto.image"
              class="img-responsive" alt="Thumbnail Image 1">
         <div class="caption">
-          <h1>Modellname</h1>
+          <h1>{{auto.modelname}}</h1>
         </div>
         <hr>
         <div>
-          <h2>Leistung in kW:</h2>
-          <h2>Reichweite in Km:</h2>
-          <h2>Ladedauer in Stunden:</h2>
-          <h2>Preis in €:</h2>
+          <h2>Leistung in kW: {{auto.capacity}}</h2>
+          <h2>Reichweite in Km: {{auto.reach}}</h2>
+          <h2>Preis in €: {{auto.price}}</h2>
 
           <hr>
           <!--Bewertungen
