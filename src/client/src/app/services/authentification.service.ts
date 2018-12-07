@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, Headers } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 const server = require('./../../../config.json');
@@ -68,6 +68,11 @@ export class AuthentificationService {
    */
   removeUser(id: number): Observable<Object> {
     return this.http.delete(server.ServerBaseUrl + '/TESTINGONLY/user/' + id);
+  }
+
+
+  appendAuthentificationHeader(headers: Headers) {
+    // headers.append('Authorization', 'Bearer ' + btoa('username:password'));
   }
 
 }
