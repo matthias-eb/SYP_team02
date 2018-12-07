@@ -62,18 +62,25 @@
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center" *ngFor="let filter of filters">
       <div ngbDropdown class="d-inline-block">
 
-        <select class="btn btn-outline-primary">
+        <select class="btn btn-outline-primary" (input)="onChange(filter.id, $event.target.value)">
 
           <!-- Bitte auswählen Dialoge -->
-          <option *ngIf="filter.name == 'Preis'; else elseBlock">Bitte {{filter.name}} bis auswählen</option>
+          <option value="" *ngIf="filter.name == 'Preis'; else elseBlock">Bitte {{filter.name}} bis auswählen</option>
           <ng-template #elseBlock>
-            <option>Bitte {{filter.name}} auswählen</option>
+            <option value="">Bitte {{filter.name}} auswählen</option>
           </ng-template>
 
-          <!-- Inhalte für Hersteller, Erscheinungsjahr und Preis -->
-          <option *ngFor="let item of filter.data">
-            {{item}}
-          </option>
+          <ng-container *ngFor="let item of filter.data">
+            <!-- Inhalte für Hersteller, Erscheinungsjahr und Preis -->
+            <option value="{{item.id}}" *ngIf="item.id != undefined; else other_content">
+              {{item.value}}
+            </option>
+            <ng-template #other_content>
+              <option >
+                {{item}}
+              </option>
+            </ng-template>
+          </ng-container>
         </select>
 
         <p>&nbsp;</p>
@@ -88,15 +95,15 @@
 <p>&nbsp;</p>
 
 
-
+<!--
 <div class="container">
   <div class="row" *ngIf="filters">
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center" *ngFor="let filter of filters">
       <div ngbDropdown class="d-inline-block">
 
 
-          <select  name="suche" [(ngModel)]="suche" (change)="onChange(suche)">
-            <!-- Inhalte für Hersteller, Erscheinungsjahr und Preis -->
+          <select  name="suche" [(ngModel)]="suche" (change)="onChange(filter.id, suche)">
+            < !-- Inhalte für Hersteller, Erscheinungsjahr und Preis -- >
             <option *ngFor="let item of filter.data" value={{item}} >
               {{item}}
             </option>
@@ -106,7 +113,7 @@
      </div>
     </div>
   </div>
-
+-->
 
 <!-- Suchen Button -->
 <div class="container">
@@ -128,3 +135,6 @@
   </div>
 </div>
 
+<div *ngIf="filteredAutos">
+  <app-autos [autos]="filteredAutos"></app-autos>
+</div>

@@ -1,4 +1,5 @@
-const Filter = require('../models/filter');
+const Filter = require('./../models/filter');
+const db = require('./../database/database.js');
 
 /**
  * Get all filters.
@@ -72,7 +73,7 @@ function prepareFilter(filter) {
   return new Promise((resolve, reject) => {
     let data = JSON.parse(filter.data);
     if (data.sql) {
-      sequelize.query(data.sql).success(function(data) {
+      db.sequelize.query(data.sql, { type: db.sequelize.QueryTypes.SELECT }).then(data => {
         filter.data = data;
         resolve(filter);
       });
