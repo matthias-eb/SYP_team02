@@ -8,24 +8,55 @@ let powerstations = db.sequelize.define('powerstations', {
     autoIncrement: true,
     field: 'LId'
   },
-  name: {
+  operator: {
     type: Sequelize.STRING,
-    field: 'Name',
+    field: 'Betreiber',
     validate: {
       max: 255
     }
   },
-  latitude: {
-    type: Sequelize.DOUBLE,
-    field: 'Breitengrad'
+  network: {
+    type: Sequelize.STRING,
+    field: 'Netzwerk',
+    validate: {
+      max: 255
+    }
   },
-  longitude: {
-    type: Sequelize.DOUBLE,
-    field: 'Laengengrad'
+  descr: {
+    type: Sequelize.STRING,
+    field: 'Beschreibung',
+    validate: {
+      max: 500
+    }
   },
-  plug_type: {
+  city: {
+    type: Sequelize.STRING,
+    field: 'Stadt',
+    validate: {
+      max: 255
+    }
+  },
+  street: {
+    type: Sequelize.STRING,
+    field: 'Strasse',
+    validate: {
+      max: 500
+    }
+  },
+  postal_code: {
     type: Sequelize.INTEGER,
-    field: 'Steckertyp'
+    field: "Postleitzahl",
+    validate: {
+      min: 5,
+      max: 5
+    }
+  },
+  plug: {
+    type: Sequelize.INTEGER,
+    field: 'Stecker',
+    validate: {
+      max:45
+    }
   },
   manufacturerId: {
     type: Sequelize.INTEGER,
@@ -40,7 +71,7 @@ let powerstations = db.sequelize.define('powerstations', {
   // don't delete database entries but set the newly added attribute deletedAt
   // to the current date (when deletion was done). paranoid will only work if
   // timestamps are enabled
-  paranoid: true,
+  paranoid: false,
 
   // if true:
   // don't use camelcase for automatically added attributes but underscore style

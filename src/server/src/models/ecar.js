@@ -24,6 +24,13 @@ let ecar = db.sequelize.define('ecar', {
       max: 45
     }
   },
+  plug: {
+    type: Sequelize.STRING,
+    field: 'Stecker',
+    validate: {
+      max: 45
+    }
+  },
   image: {
     type: Sequelize.STRING,
     field: 'Bild',
@@ -31,6 +38,10 @@ let ecar = db.sequelize.define('ecar', {
       min: 5,
       max: 500
     }
+  },
+  pub_year: {
+      type: Sequelize.INTEGER,
+      field: 'Erscheinungsjahr',
   },
   capacity: {
     type: Sequelize.INTEGER,

@@ -19,9 +19,9 @@
 -- DROP TABLES
 ---------------------------------------------------------------------
 
+--DROP TABLE Filter;
 --DROP TABLE Bewertungen;
 --DROP TABLE Benutzer;
---DROP TABLE Filter;
 --DROP TABLE Ladestationen;
 --DROP TABLE Werkstaetten;
 --DROP TABLE Elektroautos;
@@ -44,7 +44,13 @@ CREATE OR REPLACE TABLE Elektroautos (
   Hersteller_HId int NOT NULL DEFAULT 0,
   Modellname varchar(255),
   Typ varchar(45),
+  Stecker varchar(45),
   Bild varchar(500) DEFAULT 'https://generationstrom.files.wordpress.com/2016/07/logo_allgemein_gruen.png?w=1400',
+<<<<<<< HEAD
+  Herstellerjahr int,
+=======
+  Erscheinungsjahr int,
+>>>>>>> 1374124ec77e1dcf40c37e11fb0e991364523a1f
   Leistung int,
   Sitze int,
   Leergewicht int,
@@ -94,14 +100,15 @@ CREATE OR REPLACE TABLE Werkstaetten (
 
 CREATE OR REPLACE TABLE Ladestationen (
   LId int NOT NULL AUTO_INCREMENT,
-  Hersteller_HId int NOT NULL,
-  Name varchar(255),
-  Laengengrad double,
-  Breitengrad double,
-  Steckertyp varchar(255),
+  Betreiber varchar(255),
+  Netzwerk varchar(255),
+  Bezeichnung varchar(500),
+  Postleitzahl int,
+  Stadt varchar(255),
+  Strasse varchar(500),
+  Stecker varchar(45),
 
-  CONSTRAINT pk_ladestationen PRIMARY KEY (LId),
-  CONSTRAINT fk_ladestationen_hersteller FOREIGN KEY (Hersteller_HId) REFERENCES Hersteller(HId)
+  CONSTRAINT pk_ladestationen PRIMARY KEY (LId)
 );
 
 CREATE OR REPLACE TABLE Filter (
@@ -128,6 +135,7 @@ CREATE OR REPLACE TABLE Bewertungen (
   BewId int NOT NULL AUTO_INCREMENT,
   Elektroautos_EId int NOT NULL,
   Benutzer_BId int NOT NULL,
+  Bewertung int,
 
   CONSTRAINT pk_bewertungen PRIMARY KEY (BewId),
   CONSTRAINT fk_bewertungen_benutzer FOREIGN KEY (Benutzer_BId) REFERENCES Benutzer(BId),

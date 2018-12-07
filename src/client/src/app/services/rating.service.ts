@@ -49,16 +49,18 @@ export class RatingService {
    *
    * @param userId user id
    * @param autoId ecar id
+   * @param rating user rating for ecar (Star-System 1-5)
    *
    * @returns observable object for rating response or error
    *
    * @example
    *    setAutoRation(userId, autoId).subscribe((res: any) => { ... });
    */
-  setAutoRation(userId: number, autoId: number): Observable<Object> {
+  setAutoRation(userId: number, autoId: number, rating: number): Observable<Object> {
     return this.http.post(ServerBaseUrl + '/auto', {
       userId: userId,
-      autoId: autoId
+      autoId: autoId,
+      rating: rating
     });
   }
 }
