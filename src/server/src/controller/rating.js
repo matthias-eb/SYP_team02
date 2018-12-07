@@ -2,40 +2,6 @@ const Rating = require('../models/rating');
 
 
 /**
- * Set rating for a ecar from by a specific user.
- *
- * @param {object} req http(s) request object
- * @param {object} res http(s) response object
- * @param {function} next function to trigger next
- *
- * @returns success msg or error.
- */
-function setUserRating(req, res, next) {
-  if (!req.body.userId || !req.body.autoId) {
-    return res.status(400).json({
-      msg: 'Bad data. userId and/or autoId are/is missing'
-    });
-  }
-
-  Rating.findAll({
-    where: {
-      user_id: req.body.userId,
-      ecar_id: req.body.autoId
-    }
-  }).then(rating => {
-    res.status(200).json({
-      'data': rating
-    });
-  }).catch(err => {
-    res.status(500).json({
-      msg: err.message,
-      error: err
-    });
-  });
-}
-
-
-/**
  * Get all user ratings.
  *
  * @param {object} req http(s) request object
@@ -101,8 +67,37 @@ function getAutoRating(req, res, next) {
 }
 
 
+/**
+ * Set rating for a ecar from by a specific user.
+ *
+ * @param {object} req http(s) request object
+ * @param {object} res http(s) response object
+ * @param {function} next function to trigger next
+ *
+ * @returns success msg or error.
+ */
+function setAutoRating(req, res, next) {
+  if (!req.body.userId || !req.body.autoId || !req.body.rating) {
+    return res.status(400).json({
+      msg: 'Bad data. userId and/or autoId and/or rating are/is missing'
+    });
+  }
+
+  Rating.create(req.body).then(rating => {
+    res.status(201).json({
+      data: rating
+    });
+  }).catch(err => {
+    res.status(500).json({
+      msg: err.message,
+      error: err
+    });
+  });
+}
+
+
 module.exports = {
-  setUserRating: setUserRating,
   getUserRating: getUserRating,
-  getAutoRating: getAutoRating
+  getAutoRating: getAutoRating,
+  setUserRating: setAutoRating
 };
