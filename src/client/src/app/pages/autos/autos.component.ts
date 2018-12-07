@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-autos',
@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class AutosComponent implements OnInit {
 
   private images: string[];
-    private currentRate;
+  private currentRate;
+  @Input() autos: Object;
 
 
   constructor() { }
