@@ -5,9 +5,9 @@ const bodyParser = require('body-parser');
 
 // Import von Routen
 const TESTINGONLYRoutes = require('./src/routes/TESTINGONLY');
-const authRoutes = require('./src/routes/authentification');
-const autoRoutes = require('./src/routes/auto');
-const ratingRoutes = require('./src/routes/rating');
+const authRoutes = require('./src/routes/iAuthentication');
+const autoRoutes = require('./src/routes/iAuto');
+const ratingRoutes = require('./src/routes/iRating');
 
 //Logging
 app.use(morgan('dev'));
