@@ -8,7 +8,7 @@
             {{navtitle}}
           </h1> 
         </a>
-        <div class="btn-group" role="group">
+        <div *ngIf="!auth" class="btn-group" role="group">
           <a class="btn btn-outline-secondary menu-button-border menu-text-light menu-web-button" routerLink="/anmelden" role="button">
             Anmelden
           </a>
@@ -16,6 +16,9 @@
             Registrieren
           </a>
         </div>
+        <a *ngIf="auth" class="btn btn-outline-secondary menu-button-border menu-text-light menu-web-button" routerLink="/registrieren" role="button">
+          Ausloggen
+        </a>
       </nav>
   </div>
 </div>
@@ -43,29 +46,42 @@
   <hr class="hr-menu">
   <div id="collapseExample" [ngbCollapse]="isCollapsed">
     <div class="card">
-      <a routerLink="/anmelden" (click)="isCollapsed = true">
+
+      <a *ngIf="!auth" routerLink="/anmelden" (click)="isCollapsed = true">
+        <hr class="hr-menu">
         <div class="card-body btn-outline-secondary btn-lg card-size" >
           Anmelden
         </div>
       </a>
-      <hr class="hr-menu">
-      <a routerLink="/registrieren" (click)="isCollapsed = true">
+      
+      <a *ngIf="!auth" routerLink="/registrieren" (click)="isCollapsed = true">
+        <hr class="hr-menu">
         <div class="card-body btn-outline-secondary btn-lg">
           Registrieren
         </div>
       </a>
-      <hr class="hr-menu">
+      
+      <a *ngIf="auth" routerLink="/" (click)="isCollapsed = true">
+        <hr class="hr-menu">
+        <div class="card-body btn-outline-secondary btn-lg">
+          Ausloggen
+        </div>
+      </a>
+      
       <a routerLink="/kontakt" (click)="isCollapsed = true">
+        <hr class="hr-menu">
         <div class="card-body btn-outline-secondary btn-lg">
           Kontakt
         </div>
       </a>
-      <hr class="hr-menu">
+      
       <a routerLink="/impressum" (click)="isCollapsed = true">
+        <hr class="hr-menu">
         <div class="card-body btn-outline-secondary btn-lg">
           Impressum
         </div>
       </a>
+      
     </div>
   </div>
   <!--visible when...end-->
