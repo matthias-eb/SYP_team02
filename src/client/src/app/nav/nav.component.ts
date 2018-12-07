@@ -8,7 +8,7 @@ import { SharedService } from '../services/shared.service';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-  
+  private auth = false; //Fuer kommende Sessions
   public isCollapsed: boolean;
   private logopath = './assets/icon/DEC_logo.png';
   private navtitle: String;
