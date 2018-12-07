@@ -1,4 +1,4 @@
-INSERT INTO Hersteller (Name) VALUES ('Daimler'),('Mercedes'),('Volkswagen'),('Tesla'),('Ford');
+INSERT INTO Hersteller (Name) VALUES ('Daimler'),('Mercedes'),('Volkswagen'),('Tesla'),('Ford'),('Audi');
 
 INSERT INTO Werkstaetten(Hersteller_HId, Name, Laengengrad, Breitengrad) 
 VALUES 
@@ -50,43 +50,43 @@ INSERT INTO
 		Beifahrerairbag)
 
 	VALUES
-		((SELECT HId FROM Hersteller WHERE Name='Daimler'),
-			'Mercedes EQC', 
-			'Limousine', 
-			'CCS Typ2',
-			'https://mercedes-benz-eqc.de/assets/images/04_Exterieur/large/gallery_01.jpg',
-			2018,
-			300,
-			5,
-			2425,
-			2930,
-			450,
-			765,
-			180,
-			500,
-			70000,
-			0,
-			5.1,
-			80,
-			22.2,
-			'Litium-Ionen',
-			'Leder, Polyester',
-			'Silber',
-			'Plastik',
-			1,
-			1,
-			1,
-			1,
-			1,
-			0,
-			1,
-			1,
-			1,
-			0,
-			1,
-			1,
-			1,
-			1),
+		((SELECT HId FROM Hersteller WHERE Name='Mercedes'),
+			'Mercedes EQC', -- Modellname
+			'Limousine', 	-- Typ
+			'CCS Typ2',		-- Stecker
+			'https://mercedes-benz-eqc.de/assets/images/04_Exterieur/large/gallery_01.jpg',	-- Bild
+			2018,			-- Erscheinungsjahr
+			300,			-- Leistung
+			5,				-- Sitze
+			2425,			-- Leergewicht
+			2930,			-- Gesamtgewicht
+			450,			-- Reichweite
+			765,			-- Maximales Drehmoment
+			180,			-- Hoechstgeschwindigkeit
+			500,			-- Laderaum
+			70000,			-- Kaufpreis
+			0,				-- Leasingpreis
+			5.1,			-- Beschleunigung
+			80,				-- Batteriekapazität
+			22.2,			-- Verbrauch
+			'Lithium-Ionen',	-- Batterieart
+			'Leder, Polyester',	-- Sitzmaterial
+			'Silber',		-- Farbe
+			'Plastik',		-- Verkleidungsmaterial
+			1,				-- Rekuperation
+			1,				-- Klimaanlage
+			1,				-- Parkhilfe
+			1,				-- Tempomat
+			1,				-- Reifendrucksensor
+			0,				-- Autoparkfunktion
+			1,				-- Sitzheizung
+			1,				-- ABS
+			1,				-- Fensterheber
+			0,				-- Spurhalter
+			1,				-- Bluetooth
+			1,				-- Bordcomputer
+			1,				-- Navi
+			1),				-- Beifahrerairbag
 		((SELECT HId FROM Hersteller WHERE Name='Volkswagen'),
 			'e-Golf',
 			'Golf',
@@ -106,7 +106,7 @@ INSERT INTO
 			10.4,
 			24.2,
 			12.7,
-			'Litium-Ionen',
+			'Lithium-Ionen',
 			'Leder',
 			'Silber',
 			'Plastik',
@@ -123,7 +123,83 @@ INSERT INTO
 			1,
 			1,
 			1,
-			1);
+			1),
+			((SELECT HId FROM Hersteller WHERE Name='Tesla'),
+			'Tesla Model S P90D', -- Modellname
+			'Limousine', 	-- Typ
+			'CCS Typ2, Supercharger, Schuko',		-- Stecker
+			'https://www.tesla.com/tesla_theme/assets/img/models/v1.0/section-hero-background.jpg?20180111',
+			2013,			-- Erscheinungsjahr
+			345,			-- Leistung
+			7,				-- Sitze
+			2425,			-- Leergewicht
+			2930,			-- Gesamtgewicht
+			509,			-- Reichweite
+			967,			-- Maximales Drehmoment
+			250,			-- Hoechstgeschwindigkeit
+			500,			-- Laderaum
+			69999,			-- Kaufpreis
+			799,			-- Leasingpreis
+			3.3,			-- Beschleunigung
+			90,				-- Batteriekapazität
+			22.3,			-- Verbrauch
+			'Lithium-Ionen',	-- Batterieart
+			'Leder, Schaumstoff',	-- Sitzmaterial
+			'Silber',		-- Farbe
+			'Plastik, Eiche',		-- Verkleidungsmaterial
+			1,				-- Rekuperation
+			1,				-- Klimaanlage
+			1,				-- Parkhilfe
+			1,				-- Tempomat
+			1,				-- Reifendrucksensor
+			1,				-- Autoparkfunktion
+			1,				-- Sitzheizung
+			1,				-- ABS
+			1,				-- Fensterheber
+			1,				-- Spurhalter
+			1,				-- Bluetooth
+			1,				-- Bordcomputer
+			1,				-- Navi
+			1),				-- Beifahrerairbag
+
+			((SELECT HId FROM Hersteller WHERE Name='Audi'),
+			'Audi R8 e-tron', -- Modellname
+			'Sportwagen', 	-- Typ
+			'CCS Typ2',		-- Stecker
+			'http://www.energietarife.com/elektroauto-datenbank/galerie/Audi/R8-e-tron/pr_r8_R8e150003.jpg',
+			2016,			-- Erscheinungsjahr
+			340,			-- Leistung
+			2,				-- Sitze
+			1615,			-- Leergewicht
+			2930,			-- Gesamtgewicht
+			450,			-- Reichweite
+			967,			-- Maximales Drehmoment
+			250,			-- Hoechstgeschwindigkeit
+			600,			-- Laderaum
+			0,			-- Kaufpreis
+			0,			-- Leasingpreis
+			3.9,			-- Beschleunigung
+			90,				-- Batteriekapazität
+			22.3,			-- Verbrauch
+			'Lithium-Ionen',	-- Batterieart
+			'Leder, Schaumstoff',	-- Sitzmaterial
+			'Silber',		-- Farbe
+			'Plastik, Eiche',		-- Verkleidungsmaterial
+			1,				-- Rekuperation
+			1,				-- Klimaanlage
+			0,				-- Parkhilfe
+			1,				-- Tempomat
+			0,				-- Reifendrucksensor
+			0,				-- Autoparkfunktion
+			1,				-- Sitzheizung
+			1,				-- ABS
+			1,				-- Fensterheber
+			1,				-- Spurhalter
+			1,				-- Bluetooth
+			1,				-- Bordcomputer
+			1,				-- Navi
+			1);				-- Beifahrerairbag
+
 
 INSERT INTO Benutzer(Benutzername, Email, Passwort)
 VALUES
@@ -133,7 +209,7 @@ VALUES
 
 INSERT INTO Filter(Name, Typ, Daten, Gewichtung, Sichtbar)
 VALUES
-	('Hersteller', 1, '[ "Audi", "BWM", "Mercedes" ]', 10, 1),
+	('Hersteller', 1, '{ "sql": "SELECT HId AS "id", Name AS "value" FROM Hersteller" }', 10, 1),
 	('Erscheinungsjahr', 1, '[ 2010, 2012, 2015 ]', 20, 1),
 	('Preis', 1, '[ 15254.15, 25835.99 ]', 20, 1);
 
