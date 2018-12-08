@@ -4,10 +4,10 @@
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>110</x>
-      <y>20</y>
-      <w>450</w>
-      <h>540</h>
+      <x>430</x>
+      <y>120</y>
+      <w>550</w>
+      <h>700</h>
     </coordinates>
     <panel_attributes>*driving-e-car.de*
 halign=center
@@ -17,8 +17,8 @@ fontsize=18</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>420</x>
-      <y>30</y>
+      <x>840</x>
+      <y>130</y>
       <w>130</w>
       <h>50</h>
     </coordinates>
@@ -32,8 +32,8 @@ valign=center</panel_attributes>
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>10</x>
-      <y>80</y>
+      <x>330</x>
+      <y>180</y>
       <w>80</w>
       <h>110</h>
     </coordinates>
@@ -43,8 +43,8 @@ valign=center</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>170</x>
-      <y>80</y>
+      <x>490</x>
+      <y>180</y>
       <w>190</w>
       <h>70</h>
     </coordinates>
@@ -56,8 +56,8 @@ setzen/anwenden</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>70</x>
-      <y>90</y>
+      <x>390</x>
+      <y>190</y>
       <w>120</w>
       <h>40</h>
     </coordinates>
@@ -67,33 +67,36 @@ setzen/anwenden</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>340</x>
-      <y>190</y>
-      <w>190</w>
-      <h>70</h>
+      <x>740</x>
+      <y>270</y>
+      <w>220</w>
+      <h>110</h>
     </coordinates>
     <panel_attributes> /LF105/
 Gefilterte Datensätze
-anzeigen</panel_attributes>
+anzeigen
+-
+*extension points:*
+Details anzeigen</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>250</x>
-      <y>140</y>
-      <w>110</w>
-      <h>100</h>
+      <x>640</x>
+      <y>230</y>
+      <w>160</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 &lt;&lt;includes&gt;&gt;</panel_attributes>
-    <additional_attributes>90.0;80.0;10.0;10.0</additional_attributes>
+    <additional_attributes>140.0;50.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>170</x>
-      <y>470</y>
+      <x>490</x>
+      <y>730</y>
       <w>190</w>
       <h>70</h>
     </coordinates>
@@ -104,8 +107,8 @@ Elektroauto bewerten</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>170</x>
-      <y>390</y>
+      <x>780</x>
+      <y>590</y>
       <w>190</w>
       <h>70</h>
     </coordinates>
@@ -116,20 +119,22 @@ Registrieren</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>170</x>
-      <y>310</y>
-      <w>190</w>
-      <h>70</h>
+      <x>480</x>
+      <y>580</y>
+      <w>200</w>
+      <h>80</h>
     </coordinates>
-    <panel_attributes> /LF200/
-Anmelden</panel_attributes>
+    <panel_attributes> /LF200/ Anmelden
+-
+*extension points:*
+Registrierung</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLActor</id>
     <coordinates>
-      <x>10</x>
-      <y>380</y>
+      <x>330</x>
+      <y>640</y>
       <w>80</w>
       <h>110</h>
     </coordinates>
@@ -139,30 +144,19 @@ Anmelden</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>70</x>
-      <y>340</y>
-      <w>120</w>
-      <h>100</h>
+      <x>390</x>
+      <y>620</y>
+      <w>110</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>10.0;80.0;100.0;10.0</additional_attributes>
+    <additional_attributes>10.0;60.0;90.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>70</x>
-      <y>400</y>
-      <w>120</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;20.0;100.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>70</x>
-      <y>410</y>
+      <x>390</x>
+      <y>670</y>
       <w>120</w>
       <h>110</h>
     </coordinates>
@@ -172,12 +166,123 @@ Anmelden</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>40</x>
-      <y>190</y>
+      <x>360</x>
+      <y>290</y>
       <w>30</w>
-      <h>180</h>
+      <h>340</h>
     </coordinates>
     <panel_attributes>lt=-&gt;&gt;</panel_attributes>
-    <additional_attributes>10.0;160.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;320.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>760</x>
+      <y>470</y>
+      <w>190</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes> /LF110/
+Elektroauto Details
+anzeigen</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>840</x>
+      <y>370</y>
+      <w>90</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;extends&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>710</x>
+      <y>410</y>
+      <w>160</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=..()</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>510</x>
+      <y>380</y>
+      <w>210</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Condition:
+  { Besucher erwünscht Details }
+extension point:
+  Details anzeigen
+bg=#dddddd</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>670</x>
+      <y>600</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;extends&gt;&gt;</panel_attributes>
+    <additional_attributes>80.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>730</x>
+      <y>690</y>
+      <w>210</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Condition:
+  { Benutzerkonto fehlt }
+extension point:
+  Registrierung
+bg=#dddddd</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>750</x>
+      <y>610</y>
+      <w>30</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=..()</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>840</x>
+      <y>420</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>750</x>
+      <y>610</y>
+      <w>50</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=..</panel_attributes>
+    <additional_attributes>10.0;10.0;30.0;10.0</additional_attributes>
   </element>
 </diagram>
