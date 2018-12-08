@@ -54,9 +54,9 @@ export class RatingService {
    * @returns observable object for rating response or error
    *
    * @example
-   *    setAutoRation(userId, autoId).subscribe((res: any) => { ... });
+   *    setAutoRating(userId, autoId).subscribe((res: any) => { ... });
    */
-  setAutoRation(userId: number, autoId: number, rating: number): Observable<Object> {
+  setAutoRating(userId: number, autoId: number, rating: number): Observable<Object> {
     return this.http.post(ServerBaseUrl + '/auto', {
       userId: userId,
       autoId: autoId,
