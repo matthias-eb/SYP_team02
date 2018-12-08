@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const authService = require('../controller/authentication');
-const ratingService = require('../controller/rating');
+const authService = require('../services/authentication');
+const ratingService = require('../services/rating');
 
 // GET all user ratings
 router.get('/user/:id', authService.checkAuth, ratingService.getUserRating);

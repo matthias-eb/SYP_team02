@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const filterService = require('../controller/filter');
-const autoService = require('../controller/auto');
+const filterService = require('../services/filter');
+const autoService = require('../services/auto');
 
 // GET filter
 router.get('/filter', filterService.getFilter);
