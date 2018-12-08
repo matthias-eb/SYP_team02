@@ -11,26 +11,43 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <ngb-carousel *ngIf="images">
+        <!--
+         <ngb-carousel *ngIf="images">
+           -->
+        <ngb-carousel>
 
           <ng-template ngbSlide>
-            <div class="col-xs-4"><a href="#1"><img [src]="images[0]"
-                                                    class="img-responsive"></a></div>
-            <div class="col-xs-4"><a href="#1"><img [src]="images[1]"
-                                                    class="img-responsive"></a></div>
-            <div class="col-xs-4"><a href="#1"><img [src]="images[2]"
-                                                    class="img-responsive"></a></div>
+            <div class="col-xs-4"><a href="#1"><img
+              src="./assets/autobilder/egolf.jpg"
+              class="img-responsive"></a></div>
+
+            <div class="col-xs-4"><a href="#1"><img
+              src="./assets/autobilder/etron.jpg"
+              class="img-responsive"></a></div>
+
+            <div class="col-xs-4"><a href="#1"><img
+              src="./assets/autobilder/reanualtzoe.jpg"
+              class="img-responsive"></a></div>
           </ng-template>
 
           <ng-template ngbSlide>
 
+            <div class="col-xs-4"><a href="#1"><img
+              src="./assets/autobilder/hyundaiionic.jpg"
+              class="img-responsive"></a></div>
 
-            <div class="col-xs-4"><a href="#1"><img [src]="images[3]"
-                                                    class="img-responsive"></a></div>
-            <div class="col-xs-4"><a href="#1"><img [src]="images[4]"
-                                                    class="img-responsive"></a></div>
+            <div class="col-xs-4"><a href="#1"><img
+              src="./assets/autobilder/teslahero.jpg"
+              class="img-responsive"></a></div>
+
+            <div class="col-xs-4"><a href="#1"><img
+              src="./assets/autobilder/twizy.jpg"
+              class="img-responsive"></a></div>
+
+            <!--
             <div class="col-xs-4"><a href="#1"><img [src]="images[5]"
                                                     class="img-responsive"></a></div>
+                                                    -->
           </ng-template>
         </ngb-carousel>
       </div>
@@ -76,7 +93,7 @@
               {{item.value}}
             </option>
             <ng-template #other_content>
-              <option >
+              <option>
                 {{item}}
               </option>
             </ng-template>
@@ -126,7 +143,7 @@
 <p>&nbsp;</p>
 
 
-<!-- Erweiterte Suche Button -->
+<!-- Erweiterte Suche Button
 <div class="container">
   <div class="row">
     <div class="col-md-12 text-center">
@@ -134,7 +151,7 @@
     </div>
   </div>
 </div>
-
+ -->
 <div *ngIf="filteredAutos">
   <app-autos [autos]="filteredAutos"></app-autos>
 </div>
