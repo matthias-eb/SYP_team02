@@ -11,7 +11,9 @@ const db = require('./../database/database.js');
  * @returns all filters from database
  */
 function getFilter(req, res, next) {
-  Filter.findAll().then(filters => {
+  Filter.findAll({
+    where: { visibility: 1 }
+  }).then(filters => {
     let actions = filters.map(prepareFilter);
     Promise.all(actions).then(filters => {
       res.status(200).send(JSON.stringify({
