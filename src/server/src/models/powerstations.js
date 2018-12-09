@@ -52,7 +52,7 @@ let powerstations = db.sequelize.define('powerstations', {
     }
   },
   plug: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.STRING,
     field: 'Stecker',
     validate: {
       max:45
