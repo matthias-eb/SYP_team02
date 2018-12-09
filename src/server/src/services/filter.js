@@ -12,7 +12,7 @@ const db = require('./../database/database.js');
  */
 function getFilter(req, res, next) {
   Filter.findAll({
-    where: { visibility: 1 }
+    where: { visibility: true }
   }).then(filters => {
     let actions = filters.map(prepareFilter);
     Promise.all(actions).then(filters => {
