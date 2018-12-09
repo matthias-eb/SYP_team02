@@ -1,13 +1,19 @@
 <div class="container">
   <div class="row" *ngIf="autos">
-
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6" *ngFor="let auto of autos">
+
       <div class="thumbnail text-center">
         <img [src]="auto.image"
-             class="img-responsive" alt="Thumbnail Image 1">
+             class=" img-responsive" alt="Thumbnail Image 1">
+
+        <hr>
+
         <div class="caption">
-          <h1>{{auto.modelname}}</h1>
+          <div style="width: 100%;   margin: fill;">
+            <h1>{{auto.modelname}}</h1>
+          </div>
         </div>
+
         <hr>
         <div>
           <h2>Leistung in kW: {{auto.capacity}}</h2>
