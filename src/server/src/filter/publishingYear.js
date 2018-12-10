@@ -16,7 +16,7 @@
  * @returns WHERE-clause object (Sequelize)
  */
 function buildWhereClause(year) {
-  return { publishingYear: { gte: year } };
+  return { pub_year: { gte: year } };
 }
 
 
