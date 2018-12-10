@@ -21,8 +21,10 @@ h2 {
 
 
 img {
-  height: 200px;
+  height: 100%;
   width: 100%;
+  object-fit: cover;
+  border-radius: 20%;
 }
 
 p {
@@ -40,3 +42,7 @@ p {
   color: #ffe700;
 }
 
+.img-container {
+  height: 200px;
+  width: 100%;
+}
