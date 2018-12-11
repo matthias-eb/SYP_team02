@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {AutoService} from '../services/auto.service';
-import {SharedService} from '../services/shared.service';
+import {AutoService} from '../../services/auto.service';
+import {SharedService} from '../../services/shared.service';
 import {Title} from '@angular/platform-browser';
 
 @Component({
