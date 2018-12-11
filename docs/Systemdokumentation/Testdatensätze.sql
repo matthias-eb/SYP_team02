@@ -1,9 +1,9 @@
-INSERT INTO Hersteller (Name) VALUES ('Daimler'),('Mercedes'),('Volkswagen'),('Tesla'),('Ford'),('Audi');
+INSERT INTO Hersteller (Name) VALUES ('Mercedes'),('Volkswagen'),('Tesla'),('Ford'),('Audi');
 
 INSERT INTO Werkstaetten(Hersteller_HId, Name, Laengengrad, Breitengrad) 
 VALUES 
-	((SELECT HId FROM Hersteller WHERE Name='Daimler'), 'Daimler-KFZWerkstatt Neumarkt', 50.936300, 6.947830),
-	((SELECT HId FROM Hersteller WHERE Name='Daimler'), 'Daimler-KFZWerkstatt Kyotostraße', 50.9482477, 6.9449996),
+	((SELECT HId FROM Hersteller WHERE Name='Mercedes'), 'Daimler-KFZWerkstatt Neumarkt', 50.936300, 6.947830),
+	((SELECT HId FROM Hersteller WHERE Name='Mercedes'), 'Daimler-KFZWerkstatt Kyotostraße', 50.9482477, 6.9449996),
 	((SELECT HId FROM Hersteller WHERE Name='Mercedes'), 'Mercedes-KFZWerkstatt Hansaring', 50.9484576, 6.9491848),
 	((SELECT HId FROM Hersteller WHERE Name='Mercedes'), 'Mercedes-KFZWerkstatt Cäcilienstraße', 50.9368813, 6.9514635),
 	((SELECT HId FROM Hersteller WHERE Name='Volkswagen'), 'VW-KFZWerkstatt auf der Fähre', 50.9389838, 6.9547548),
@@ -163,7 +163,7 @@ INSERT INTO
 			1),				-- Beifahrerairbag
 			
 			((SELECT HId FROM Hersteller WHERE Name='Ford'),
-			'Tesla Model S P90D', -- Modellname
+			'Ford Focus Electric', -- Modellname
 			'Kombi', 	-- Typ
 			'CCS Typ2, Schuko',		-- Stecker
 			'https://media.ed.edmunds-media.com/ford/focus/2017/oem/2017_ford_focus_4dr-hatchback_electric_fq_oem_1_815.jpg',
