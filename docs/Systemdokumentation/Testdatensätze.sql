@@ -247,9 +247,9 @@ VALUES
 
 INSERT INTO Filter(Name, Typ, Daten, Gewichtung, Sichtbar)
 VALUES
-	('Hersteller', 1, '{ "sql": "SELECT HId AS ''id'', Name AS ''value'' FROM Hersteller" }', 10, 1),
-	('Erscheinungsjahr', 1, '{ "sql": "SELECT Erscheinungsjahr AS ''id'', Erscheinungsjahr AS ''value'' FROM Elektroautos"}', 20, 1),
-	('Preis', 1, '{ "sql": "SELECT Kaufpreis AS ''id'', Kaufpreis AS ''value'' FROM Elektroautos"}', 20, 1);
+	('Hersteller', 1, '{ "sql": "SELECT DISTINCT HId AS ''id'', Name AS ''value'' FROM Hersteller ORDER BY value ASC" }', 10, 1),
+	('Erscheinungsjahr', 1, '{ "sql": "SELECT DISTINCT Erscheinungsjahr AS ''id'', Erscheinungsjahr AS ''value'' FROM Elektroautos ORDER BY value DESC"}', 20, 1),
+	('Preis', 1, '{ "sql": "SELECT DISTINCT Kaufpreis AS ''id'', Kaufpreis AS ''value'' FROM Elektroautos ORDER BY value DESC"}', 20, 1);
 
 INSERT INTO Bewertungen(Benutzer_BId, Elektroautos_EId, Bewertung)
 VALUES
