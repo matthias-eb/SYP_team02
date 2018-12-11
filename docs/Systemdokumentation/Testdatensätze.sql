@@ -1,4 +1,4 @@
-INSERT INTO Hersteller (Name) VALUES ('Mercedes'),('Volkswagen'),('Tesla'),('Ford'),('Audi');
+INSERT INTO Hersteller (Name) VALUES ('Daimler'),('Mercedes'),('Volkswagen'),('Tesla'),('Ford'),('Audi');
 
 INSERT INTO Werkstaetten(Hersteller_HId, Name, Laengengrad, Breitengrad) 
 VALUES 
@@ -248,8 +248,8 @@ VALUES
 INSERT INTO Filter(Name, Typ, Daten, Gewichtung, Sichtbar)
 VALUES
 	('Hersteller', 1, '{ "sql": "SELECT HId AS ''id'', Name AS ''value'' FROM Hersteller" }', 10, 1),
-	('Erscheinungsjahr', 1, '{ "sql": "SELECT EId AS ''id'', Erscheinungsjahr AS ''value'' FROM Elektroautos"}', 20, 1),
-	('Preis', 1, '{ "sql": "SELECT EId AS ''id'', Kaufpreis AS ''value'' FROM Elektroautos"}', 20, 1);
+	('Erscheinungsjahr', 1, '{ "sql": "SELECT Erscheinungsjahr AS ''id'', Erscheinungsjahr AS ''value'' FROM Elektroautos"}', 20, 1),
+	('Preis', 1, '{ "sql": "SELECT Kaufpreis AS ''id'', Kaufpreis AS ''value'' FROM Elektroautos"}', 20, 1);
 
 INSERT INTO Bewertungen(Benutzer_BId, Elektroautos_EId, Bewertung)
 VALUES
