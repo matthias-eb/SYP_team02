@@ -210,8 +210,8 @@ VALUES
 INSERT INTO Filter(Name, Typ, Daten, Gewichtung, Sichtbar)
 VALUES
 	('Hersteller', 1, '{ "sql": "SELECT HId AS ''id'', Name AS ''value'' FROM Hersteller" }', 10, 1),
-	('Erscheinungsjahr', 1, '[ 2010, 2012, 2015 ]', 20, 1),
-	('Preis', 1, '[ 15254.15, 25835.99 ]', 20, 1);
+	('Erscheinungsjahr', 1, '{ "sql": "SELECT EId AS ''id'', Erscheinungsjahr AS ''value'' FROM Elektroautos"}', 20, 1),
+	('Preis', 1, '{ "sql": "SELECT EId AS ''id'', Kaufpreis AS ''value'' FROM Elektroautos"}', 20, 1);
 
 INSERT INTO Bewertungen(Benutzer_BId, Elektroautos_EId, Bewertung)
 VALUES
