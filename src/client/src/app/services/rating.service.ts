@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+import { SharedService } from './shared.service';
+
 const server = require('./../../../config.json');
 const ServerBaseUrl = server.ServerBaseUrl + '/rating';
 
@@ -10,7 +12,7 @@ const ServerBaseUrl = server.ServerBaseUrl + '/rating';
 })
 export class RatingService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private sharedService: SharedService) { }
 
   /**
    * Get all user ratings.
@@ -57,10 +59,11 @@ export class RatingService {
    *    setAutoRating(userId, autoId).subscribe((res: any) => { ... });
    */
   setAutoRating(userId: number, autoId: number, rating: number): Observable<Object> {
+    const authHeader = this.sharedService.getAuthHeaderBase();
     return this.http.post(ServerBaseUrl + '/auto', {
       userId: userId,
       autoId: autoId,
       rating: rating
-    });
+    }, { headers: authHeader });
   }
 }

@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, /*Headers*/ } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+
+import { SharedService } from './shared.service';
 
 const server = require('./../../../config.json');
 
@@ -13,7 +15,7 @@ const server = require('./../../../config.json');
 })
 export class AuthentificationService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private sharedService: SharedService) { }
 
   /**
    * Log user in.
@@ -27,10 +29,16 @@ export class AuthentificationService {
    *    login('Max', 'secret').subscribe((data: any) => { ... });
    */
   login(name: String, pwd: String): Observable<Object> {
-    return this.http.post(server.ServerBaseUrl + '/login', {
+    const res: Observable<Object> = this.http.post(server.ServerBaseUrl + '/login', {
       name: name,
       pwd: pwd
     });
+    res.subscribe((data: any) => {
+      this.sharedService.setUserIdFromCache(data.user.id);
+      this.sharedService.setUserNameFromCache(data.user.name);
+      this.sharedService.setUserTokenFromCache(data.token);
+    });
+    return res;
   }
 
   /**
@@ -69,10 +77,5 @@ export class AuthentificationService {
   removeUser(id: number): Observable<Object> {
     return this.http.delete(server.ServerBaseUrl + '/TESTINGONLY/user/' + id);
   }
-
-
-  /*appendAuthentificationHeader(headers: Headers) {
-    // headers.append('Authorization', 'Bearer ' + btoa('username:password'));
-  }*/
 
 }
