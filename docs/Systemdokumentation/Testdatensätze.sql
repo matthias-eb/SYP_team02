@@ -1,4 +1,4 @@
-INSERT INTO Hersteller (Name) VALUES ('Daimler'),('Mercedes'),('Volkswagen'),('Tesla'),('Ford'),('Audi');
+INSERT INTO Hersteller (Name) VALUES ('Mercedes'),('Volkswagen'),('Tesla'),('Ford'),('Audi');
 
 INSERT INTO Werkstaetten(Hersteller_HId, Name, Laengengrad, Breitengrad) 
 VALUES 
@@ -161,6 +161,44 @@ INSERT INTO
 			1,				-- Bordcomputer
 			1,				-- Navi
 			1),				-- Beifahrerairbag
+			
+			((SELECT HId FROM Hersteller WHERE Name='Ford'),
+			'Tesla Model S P90D', -- Modellname
+			'Kombi', 	-- Typ
+			'CCS Typ2, Schuko',		-- Stecker
+			'https://media.ed.edmunds-media.com/ford/focus/2017/oem/2017_ford_focus_4dr-hatchback_electric_fq_oem_1_815.jpg',
+			2018,			-- Erscheinungsjahr
+			107,			-- Leistung
+			5,				-- Sitze
+			0,			-- Leergewicht
+			0,			-- Gesamtgewicht
+			185,			-- Reichweite
+			0,			-- Maximales Drehmoment
+			135,			-- Hoechstgeschwindigkeit
+			402,			-- Laderaum
+			29995,			-- Kaufpreis
+			210.27,			-- Leasingpreis
+			0,			-- Beschleunigung
+			0,				-- Batteriekapazität
+			33.5,			-- Verbrauch
+			'Lithium-Ionen (Wassergekühlt)',	-- Batterieart
+			'Leder, Schaumstoff',	-- Sitzmaterial
+			'Rot',		-- Farbe
+			'Plastik',		-- Verkleidungsmaterial
+			1,				-- Rekuperation
+			1,				-- Klimaanlage
+			1,				-- Parkhilfe
+			1,				-- Tempomat
+			0,				-- Reifendrucksensor
+			0,				-- Autoparkfunktion
+			1,				-- Sitzheizung
+			1,				-- ABS
+			1,				-- Fensterheber
+			0,				-- Spurhalter
+			1,				-- Bluetooth
+			0,				-- Bordcomputer
+			1,				-- Navi
+			1),				-- Beifahrerairbag
 
 			((SELECT HId FROM Hersteller WHERE Name='Audi'),
 			'Audi R8 e-tron', -- Modellname
@@ -210,8 +248,8 @@ VALUES
 INSERT INTO Filter(Name, Typ, Daten, Gewichtung, Sichtbar)
 VALUES
 	('Hersteller', 1, '{ "sql": "SELECT HId AS ''id'', Name AS ''value'' FROM Hersteller" }', 10, 1),
-	('Erscheinungsjahr', 1, '[ 2010, 2012, 2015 ]', 20, 1),
-	('Preis', 1, '[ 15254.15, 25835.99 ]', 20, 1);
+	('Erscheinungsjahr', 1, '{ "sql": "SELECT EId AS ''id'', Erscheinungsjahr AS ''value'' FROM Elektroautos"}', 20, 1),
+	('Preis', 1, '{ "sql": "SELECT EId AS ''id'', Kaufpreis AS ''value'' FROM Elektroautos"}', 20, 1);
 
 INSERT INTO Bewertungen(Benutzer_BId, Elektroautos_EId, Bewertung)
 VALUES
