@@ -12,7 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { FootbarComponent } from './footbar/footbar.component';
-import { MainComponent } from './main/main.component';
+import { MainComponent } from './pages/main/main.component';
 import { AnmeldenComponent } from './pages/anmelden/anmelden.component';
 import { RegistrierenComponent } from './pages/registrieren/registrieren.component';
 import { AutosComponent } from './pages/autos/autos.component';
