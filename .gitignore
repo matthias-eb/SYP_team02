@@ -578,6 +578,9 @@ xcuserdata/
 !data/*
 /src/server/config.json
 /src/client/config.json
+/src/server/RUN.sh
+/src/server/package-lock.json
+/src/client/RUN.sh
 /.vscode/chrome/*
 
 
