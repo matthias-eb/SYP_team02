@@ -1,21 +1,30 @@
 Notizen:
 	Unsere Agenda heute läuft folgendermassen:
 		-Unser Auftrag
-		-Prototypvorstellung
-		-Entscheidungen
-		-Aussichten
-	Kommen wir zuerst zu unserem Auftrag. Hier stellen wir euch einmal die grundlegende Idee vor, auf der unser Produkt basiert. 
+		-Prototypvorstellung -> Spezialist Simon Kreuziger
+		-Entscheidungen	-> aufgetreten bei der Konzeptionierung und Entwicklung
+		-Aussichten	-> Was kommt auf euch und uns zu?
 	(Folienwechsel)
-	Wenn man momentan auf Google nach einem Elektroauto sucht, findet man leider keine Seite, die einen das passende Elektroauto für sich finden lässt und wichtige Fragen beantwortet, wie zum Beispiel wie viele Ladestationen in der Umgebung zu finden sind, ab was für Preisen ein günstiges Elektroauto zu finden ist, oder Welche Hersteller überhaupt Elektroautos anbieten. 
+	-Umfasst grundlegende Ideen von Prof. Jarzina
 	(Folienwechsel)
-	Es bleibt einem also nur das endlose Googeln übrig, was einem nachher doch nur einen Bruchteil der existierenden Autos überhaupt vorschlägt. Beispielsweise hört man ständig von Vorreitern in der Elektroautoindustrie wie zum Beispiel Tesla, doch auch Ford, Bmw und Audi haben bereits große Fortschritte in der Branche gemacht und eine Menge Modelle auf dem Markt. Diese werden allerdings durch die Suche oft übersehen, da zuerst das neueste und bekannteste gefunden wird.
+	-Grundlegender Gedanke: Welches Elektroauto passt zu mir?
+	-Suche nach Elektroautos schwierig:
+		-nur die populärsten Suchen gezeigt
+		-Keine Informationen, worauf man achten muss
 	(Folienwechsel)
-	Es bleiben also immer folgende Fragen offen: 
+	-Google Suche:
+		-Es fehlt eine Seite, die alle Autos zusammenfasst und mit Hilfe von Kriterien suchen lässt
+		-Folgen: nur die bekanntesten E-Autos werden gefunden
+		-Stundenlanges Suchen
+	(Folienwechsel)
+	Es bleiben folgende Fragen offen: 
 		-Was für ein Elektroauto will ich überhaupt? Eine Limousine? einen Sportwagen? oder doch lieber einen Kombi?
 		-Welches von diesen E-Autos will ich überhaupt?
 		-Worauf muss man als Käufer achten?
 		-Kann ich mir das überhaupt leisten?
-	Diese und andere Fragen versucht unser Produkt zu beantworten. Doch letztendlich haben wir noch einen anderen, viel wichtigeren Auftrag:
+	Diese und andere Fragen versucht unser Produkt zu beantworten.
+
+	Doch letztendlich haben wir noch einen anderen, viel wichtigeren Auftrag:
 	(Folienwechsel)
 	In den Worten von unserem Kunden, Prof. Jarzina:
 	"Ihr macht einfach die geilste App der Welt für Elektroautos."
