@@ -16,6 +16,7 @@ import { MainComponent } from './pages/main/main.component';
 import { AnmeldenComponent } from './pages/anmelden/anmelden.component';
 import { RegistrierenComponent } from './pages/registrieren/registrieren.component';
 import { AutosComponent } from './pages/autos/autos.component';
+import { ErweitertesucheComponent } from './pages/erweitertesuche/erweitertesuche.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AutosComponent } from './pages/autos/autos.component';
     MainComponent,
     AnmeldenComponent,
     RegistrierenComponent,
-    AutosComponent
+    AutosComponent,
+    ErweitertesucheComponent
   ],
   imports: [
     BrowserModule,

@@ -19,7 +19,7 @@
           <ng-template ngbSlide>
             <div class="col-xs-4 img-container"><a href="#1"><img
               src="./assets/autobilder/egolf.jpg"
-              class="img-responsive" style="margin-right: 10px"></a></div>
+              class="img-responsive"></a></div>
 
             <div class="col-xs-4 img-container"><a href="#1"><img
               src="./assets/autobilder/etron.jpg"
@@ -143,15 +143,15 @@
 <p>&nbsp;</p>
 
 
-<!-- Erweiterte Suche Button
+<!-- Erweiterte Suche Button -->
 <div class="container">
   <div class="row">
     <div class="col-md-12 text-center">
-      <button type="button" class="btn btn-secondary">Erweiterte Suche</button>
+      <button type="button" onclick="location.href='/erweitertesuche';" class="btn btn-secondary">Erweiterte Suche</button>
     </div>
   </div>
 </div>
- -->
+
 <div *ngIf="filteredAutos">
   <app-autos [autos]="filteredAutos"></app-autos>
 </div>
