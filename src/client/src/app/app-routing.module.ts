@@ -5,7 +5,9 @@ import { MainComponent } from './pages/main/main.component';
 import { AnmeldenComponent } from './pages/anmelden/anmelden.component';
 import { RegistrierenComponent } from './pages/registrieren/registrieren.component';
 import { AutosComponent } from './pages/autos/autos.component';
-import {ErweitertesucheComponent} from './pages/erweitertesuche/erweitertesuche.component';
+import { ErweitertesucheComponent } from './pages/erweitertesuche/erweitertesuche.component';
+import { ImpressumComponent } from './pages/impressum/impressum.component';
+import { KontaktComponent } from './pages/kontakt/kontakt.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
@@ -13,7 +15,10 @@ const routes: Routes = [
   { path: 'anmelden', component: AnmeldenComponent },
   { path: 'registrieren', component: RegistrierenComponent },
   { path: 'autos', component: AutosComponent },
-  { path: 'erweitertesuche', component: ErweitertesucheComponent }
+  { path: 'erweitertesuche', component: ErweitertesucheComponent },
+  { path: 'impressum', component: ImpressumComponent },
+  { path: 'kontakt', component: KontaktComponent }
+
 
 ];
 
