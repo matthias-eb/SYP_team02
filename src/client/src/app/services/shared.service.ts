@@ -18,16 +18,26 @@ export class SharedService {
 
   // Observable string sources
   private emitTitleChangeSource = new Subject<string>();
+  private emitUserIdChangeSource = new Subject<number>();
+  private emitUserNameChangeSource = new Subject<string>();
 
-  // Observable string streams
-  changeEmitted$ = this.emitTitleChangeSource.asObservable();
+  // Observable streams (for outside use)
+  changedTitleEmitted$ = this.emitTitleChangeSource.asObservable();
+  changedUserIdEmitted$ = this.emitUserIdChangeSource.asObservable();
+  changedUserNameEmitted$ = this.emitUserIdChangeSource.asObservable();
 
-  // Service message commands
+  // Service message commands (income)
   emitTitleChange(change: string) {
     this.emitTitleChangeSource.next(change);
   }
+  emitUserIdChange(change: number){
+    this.emitUserIdChangeSource.next(change);
+  }
+  emitUserNameChange(change: string){
+    this.emitUserNameChangeSource.next(change);
+  }
 
-
+  
   // Session Handling cache
 
   /**
@@ -40,6 +50,7 @@ export class SharedService {
       localStorage.setItem('userId', userId.toString());
     }
     this.userId = userId;
+    this.emitUserIdChange(userId);
   }
   /**
    * Get temporary saved User ID.
@@ -63,6 +74,7 @@ export class SharedService {
       localStorage.setItem('userName', name);
     }
     this.userName = name;
+    this.emitUserNameChange(name);
   }
   /**
    * Get temporary saved User name.
