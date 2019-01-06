@@ -17,6 +17,8 @@ import { AnmeldenComponent } from './pages/anmelden/anmelden.component';
 import { RegistrierenComponent } from './pages/registrieren/registrieren.component';
 import { AutosComponent } from './pages/autos/autos.component';
 import { ErweitertesucheComponent } from './pages/erweitertesuche/erweitertesuche.component';
+import { ImpressumComponent } from './pages/impressum/impressum.component';
+import { KontaktComponent } from './pages/kontakt/kontakt.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { ErweitertesucheComponent } from './pages/erweitertesuche/erweitertesuch
     AnmeldenComponent,
     RegistrierenComponent,
     AutosComponent,
-    ErweitertesucheComponent
+    ErweitertesucheComponent,
+    ImpressumComponent,
+    KontaktComponent
   ],
   imports: [
     BrowserModule,

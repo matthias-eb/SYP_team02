@@ -1,25 +1,35 @@
 <!--only visible when window is bigger than sm=540px-->
 <div class="d-none d-sm-block">
   <div class="m-6 pt-5 pb-5">
-      <nav class="menu-bar d-flex justify-content-between align-items-center">
-        <a class="d-flex align-items-center" routerLink="/">
-          <img src="{{logopath}}" width="150" height="150" class="d-inline-block align-top" alt="">
-          <h1 class="menu-text-light">
-            {{navtitle}}
-          </h1> 
+    <nav class="menu-bar d-flex justify-content-between align-items-center">
+      <a class="d-flex align-items-center" routerLink="/">
+        <img src="{{logopath}}" width="150" height="150" class="d-inline-block align-top" alt="">
+        <h1 class="menu-text-light">
+          {{navtitle}}
+        </h1> 
+      </a>
+
+      <div *ngIf="!authUserId" class="btn-group mr-2" role="group">
+        <a class="btn btn-outline-secondary menu-button-border menu-text-light menu-web-button" routerLink="/anmelden" role="button">
+          Anmelden
         </a>
-        <div *ngIf="!auth" class="btn-group" role="group">
-          <a class="btn btn-outline-secondary menu-button-border menu-text-light menu-web-button" routerLink="/anmelden" role="button">
-            Anmelden
-          </a>
-          <a class="btn btn-outline-secondary menu-button-border menu-text-light menu-web-button" routerLink="/registrieren" role="button">
-            Registrieren
-          </a>
+        <a class="btn btn-outline-secondary menu-button-border menu-text-light menu-web-button" routerLink="/registrieren" role="button">
+          Registrieren
+        </a>
+      </div>
+      <div *ngIf="authUserId">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="menu-text-light mr-2 menu-button-border">
+            {{authUserName}}
+          </div>
+          <div (click)="onAusloggen()">
+            <a class="btn btn-outline-secondary menu-text-light menu-button-border menu-web-button mr-2" routerLink="/" (click)="onAusloggen()" role="button">
+              Ausloggen
+            </a> 
+          </div>
         </div>
-        <a *ngIf="auth" class="btn btn-outline-secondary menu-button-border menu-text-light menu-web-button" routerLink="/registrieren" role="button">
-          Ausloggen
-        </a>
-      </nav>
+      </div>
+    </nav>
   </div>
 </div>
 
@@ -47,21 +57,28 @@
   <div id="collapseExample" [ngbCollapse]="isCollapsed">
     <div class="card">
 
-      <a *ngIf="!auth" routerLink="/anmelden" (click)="isCollapsed = true">
+      <a *ngIf="!authUserId" routerLink="/anmelden" (click)="isCollapsed = true">
         <hr class="hr-menu">
         <div class="card-body btn-outline-secondary btn-lg card-size" >
           Anmelden
         </div>
       </a>
       
-      <a *ngIf="!auth" routerLink="/registrieren" (click)="isCollapsed = true">
+      <a *ngIf="!authUserId" routerLink="/registrieren" (click)="isCollapsed = true">
         <hr class="hr-menu">
         <div class="card-body btn-outline-secondary btn-lg">
           Registrieren
         </div>
       </a>
       
-      <a *ngIf="auth" routerLink="/" (click)="isCollapsed = true">
+      <a *ngIf="authUserId">
+        <hr class="hr-menu">
+        <div class="card-body btn-lg app-authName-card d-flex align-items-center ">
+            Hallo, {{authUserName}}
+        </div>
+      </a>
+
+      <a *ngIf="authUserId" routerLink="/" (click)="onAusloggen()">
         <hr class="hr-menu">
         <div class="card-body btn-outline-secondary btn-lg">
           Ausloggen
