@@ -12,7 +12,6 @@ import {Title} from '@angular/platform-browser';
 
 export class MainComponent implements OnInit {
   private filters: Object;
-  private images: string[];
   private userFilter: Object;
   private filteredAutos: Object;
 
@@ -29,7 +28,7 @@ export class MainComponent implements OnInit {
       this.filters = res.data;
       console.log(this.filters);
     });
-    this.images = [1, 2, 3, 4, 5, 6].map(() => `https://picsum.photos/300/300?random&t=${Math.random()}`);
+
   }
 
   process() {

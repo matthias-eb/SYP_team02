@@ -1,0 +1,26 @@
+<div ngbDropdown class="d-inline-block but" *ngIf="dropdown">
+
+  <select class="btn btn-secondary but" (input)="onChange(dropdown.id, $event.target.value)">
+
+    <!-- Bitte auswählen Dialoge -->
+    <option value="" *ngIf="dropdown.name == 'Preis'; else elseBlock">Bitte {{dropdown.name}} bis auswählen</option>
+    <ng-template #elseBlock>
+      <option value="">Bitte {{dropdown.name}} auswählen</option>
+    </ng-template>
+
+    <ng-container *ngFor="let item of dropdown.data">
+      <!-- Inhalte für Hersteller, Erscheinungsjahr und Preis -->
+      <option value="{{item.id}}" *ngIf="item.id != undefined; else other_content">
+        {{item.value}}
+      </option>
+      <ng-template #other_content>
+        <option>
+          {{item}}
+        </option>
+      </ng-template>
+    </ng-container>
+  </select>
+
+  <p>&nbsp;</p>
+
+</div>

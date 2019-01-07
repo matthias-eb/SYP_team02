@@ -1,167 +1,48 @@
 <div class="container">
   <h1>Erweiterte Suche:</h1>
-  <div class="row">
-    <div class="col-lg-4">
+</div>
 
-      <!-- Checkboxen Links-->
-      <p>&nbsp;</p>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-        <label class="form-check-label" for="defaultCheck1">
-          ABS
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-        <label class="form-check-label" for="defaultCheck2">
-          Autoparkfunktion
-        </label>
-      </div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-        <label class="form-check-label" for="defaultCheck1">
-          Beifahrerairbag
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-        <label class="form-check-label" for="defaultCheck2">
-          Bluetooth
-        </label>
-      </div>
+<div class="container">
+  <div class="row" *ngIf="filters">
 
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-        <label class="form-check-label" for="defaultCheck1">
-          Bordcomputer
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-        <label class="form-check-label" for="defaultCheck2">
-          Fensterheber
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-        <label class="form-check-label" for="defaultCheck2">
-          Klimaanlage
-        </label>
-      </div>
-
-    </div>
-    <div class="col-lg-4">
+    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12" *ngFor="let filter of filters">
+      <app-checkbox [checkbox]="filter"></app-checkbox>
     </div>
 
+    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12" *ngFor="let filter of filters">
+      <app-dropdown [dropdown]="filter"></app-dropdown>
+    </div>
 
-    <div class="col-lg-4">
+    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12" *ngFor="let filter of filters">
+      <app-schieberegler [schieberegler]="filter"></app-schieberegler>
+    </div>
 
-      <!-- Checkboxen Rechts-->
-      <p>&nbsp;</p>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-        <label class="form-check-label" for="defaultCheck1">
-          Navi
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-        <label class="form-check-label" for="defaultCheck2">
-          Parkhilfe
-        </label>
-      </div>
-
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-        <label class="form-check-label" for="defaultCheck1">
-          Reifendrucksensor
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-        <label class="form-check-label" for="defaultCheck2">
-          Rekuperation
-        </label>
-      </div>
-
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-        <label class="form-check-label" for="defaultCheck1">
-          Sitzheizung
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-        <label class="form-check-label" for="defaultCheck2">
-          Spurhalter
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-        <label class="form-check-label" for="defaultCheck2">
-          Tempomat
-        </label>
-      </div>
+    <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12" *ngFor="let filter of filters">
+      <app-zahleingabe [zahleingabe]="filter"></app-zahleingabe>
 
     </div>
   </div>
-
-
-  <p>&nbsp;</p>
-  <h1>Farbe:</h1>
-
-  <div class="row">
-    <div class="col-lg-12">
-
-      <!-- Checkboxen Farbe-->
-      <p>&nbsp;</p>
-      <div class="form-check box">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-        <label class="form-check-label" for="defaultCheck1">
-          Schwarz
-        </label>
-      </div>
-      <div class="form-check box">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-        <label class="form-check-label" for="defaultCheck2">
-          Blau
-        </label>
-      </div>
-
-      <div class="form-check box">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-        <label class="form-check-label" for="defaultCheck1">
-          Rot
-        </label>
-      </div>
-      <div class="form-check box">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-        <label class="form-check-label" for="defaultCheck2">
-          Silber
-        </label>
-      </div>
-
-      <div class="form-check box">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-        <label class="form-check-label" for="defaultCheck1">
-          Weiß
-        </label>
-      </div>
-      <div class="form-check box">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-        <label class="form-check-label" for="defaultCheck2">
-          Grün
-        </label>
-      </div>
-      <div class="form-check box">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-        <label class="form-check-label" for="defaultCheck2">
-          Orange
-        </label>
-      </div>
-
-
-
-
 </div>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<!-- Suchen Button -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <button type="button" class="btn btn-secondary" (click)="process()">Suchen</button>
+    </div>
+  </div>
+</div>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<div *ngIf="filteredAutos">
+  <app-autos [autos]="filteredAutos"></app-autos>
+</div>
+
