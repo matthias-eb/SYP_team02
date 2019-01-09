@@ -5,7 +5,7 @@
     <!-- Bitte auswählen Dialoge -->
     <option value="" *ngIf="dropdown.name == 'Preis'; else elseBlock">Bitte {{dropdown.name}} bis auswählen</option>
     <ng-template #elseBlock>
-      <option value="">Bitte {{dropdown.name}} auswählen</option>
+      <option value="">{{dropdown.name}} auswählen</option>
     </ng-template>
 
     <ng-container *ngFor="let item of dropdown.data">

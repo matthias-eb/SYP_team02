@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component,  OnInit} from '@angular/core';
 import {SharedService} from '../../services/shared.service';
 import {Title} from '@angular/platform-browser';
 import {AutoService} from '../../services/auto.service';
@@ -21,7 +21,7 @@ export class ErweitertesucheComponent implements OnInit {
 
     this.titleService.setTitle('Erweiterte Suche');
     this.sharedService.emitTitleChange('Erweiterte Suche');
-    this.autoService.getMainFilter().subscribe((res: any) => {
+    this.autoService.getFilter().subscribe((res: any) => {
       this.filters = res.data;
       console.log(this.filters);
     });
