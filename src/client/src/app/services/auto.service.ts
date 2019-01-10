@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 const server = require('./../../../config.json');
@@ -54,6 +54,22 @@ export class AutoService {
   getFilterAutos(filter: any): Observable<Object> {
     return this.http.post(ServerBaseUrl, {
       filter: filter
+    });
+  }
+
+  /**
+   * Get best rated ecars.
+   *
+   * @param limit limit of ecars to get
+   *
+   * @returns observable object of response with list of best ecars response or error
+   *
+   * @example
+   *    getBestAutos(limit).subscribe((res: any) => { ... });
+   */
+  getBestAutos(limit: number) {
+    return this.http.get(ServerBaseUrl + '/best', {
+      params: new HttpParams().append('limit', String(limit))
     });
   }
 }

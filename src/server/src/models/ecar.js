@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 const db = require('./../database/database');
+const Rating = require('./rating');
 
 let ecar = db.sequelize.define('ecar', {
   id: {
@@ -216,5 +217,7 @@ let ecar = db.sequelize.define('ecar', {
   // define the table's name
   tableName: 'Elektroautos'
 });
+
+ecar.hasMany(Rating, { foreignKey : 'Elektroautos_EId' });
 
 module.exports = ecar;

@@ -1,4 +1,5 @@
 const Auto = require('../models/ecar');
+const Rating = require('../models/rating');
 const Filter = require('../filter/_base');
 
 
@@ -24,6 +25,34 @@ function getAuto(req, res, next) {
       error: err
     });
   });
+}
+
+
+/**
+ * Get best rated ecars.
+ *
+ * @param {object} req http(s) request object
+ * @param {object} res http(s) response object
+ * @param {function} next function to trigger next
+ *
+ * @returns best ecars or error.
+ */
+function getBestAutos(req, res, next) {
+  const DEFAULT_LIMIT = 6;
+  
+  Auto.findAll({
+    include: [ Rating ],
+    order: [ [{ model: Rating }, 'rating', 'ASC'], ['id', 'ASC'] ]
+  }).then(autos => {
+    res.status(200).json({
+      'data': autos.slice(0, req.body.limit || DEFAULT_LIMIT)
+    });
+  })/*.catch(err => {
+    res.status(500).json({
+      msg: err.message,
+      error: err
+    });
+  })*/;
 }
 
 
@@ -69,5 +98,6 @@ function postSqlFiltering(data, req, res, next) {
 
 
 module.exports = {
-  getAuto: getAuto
+  getAuto: getAuto,
+  getBestAutos: getBestAutos
 };

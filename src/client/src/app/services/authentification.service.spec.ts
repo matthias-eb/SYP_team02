@@ -15,20 +15,20 @@ describe('AuthentificationService', () => {
       imports: [HttpClientTestingModule],
       providers: [AuthentificationService]
     });
+    service = TestBed.get(AuthentificationService);
   });
 
   /**
    * Create authentification service object.
    */
   it('should be created', () => {
-    service = TestBed.get(AuthentificationService);
     expect(service).toBeTruthy();
   });
 
   /**
    * Register a new user.
    */
-  it('should be registered', () => {
+  it('should be registered', (done) => {
     service.register('Max', 'Max@Mustermann.de', '12345').subscribe((data: any) => {
       // data: {
       //   "msg": "User successful registered.",
@@ -47,13 +47,14 @@ describe('AuthentificationService', () => {
       expect(data.user.name).toEqual('Max');
       expect(data.user.email).toEqual('Max@Mustermann.de');
       expect(data.user.pwd).toEqual('$2b$04$xJeu9AGP0hF89i.LqtdexO5dcAkiIfGx3I/TVyHlse0LppYx5RVta');
+      done();
     });
   });
 
   /**
    * Try to register the same user again
    */
-  it('should not be registered', () => {
+  it('should not be registered', (done) => {
     service.register('Max', 'Max@Mustermann.de', '12345').subscribe((data: any) => {
       // data: {
       //   "msg": "Username already exists."
@@ -61,13 +62,14 @@ describe('AuthentificationService', () => {
       expect(data).toBeTruthy();
       expect(data.msg).toEqual('Username already exists.');
       expect(data.user).not.toBeTruthy();
+      done();
     });
   });
 
   /**
    * Log user in.
    */
-  it('should be logged in', () => {
+  it('should be logged in', (done) => {
     service.login('Max', '12345').subscribe((data: any) => {
       // data: {
       //   "msg": "Login successful.",
@@ -83,6 +85,7 @@ describe('AuthentificationService', () => {
       expect(data.user).toBeTruthy();
       expect(data.user.id).toBeTruthy();
       expect(data.user.name).toEqual('Max');
+      done();
     });
   });
 
@@ -90,7 +93,7 @@ describe('AuthentificationService', () => {
    * Tidy up. Delete new registered user.
    * This will also test if the user token is set!
    */
-  it('should be deleted', () => {
+  it('should be deleted', (done) => {
     service.removeUser(userId).subscribe((data: any) => {
       // data: {
       //   msg: 'User deleted.'
@@ -98,6 +101,7 @@ describe('AuthentificationService', () => {
       expect(data).toBeTruthy();
       expect(data.msg).toEqual('User deleted.');
       expect(data.error).not.toBeTruthy();
+      done();
     });
   });
 });
