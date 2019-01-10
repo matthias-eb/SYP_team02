@@ -9,7 +9,12 @@ const User = require('./../models/user');
 // NOT AVALIBLE IN PRODUCTION MODE
 //
 
-// DELETE a user
+/**
+ * DELETE a user
+ * 
+ * ONLY FOR TESTING
+ * NOT AVALIBLE IN PRODUCTION MODE
+ */
 router.delete('/user/:id', authService.checkAuth, function(req, res, next) {
   User.destroy({
     where: {
