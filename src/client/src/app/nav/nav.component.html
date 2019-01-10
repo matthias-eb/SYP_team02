@@ -1,13 +1,15 @@
 <!--only visible when window is bigger than sm=540px-->
 <div class="d-none d-sm-block">
-  <div class="m-6 pt-5 pb-5">
+  <div class="pt-5 pb-5">
     <nav class="menu-bar d-flex justify-content-between align-items-center">
-      <a class="d-flex align-items-center" routerLink="/">
+      <div class="d-flex align-items-center">
+        <a routerLink="/">
         <img src="{{logopath}}" width="150" height="150" class="d-inline-block align-top" alt="">
+        </a>  
         <h1 class="menu-text-light">
           {{navtitle}}
-        </h1> 
-      </a>
+        </h1>
+      </div>
 
       <div *ngIf="!authUserId" class="btn-group mr-2" role="group">
         <a class="btn btn-outline-secondary menu-button-border menu-text-light menu-web-button" routerLink="/anmelden" role="button">
@@ -20,7 +22,7 @@
       <div *ngIf="authUserId">
         <div class="d-flex justify-content-between align-items-center">
           <div class="menu-text-light mr-2 menu-button-border">
-            {{authUserName}}
+            Hallo, {{authUserName}}
           </div>
           <div (click)="onAusloggen()">
             <a class="btn btn-outline-secondary menu-text-light menu-button-border menu-web-button mr-2" routerLink="/" (click)="onAusloggen()" role="button">
@@ -39,11 +41,9 @@
     <a routerLink="/" (click)="isCollapsed = true">
       <img src="{{logopath}}" width="60" height="60" class="d-inline-block align-top" alt="">
     </a>
-    <a routerLink="/" (click)="isCollapsed = true">
-      <h1 class="h1-app menu-text-dark">
-        {{navtitle}}
-      </h1>  
-    </a>
+    <h1 class="h1-app menu-text-dark">
+      {{navtitle}}
+    </h1>  
     <button type="button" class="btn btn-outline-secondary d-flex justify-content-center" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
       <div *ngIf="isCollapsed == true" class="d-flex align-items-center justify-content-center">
         <i class="material-icons md-36">menu</i>
@@ -74,7 +74,7 @@
       <a *ngIf="authUserId">
         <hr class="hr-menu">
         <div class="card-body btn-lg app-authName-card d-flex align-items-center ">
-          {{authUserName}}
+          Hallo, {{authUserName}}
         </div>
       </a>
 

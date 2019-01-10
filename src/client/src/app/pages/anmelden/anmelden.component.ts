@@ -18,12 +18,20 @@ export class AnmeldenComponent implements OnInit {
   password = new FormControl('');
   private loginmessage:string;
   private type:string;
+  private authorized=false;
 
-  constructor(private sharedService: SharedService, private titleService: Title, private authService: AuthentificationService) { }
+  constructor(private sharedService: SharedService, private titleService: Title, private authService: AuthentificationService) {
+    sharedService.changedUserIdEmitted$.subscribe(    userId => {
+      if(userId!=0){
+        this.authorized=true;
+      }
+    });
+   }
 
   ngOnInit() { 
     this.titleService.setTitle('Anmelden');
     this.sharedService.emitTitleChange('Anmelden');
+    this.sharedService.changedUserIdEmitted$.subscribe
   }
  
   onSubmit(){

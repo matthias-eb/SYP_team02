@@ -1,11 +1,14 @@
 
+<div *ngIf="authorized">
+Hello
+</div>
 <div class="d-flex justify-content-center mt-3">
   <div class="d-flex flex-column">
     
     <div class="flex-row p-3">
       <div class="input-group">
         <div class="input-group-prepend">
-          <span class="span-anmelden input-group-text" id="inputGroup-sizing-default">Name:</span>
+          <span class="span-anmelden input-group-text" id="inputGroup-sizing-default">Benutzername:</span>
         </div>
         <!--<input type="text" class="input-anmelden form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" [formControl]="name" (keyup.enter)="onSubmit()">-->
         <input type="text" class="input-anmelden form-control" aria-describedby="basic-addon1" [formControl]="name" (keyup.enter)="onSubmit()">
