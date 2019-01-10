@@ -8,7 +8,7 @@ import { SharedService } from '../services/shared.service';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-  private authUserId = 0; //Fuer kommende Sessions
+  private authUserId = 0;
   private authUserName: String;
   public isCollapsed: boolean;
   private logopath = './assets/icon/DEC_logo.png';
@@ -21,14 +21,16 @@ export class NavComponent implements OnInit {
     });
     sharedService.changedUserIdEmitted$.subscribe(    userId => {
       this.authUserId = userId;
-      //this.authUserName = sharedService.getUserNameFromCache();
     });
     sharedService.changedUserNameEmitted$.subscribe(userName => {
       this.authUserName = userName;
     })
   }
 
-  ngOnInit(){}
+  ngOnInit(){
+    this.authUserId = this.sharedService.getUserIdFromCache();
+    this.authUserName = this.sharedService.getUserNameFromCache();
+  }
 
   onAusloggen(){
     this.sharedService.setUserIdFromCache(0);

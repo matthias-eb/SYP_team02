@@ -19,6 +19,11 @@ import { AutosComponent } from './pages/autos/autos.component';
 import { ErweitertesucheComponent } from './pages/erweitertesuche/erweitertesuche.component';
 import { ImpressumComponent } from './pages/impressum/impressum.component';
 import { KontaktComponent } from './pages/kontakt/kontakt.component';
+import { CheckboxComponent } from './pages/filterkomponenten/checkbox/checkbox.component';
+import { DropdownComponent } from './pages/filterkomponenten/dropdown/dropdown.component';
+import { SchiebereglerComponent } from './pages/filterkomponenten/schieberegler/schieberegler.component';
+import { ZahleingabeComponent } from './pages/filterkomponenten/zahleingabe/zahleingabe.component';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +36,11 @@ import { KontaktComponent } from './pages/kontakt/kontakt.component';
     AutosComponent,
     ErweitertesucheComponent,
     ImpressumComponent,
-    KontaktComponent
+    KontaktComponent,
+    CheckboxComponent,
+    DropdownComponent,
+    SchiebereglerComponent,
+    ZahleingabeComponent
   ],
   imports: [
     BrowserModule,

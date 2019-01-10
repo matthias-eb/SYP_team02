@@ -247,9 +247,13 @@ VALUES
 
 INSERT INTO Filter(Name, Typ, Daten, Gewichtung, Sichtbar)
 VALUES
+	('Modellname', 1, '{ "sql": "SELECT DISTINCT Modellname AS ''id'', Modellname AS ''value'' FROM Hersteller ORDER BY value ASC"}', 20, 1),
 	('Hersteller', 1, '{ "sql": "SELECT DISTINCT HId AS ''id'', Name AS ''value'' FROM Hersteller ORDER BY value ASC" }', 10, 1),
 	('Erscheinungsjahr', 1, '{ "sql": "SELECT DISTINCT Erscheinungsjahr AS ''id'', Erscheinungsjahr AS ''value'' FROM Elektroautos ORDER BY value DESC"}', 20, 1),
-	('Preis', 1, '{ "sql": "SELECT DISTINCT Kaufpreis AS ''id'', Kaufpreis AS ''value'' FROM Elektroautos ORDER BY value DESC"}', 20, 1);
+	('Autoparkfunktion', 2, '', 5, 1),
+	('Preis', 3, '{ "sql": "SELECT DISTINCT Kaufpreis AS ''id'', Kaufpreis AS ''value'' FROM Elektroautos ORDER BY value ASC"}', 20, 1),
+	('Leistung', 3, '{"sql": "SELECT DISTINCT Leistung AS ''id'', Leistung AS ''value'' FROM Hersteller ORDER BY value ASC"}', 10, 1),
+	('Höchstgeschwindigkeit', 3, '{ "sql": "SELECT DISTINCT Hoechstgeschwindigkeit AS ''id'', Hoechstgeschwindigkeit AS ''value'' FROM Hersteller ORDER BY value ASC" }', 10, 1);
 
 INSERT INTO Bewertungen(Benutzer_BId, Elektroautos_EId, Bewertung)
 VALUES

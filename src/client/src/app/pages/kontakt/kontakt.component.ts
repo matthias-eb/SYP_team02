@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Title }  from '@angular/platform-browser';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'app-kontakt',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KontaktComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sharedService: SharedService, private titleService: Title) { }
 
   ngOnInit() {
+    this.titleService.setTitle('Kontakt');
+    this.sharedService.emitTitleChange('Kontakt');
   }
 
 }

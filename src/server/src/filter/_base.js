@@ -6,7 +6,10 @@ const filter = {
 // FId   filename/path based on the this (filter) directroy
   '1' : 'manufacturer',         // Hersteller
   '2' : 'publishingYear',       // Erscheinungsjahr
-  '3' : 'price'                 // Preis
+  '3' : 'price',                 // Preis
+  '4' : 'modellname'
+
+  
 };
 
 
