@@ -28,7 +28,10 @@ export class AnmeldenComponent implements OnInit {
     });
    }
 
-  ngOnInit() { 
+  /**
+  * If already logged in, redirect to mainpage.
+  */
+  ngOnInit(){ 
     this.authUserId = this.sharedService.getUserIdFromCache();
     if(this.authUserId != 0){
       this.router.navigate([''])
@@ -38,7 +41,8 @@ export class AnmeldenComponent implements OnInit {
   }
  
   /**
-   * Checking the input of name.value and password.value and sets a message depending on the result next to calling a login request. 
+   * Checking the input of name.value and password.value and sets a message depending on the result.
+   * If both values are acceptable a request to login will be send. 
    */
   onSubmit(){
 

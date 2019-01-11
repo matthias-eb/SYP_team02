@@ -25,6 +25,9 @@ export class RegistrierenComponent implements OnInit {
 
   constructor(private sharedService: SharedService, private titleService: Title, private authService: AuthentificationService, private router: Router) { }
   
+  /**
+  * If already logged in, redirect to mainpage.
+  */
   ngOnInit() {
     this.authUserId = this.sharedService.getUserIdFromCache();
     if(this.authUserId != 0){
@@ -39,7 +42,7 @@ export class RegistrierenComponent implements OnInit {
 
   /**
    * Sets a messeage to the actual status of the register request.
-   * If all needed variables are correct the request to register will be called.
+   * If all needed variables are correct a request to register will be called.
    */
   onSubmit(){
     /* Die Fehler suche wird extra Step-By-Step gemacht */
