@@ -108,7 +108,7 @@ CREATE OR REPLACE TABLE Ladestationen (
 );
 
 CREATE OR REPLACE TABLE Filter (
-  FId int NOT NULL AUTO_INCREMENT,
+  FId int NOT NULL,
   Sichtbar tinyint,
   Name varchar(255),
   Typ int,
