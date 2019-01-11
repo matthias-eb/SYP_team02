@@ -1,7 +1,7 @@
 INSERT INTO Hersteller (Name) VALUES ('Mercedes'),('Volkswagen'),('Tesla'),('Ford'),('Audi');
 
-INSERT INTO Werkstaetten(Hersteller_HId, Name, Laengengrad, Breitengrad)
-VALUES
+INSERT INTO Werkstaetten(Hersteller_HId, Name, Laengengrad, Breitengrad) 
+VALUES 
 	((SELECT HId FROM Hersteller WHERE Name='Mercedes'), 'Daimler-KFZWerkstatt Neumarkt', 50.936300, 6.947830),
 	((SELECT HId FROM Hersteller WHERE Name='Mercedes'), 'Daimler-KFZWerkstatt Kyotostraße', 50.9482477, 6.9449996),
 	((SELECT HId FROM Hersteller WHERE Name='Mercedes'), 'Mercedes-KFZWerkstatt Hansaring', 50.9484576, 6.9491848),
@@ -10,8 +10,8 @@ VALUES
 	((SELECT HId FROM Hersteller WHERE Name='Tesla'), 'Tesla-KFZWerkstatt Remscheid', 51.1690608, 7.1848244),
 	((SELECT HId FROM Hersteller WHERE Name='Ford'), 'Ford-KFZWerkstatt Brühl', 50.8192399, 6.9236327);
 
-INSERT INTO
-	Elektroautos(Hersteller_HId,
+INSERT INTO 
+	Elektroautos(Hersteller_HId, 
 		Modellname,
 		Typ,
 		Stecker,
@@ -161,7 +161,7 @@ INSERT INTO
 			1,				-- Bordcomputer
 			1,				-- Navi
 			1),				-- Beifahrerairbag
-
+			
 			((SELECT HId FROM Hersteller WHERE Name='Ford'),
 			'Ford Focus Electric', -- Modellname
 			'Kombi', 	-- Typ
@@ -247,13 +247,43 @@ VALUES
 
 INSERT INTO Filter(FId, Name, Typ, Daten, Gewichtung, Sichtbar)
 VALUES
-	(1, 'Hersteller', 1, '{ "sql": "SELECT DISTINCT HId AS ''id'', Name AS ''value'' FROM Hersteller ORDER BY value ASC" }', 10, 1),
-	(2, 'Erscheinungsjahr', 1, '{ "sql": "SELECT DISTINCT Erscheinungsjahr AS ''id'', Erscheinungsjahr AS ''value'' FROM Elektroautos ORDER BY value DESC"}', 20, 1),
-	(3, 'Preis', 3, '{ "sql": "SELECT DISTINCT Kaufpreis AS ''id'', Kaufpreis AS ''value'' FROM Elektroautos ORDER BY value ASC"}', 20, 1),
-	(4, 'Modellname', 1, '{ "sql": "SELECT DISTINCT Modellname AS ''id'', Modellname AS ''value'' FROM Elektroautos ORDER BY value ASC"}', 20, 1),
-	(5, 'Autoparkfunktion', 2, '', 5, 1),
-	(6, 'Leistung', 3, '{"sql": "SELECT DISTINCT Leistung AS ''id'', Leistung AS ''value'' FROM Elektroautos ORDER BY value ASC"}', 10, 1),
-	(7, 'Höchstgeschwindigkeit', 3, '{ "sql": "SELECT DISTINCT Hoechstgeschwindigkeit AS ''id'', Hoechstgeschwindigkeit AS ''value'' FROM Elektroautos ORDER BY value ASC" }', 10, 1);
+
+(1, 'ABS', 2, '', 20, 1),
+(2, 'Autoparkfunktion', 2, '', 20, 1),
+(3, 'Batterieart', 1, '{ "sql": "SELECT DISTINCT Batterieart AS ''id'', Batterieart AS ''value'' FROM Elektroautos ORDER BY value DESC"}', 20, 1),
+(4, 'Batteriekapazitaet', 3, '{ "sql": "SELECT DISTINCT Batteriekapazitaet AS ''value'' FROM Elektroautos ORDER BY value DESC"}', 20, 1),
+(5, 'Beifahrerairbag', 2, '', 20, 1),
+(6, 'Beschleunigung', 3, '{ "sql": "SELECT DISTINCT Beschleunigung AS ''value'' FROM Elektroautos ORDER BY value DESC"}', 20, 1),
+(7, 'Bluetooth', 2, '', 20, 1),
+(8, 'Bordcomputer', 2, '', 20, 1),
+(9,'Erscheinungsjahr', 1, '{ "sql": "SELECT DISTINCT Erscheinungsjahr AS ''id'', Erscheinungsjahr AS ''value'' FROM Elektroautos ORDER BY value DESC"}', 20, 1),
+(10, 'Farbe', 1, '{ "sql": "SELECT DISTINCT Farbe AS ''id'', Farbe AS ''value'' FROM Elektroautos ORDER BY value DESC"}', 20, 1),
+(11, 'Fensterheber', 2, '', 20, 1),
+(12, 'Gesamtgewicht', 2, '', 20, 1),
+(13,'Hersteller', 1, '{ "sql": "SELECT DISTINCT HId AS ''id'', Name AS ''value'' FROM Hersteller ORDER BY value ASC" }', 10, 1),
+(14, 'Hoechstgeschwindigkeit', 3, '{ "sql": "SELECT DISTINCT Hoechstgeschwindigkeit AS ''value'' FROM Elektroautos ORDER BY value DESC"}', 20, 1),
+(15,'Preis', 3, '{ "sql": "SELECT DISTINCT Kaufpreis AS ''id'', Kaufpreis AS ''value'' FROM Elektroautos ORDER BY value DESC"}', 20, 1),
+(16, 'Klimaanlage', 2, '', 20, 1),
+(17, 'Laderaum', 2, '', 20, 1),
+(18, 'Leasingpreis', 3, '{ "sql": "SELECT DISTINCT Leasingpreis AS ''value'' FROM Elektroautos ORDER BY value DESC"}', 20, 1),
+(19, 'Leergewicht', 2, '', 20, 1),
+(20, 'Leistung', 3, '{ "sql": "SELECT DISTINCT Leistung AS ''value'' FROM Elektroautos ORDER BY value DESC"}', 20, 1),
+(21, 'MaxDrehmoment', 2, '', 20, 1),
+(22, 'Modellname', 1, '{ "sql": "SELECT DISTINCT Modellname AS ''id'', Modellname AS ''value'' FROM Elektroautos ORDER BY value DESC"}', 20, 1),
+(23, 'Navi', 2, '', 20, 1),
+(24, 'Parkhilfe', 2, '', 20, 1),
+(25, 'Reichweite', 3, '{ "sql": "SELECT DISTINCT Reichweite AS ''value'' FROM Elektroautos ORDER BY value DESC"}', 20, 1),
+(26, 'Reifendrucksensor', 2, '', 20, 1),
+(27, 'Rekuperation', 2, '', 20, 1),
+(28,'Sitze', 1, '{ "sql": "SELECT DISTINCT Sitze AS ''id'', Sitze AS ''value'' FROM Elektroautos ORDER BY value ASC" }', 10, 1),
+(29, 'Sitzheizung', 2, '', 20, 1),
+(30,'Sitzmaterial', 1, '{ "sql": "SELECT DISTINCT Sitzmaterial AS ''id'', Sitzmaterial AS ''value'' FROM Elektroautos ORDER BY value ASC" }', 10, 1),
+(31, 'Spurhalter', 2, '', 20, 1),
+(32,'Stecker', 1, '{ "sql": "SELECT DISTINCT Stecker AS ''id'', Stecker AS ''value'' FROM Elektroautos ORDER BY value ASC" }', 10, 1),
+(33, 'Tempomat', 2, '', 20, 1),
+(34,'Typ', 1, '{ "sql": "SELECT DISTINCT Typ AS ''id'', Typ AS ''value'' FROM Elektroautos ORDER BY value ASC" }', 10, 1),
+(35, 'Verbrauch', 2, '', 20, 1),
+(36,'Verkleidungsmaterial', 1, '{ "sql": "SELECT DISTINCT Verkleidungsmaterial AS ''id'', Verkleidungsmaterial AS ''value'' FROM Elektroautos ORDER BY value ASC" }', 10, 1);
 
 INSERT INTO Bewertungen(Benutzer_BId, Elektroautos_EId, Bewertung)
 VALUES

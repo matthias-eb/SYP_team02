@@ -1,7 +1,7 @@
 /**
  * Filter:
- *   ID: 3
- *   name: price (german: Preis)
+ *   ID: 15
+ *   name: price (german: Kaufpreis)
  *   description: filter max price
  *   data-example: { data: <max> }
  */

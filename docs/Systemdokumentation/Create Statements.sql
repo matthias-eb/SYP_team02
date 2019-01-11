@@ -1,37 +1,3 @@
----------------------------------------------------------------------
--- CREATE DATABASE
----------------------------------------------------------------------
-
----- create new database
---CREATE DATABASE EcarDB;
---
----- create new user
---CREATE USER 'ecar'@'localhost' IDENTIFIED BY '12345';
---
----- grant new user all premissions for the new database
---GRANT ALL PRIVILEGES ON EcarDB . * TO 'ecar'@'localhost';
---FLUSH PRIVILEGES;
-
---USE EcarDB;
-
-
----------------------------------------------------------------------
--- DROP TABLES
----------------------------------------------------------------------
-
---DROP TABLE Filter;
---DROP TABLE Bewertungen;
---DROP TABLE Benutzer;
---DROP TABLE Ladestationen;
---DROP TABLE Werkstaetten;
---DROP TABLE Elektroautos;
---DROP TABLE Hersteller;
-
-
----------------------------------------------------------------------
--- CREATE TABLES
----------------------------------------------------------------------
-
 CREATE OR REPLACE TABLE Hersteller (
   HId int AUTO_INCREMENT,
   Name varchar(255) NOT NULL,
@@ -108,7 +74,7 @@ CREATE OR REPLACE TABLE Ladestationen (
 );
 
 CREATE OR REPLACE TABLE Filter (
-  FId int NOT NULL AUTO_INCREMENT,
+  FId int NOT NULL,
   Sichtbar tinyint,
   Name varchar(255),
   Typ int,

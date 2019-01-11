@@ -75,7 +75,7 @@ let ecar = db.sequelize.define('ecar', {
     type: Sequelize.INTEGER,
     field: 'Hoechstgeschwindigkeit'
   },
-  stowage: {
+  storage: {
     type: Sequelize.INTEGER,
     field: 'Laderaum'
   },

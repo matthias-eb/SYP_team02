@@ -1,7 +1,7 @@
 /**
  * Filter:
- *   ID: 2
- *   name: publishingYear (german: Erscheinungsjahr)
+ *   ID: 9
+ *   name: pub_year (german: Erscheinungsjahr)
  *   description: filter publishing year geater then XXXX
  *   data-example: { data: '<year>' }
  */

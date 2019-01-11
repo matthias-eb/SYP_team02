@@ -73,27 +73,27 @@ function getMainFilter(req, res, next) {
  */
 function prepareFilter(filter) {
   return new Promise((resolve, reject) => {
-    let data = JSON.parse(filter.data);
-    if (data.sql) {
-      db.sequelize.query(data.sql, { type: db.sequelize.QueryTypes.SELECT }).then(data => {
-        filter.data = data;
-        resolve(filter);
-      });
-    }
-    else if (data.code) {
-      try {
-        filter.data = eval(data.code);
-        resolve(filter);
-      } catch (error) {
-        reject(error);
+    let data = filter.data;
+    try {
+      data = JSON.parse(data || {});
+      if (data.sql) {
+        db.sequelize.query(data.sql, { type: db.sequelize.QueryTypes.SELECT }).then(data => {
+          filter.data = data;
+          resolve(filter);
+        });
       }
-    }
-    else if (data) {
-      filter.data = data;
+      else if (data.code) {
+        try {
+          filter.data = eval(data.code);
+          resolve(filter);
+        } catch (error) {
+          reject(error);
+        }
+      }else {
+        reject(new Error('unknown data in database.'));
+      }
+    } catch(e){
       resolve(filter);
-    }
-    else {
-      reject(new Error('unknown data in database.'));
     }
   });
 }
