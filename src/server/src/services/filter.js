@@ -45,7 +45,7 @@ function getMainFilter(req, res, next) {
         { visibility: 1 }
       ],
       $or: [
-        { id: [ 1, 2, 3 ] }
+        { id: [ 9, 13, 15 ] }
       ]
     }
   }).then(filters => {
