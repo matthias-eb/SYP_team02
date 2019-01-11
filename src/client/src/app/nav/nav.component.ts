@@ -26,12 +26,16 @@ export class NavComponent implements OnInit {
       this.authUserName = userName;
     })
   }
-
+  /**
+   * Set authUserId and authUserName to values found in Cache 
+   */
   ngOnInit(){
     this.authUserId = this.sharedService.getUserIdFromCache();
     this.authUserName = this.sharedService.getUserNameFromCache();
   }
-
+  /**
+   * Set UserId, UserName and User Token to an unauthorized state. 
+   */
   onAusloggen(){
     this.sharedService.setUserIdFromCache(0);
     this.sharedService.setUserNameFromCache("Guest");
