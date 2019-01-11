@@ -3,7 +3,7 @@ import { FormControl } from '@angular/forms';
 import { Title }  from '@angular/platform-browser';
 import { AuthentificationService } from '../../services/authentification.service';
 import { SharedService } from '../../services/shared.service';
-import {Router} from "@angular/router"
+import { Router } from "@angular/router"
 
 @Component({
   selector: 'app-anmelden',
@@ -12,8 +12,6 @@ import {Router} from "@angular/router"
 })
 
 export class AnmeldenComponent implements OnInit {
-  
-
   private userId=0;
   name = new FormControl('');
   password = new FormControl('');
@@ -39,7 +37,11 @@ export class AnmeldenComponent implements OnInit {
     this.sharedService.emitTitleChange('Anmelden');
   }
  
+  /**
+   * Checking the input of name.value and password.value and sets a message depending on the result next to calling a login request. 
+   */
   onSubmit(){
+
     if(this.name.value == '' || this.password.value == '' ){
       this.type = 'danger';
       this.loginmessage = 'Bitte die Felder für Namen und Passwort ausfüllen.';

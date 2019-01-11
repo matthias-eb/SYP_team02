@@ -37,6 +37,10 @@ export class RegistrierenComponent implements OnInit {
     });
   }
 
+  /**
+   * Sets a messeage to the actual status of the register request.
+   * If all needed variables are correct the request to register will be called.
+   */
   onSubmit(){
     /* Die Fehler suche wird extra Step-By-Step gemacht */
     //1. Sind alle Felder ausgefuellt?

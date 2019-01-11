@@ -27,12 +27,27 @@ export class SharedService {
   changedUserNameEmitted$ = this.emitUserNameChangeSource.asObservable();
 
   // Service message commands (income)
+   /**
+   * Saves change into observable object: changedTitleEmitted$
+   * 
+   * @param change string
+   */
   emitTitleChange(change: string) {
     this.emitTitleChangeSource.next(change);
   }
+  /**
+   * Saves change into observable object: changedUserIdEmitted$
+   * 
+   * @param change string
+   */
   emitUserIdChange(change: number){
     this.emitUserIdChangeSource.next(change);
   }
+  /**
+   * Saves change into observable object: changedUserNameEmitted$
+   * 
+   * @param change string
+   */
   emitUserNameChange(change: string){
     this.emitUserNameChangeSource.next(change);
   }
