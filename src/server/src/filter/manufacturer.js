@@ -1,6 +1,6 @@
 /**
  * Filter:
- *   ID: 1
+ *   ID: 13
  *   name: manufacturer (german: Hersteller)
  *   description: filter manufacturers by name
  *   data-example: { data: '<manufacturer-id>' }

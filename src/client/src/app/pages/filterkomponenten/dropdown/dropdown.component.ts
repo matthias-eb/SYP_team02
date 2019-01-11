@@ -8,9 +8,15 @@ import {Component, Input, OnInit} from '@angular/core';
 export class DropdownComponent implements OnInit {
 
   @Input() dropdown: Object;
-  constructor() { }
+  @Input() userFilter: Object;
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  onChange(filter: number, value: string) {
+    if (value === '') {
+      delete this.userFilter[filter];
+    } else {
+      this.userFilter[filter] = value;
+    }
   }
-
 }

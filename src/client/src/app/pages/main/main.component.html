@@ -11,44 +11,18 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <!--
-         <ngb-carousel *ngIf="images">
-           -->
-        <ngb-carousel>
-
-          <ng-template ngbSlide>
-            <div class="col-xs-4 img-container"><a href="#1"><img
-              src="./assets/autobilder/egolf.jpg"
-              class="img-responsive"></a></div>
-
-            <div class="col-xs-4 img-container"><a href="#1"><img
-              src="./assets/autobilder/etron.jpg"
-              class="img-responsive"></a></div>
-
-            <div class="col-xs-4 img-container"><a href="#1"><img
-              src="./assets/autobilder/reanualtzoe.jpg"
-              class="img-responsive"></a></div>
-          </ng-template>
-
-          <ng-template ngbSlide>
-
-            <div class="col-xs-4 img-container"><a href="#1">
-              <img src="./assets/autobilder/hyundaiionic.jpg"
-                   class="img-responsive"></a></div>
-
-            <div class="col-xs-4 img-container"><a href="#1"><img
-              src="./assets/autobilder/teslahero.jpg"
-              class="img-responsive"></a></div>
-
-            <div class="col-xs-4 img-container"><a href="#1"><img
-              src="./assets/autobilder/twizy.jpg"
-              class="img-responsive"></a></div>
-
-            <!--
-            <div class="col-xs-4"><a href="#1"><img [src]="images[5]"
-                                                    class="img-responsive"></a></div>
-                                                    -->
-          </ng-template>
+        <ngb-carousel *ngIf="carouselAutos">
+          <ng-container *ngFor="let auto of carouselAutos; let i = index">
+            <ng-template ngbSlide *ngIf="i % 3 === 0">
+              <ng-container *ngFor="let subIndex of [ 0, 1, 2 ]">
+                <div *ngIf="carouselAutos[i+subIndex]" class="col-xs-4 img-container">
+                  <a routerLink="/autos/{{carouselAutos[i+subIndex].id}}">
+                    <img class="img-responsive" src="{{carouselAutos[i+subIndex].image}}">
+                  </a>
+                </div>
+              </ng-container>
+            </ng-template>
+          </ng-container>
         </ngb-carousel>
       </div>
     </div>

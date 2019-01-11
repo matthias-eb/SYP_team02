@@ -1,12 +1,25 @@
 import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { RatingService } from './rating.service';
 
 describe('RatingService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
 
+  // classundertest/service object
+  let service: RatingService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [RatingService]
+    });
+  });
+
+  /**
+   * Create authentification service object.
+   */
   it('should be created', () => {
-    const service: RatingService = TestBed.get(RatingService);
+    service = TestBed.get(RatingService);
     expect(service).toBeTruthy();
   });
 });

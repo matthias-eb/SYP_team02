@@ -1,8 +1,9 @@
-
-<div  ng-app ng-controller="formCtrl" *ngIf="zahleingabe">
-  <form name="myForm" ng-submit="onSubmit()">
-    <h2>Eingabefeld für: {{zahleingabe.name}}</h2>
-    <input class="but" type="number">
-
-  </form>
+<div ng-app ng-controller="formCtrl" *ngIf="zahleingabe">
+  <div class="mytooltip">
+    <input id="number_{{zahleingabe.id}}" class="but" type="number"
+      placeholder="{{zahleingabe.name}}"
+      (input)="onChange(zahleingabe.id, $event.target.value)">
+    <span *ngIf="userFilter[zahleingabe.id]" class="tooltiptext">{{zahleingabe.name}}</span>
+  </div>
+  <p>&nbsp;</p>
 </div>

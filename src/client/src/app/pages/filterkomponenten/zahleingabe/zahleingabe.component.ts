@@ -8,10 +8,17 @@ import {Component, Input, OnInit} from '@angular/core';
 export class ZahleingabeComponent implements OnInit {
 
   @Input() zahleingabe: Object;
+  @Input() userFilter: Object;
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
+  onChange(filter: number, value: number) {
+    if (value.toString() === '') {
+      delete this.userFilter[filter];
+    } else {
+      this.userFilter[filter] = value.toString();
+    }
+  }
 }
