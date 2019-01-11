@@ -8,10 +8,18 @@ import {Component, Input, OnInit} from '@angular/core';
 export class CheckboxComponent implements OnInit {
 
   @Input() checkbox: Object;
+  @Input() userFilter: Object;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  onChange(filter: number, value: boolean) {
+    if (value) {
+      this.userFilter[filter] = 1;
+    } else {
+      delete this.userFilter[filter];
+    }
+  }
 }
