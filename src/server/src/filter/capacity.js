@@ -1,6 +1,6 @@
 /**
  * Filter:
- *   ID: 6
+ *   ID: 20
  *   name: capacity (german: Leistung)
  *   description: filter capacity by minimal value
  *   data-example: { data: '<capacity>' }
@@ -11,7 +11,7 @@
  * Build specific WHERE-clause object
  * to filter for the minimal capacity value.
  *
- * @param id capacity minimal capacity value
+ * @param capacity minimal capacity value
  *
  * @returns WHERE-clause object (Sequelize)
  */

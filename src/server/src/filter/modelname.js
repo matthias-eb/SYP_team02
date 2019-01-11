@@ -1,6 +1,6 @@
 /**
  * Filter:
- *   ID: 4
+ *   ID: 22
  *   name: modelname (german: Modellname)
  *   description: filter modelname by name
  *   data-example: { data: '<modelname>' }

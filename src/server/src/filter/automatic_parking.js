@@ -1,6 +1,6 @@
 /**
  * Filter:
- *   ID: 5
+ *   ID: 2
  *   name: automatic_parking (german: Autoparkfunktion)
  *   description: filter to (un)set ecars with an automatic parking feature.
  *   data-example: { data: '<automatic_parking>' }

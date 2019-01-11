@@ -1,6 +1,6 @@
 /**
  * Filter:
- *   ID: 7
+ *   ID: 14
  *   name: topSpeed (german: Hoechstgeschwindigkeit)
  *   description: filter top speed by minimal value
  *   data-example: { data: '<speed>' }
