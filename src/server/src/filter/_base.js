@@ -6,10 +6,11 @@ const filter = {
 // FId   filename/path based on the this (filter) directroy
   '1' : 'manufacturer',         // Hersteller
   '2' : 'publishingYear',       // Erscheinungsjahr
-  '3' : 'price',                 // Preis
-  '4' : 'modellname'
-
-  
+  '3' : 'price',                // Preis
+  '4' : 'modellname',           // Modellname
+  '5' : 'automatic_parking',    // Autoparkfunktion
+  '6' : 'capacity',             // Leistung
+  '7' : 'topSpeed'              // Hoechstgeschwindigkeit
 };
 
 

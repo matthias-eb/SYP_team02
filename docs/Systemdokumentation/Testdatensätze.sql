@@ -1,7 +1,7 @@
 INSERT INTO Hersteller (Name) VALUES ('Mercedes'),('Volkswagen'),('Tesla'),('Ford'),('Audi');
 
-INSERT INTO Werkstaetten(Hersteller_HId, Name, Laengengrad, Breitengrad) 
-VALUES 
+INSERT INTO Werkstaetten(Hersteller_HId, Name, Laengengrad, Breitengrad)
+VALUES
 	((SELECT HId FROM Hersteller WHERE Name='Mercedes'), 'Daimler-KFZWerkstatt Neumarkt', 50.936300, 6.947830),
 	((SELECT HId FROM Hersteller WHERE Name='Mercedes'), 'Daimler-KFZWerkstatt Kyotostraße', 50.9482477, 6.9449996),
 	((SELECT HId FROM Hersteller WHERE Name='Mercedes'), 'Mercedes-KFZWerkstatt Hansaring', 50.9484576, 6.9491848),
@@ -10,8 +10,8 @@ VALUES
 	((SELECT HId FROM Hersteller WHERE Name='Tesla'), 'Tesla-KFZWerkstatt Remscheid', 51.1690608, 7.1848244),
 	((SELECT HId FROM Hersteller WHERE Name='Ford'), 'Ford-KFZWerkstatt Brühl', 50.8192399, 6.9236327);
 
-INSERT INTO 
-	Elektroautos(Hersteller_HId, 
+INSERT INTO
+	Elektroautos(Hersteller_HId,
 		Modellname,
 		Typ,
 		Stecker,
@@ -161,7 +161,7 @@ INSERT INTO
 			1,				-- Bordcomputer
 			1,				-- Navi
 			1),				-- Beifahrerairbag
-			
+
 			((SELECT HId FROM Hersteller WHERE Name='Ford'),
 			'Ford Focus Electric', -- Modellname
 			'Kombi', 	-- Typ
@@ -245,15 +245,15 @@ VALUES
 	('Gettopunk96', 'messdiener22@gmail.com', '3F16A9535055AC7E33E184FAC4B148B90C6B0233F24F5E44DAB094E474087409'),
 	('XxGruftixX', 'grufti@grufti.com', 'A66FB722C08488CD9B54349529CAB266FEF869181713C29D52EF495D6D992C57');
 
-INSERT INTO Filter(Name, Typ, Daten, Gewichtung, Sichtbar)
+INSERT INTO Filter(FId, Name, Typ, Daten, Gewichtung, Sichtbar)
 VALUES
-	('Modellname', 1, '{ "sql": "SELECT DISTINCT Modellname AS ''id'', Modellname AS ''value'' FROM Hersteller ORDER BY value ASC"}', 20, 1),
-	('Hersteller', 1, '{ "sql": "SELECT DISTINCT HId AS ''id'', Name AS ''value'' FROM Hersteller ORDER BY value ASC" }', 10, 1),
-	('Erscheinungsjahr', 1, '{ "sql": "SELECT DISTINCT Erscheinungsjahr AS ''id'', Erscheinungsjahr AS ''value'' FROM Elektroautos ORDER BY value DESC"}', 20, 1),
-	('Autoparkfunktion', 2, '', 5, 1),
-	('Preis', 3, '{ "sql": "SELECT DISTINCT Kaufpreis AS ''id'', Kaufpreis AS ''value'' FROM Elektroautos ORDER BY value ASC"}', 20, 1),
-	('Leistung', 3, '{"sql": "SELECT DISTINCT Leistung AS ''id'', Leistung AS ''value'' FROM Hersteller ORDER BY value ASC"}', 10, 1),
-	('Höchstgeschwindigkeit', 3, '{ "sql": "SELECT DISTINCT Hoechstgeschwindigkeit AS ''id'', Hoechstgeschwindigkeit AS ''value'' FROM Hersteller ORDER BY value ASC" }', 10, 1);
+	(1, 'Hersteller', 1, '{ "sql": "SELECT DISTINCT HId AS ''id'', Name AS ''value'' FROM Hersteller ORDER BY value ASC" }', 10, 1),
+	(2, 'Erscheinungsjahr', 1, '{ "sql": "SELECT DISTINCT Erscheinungsjahr AS ''id'', Erscheinungsjahr AS ''value'' FROM Elektroautos ORDER BY value DESC"}', 20, 1),
+	(3, 'Preis', 3, '{ "sql": "SELECT DISTINCT Kaufpreis AS ''id'', Kaufpreis AS ''value'' FROM Elektroautos ORDER BY value ASC"}', 20, 1),
+	(4, 'Modellname', 1, '{ "sql": "SELECT DISTINCT Modellname AS ''id'', Modellname AS ''value'' FROM Elektroautos ORDER BY value ASC"}', 20, 1),
+	(5, 'Autoparkfunktion', 2, '', 5, 1),
+	(6, 'Leistung', 3, '{"sql": "SELECT DISTINCT Leistung AS ''id'', Leistung AS ''value'' FROM Elektroautos ORDER BY value ASC"}', 10, 1),
+	(7, 'Höchstgeschwindigkeit', 3, '{ "sql": "SELECT DISTINCT Hoechstgeschwindigkeit AS ''id'', Hoechstgeschwindigkeit AS ''value'' FROM Elektroautos ORDER BY value ASC" }', 10, 1);
 
 INSERT INTO Bewertungen(Benutzer_BId, Elektroautos_EId, Bewertung)
 VALUES
