@@ -46,3 +46,35 @@ p {
   height: 200px;
   width: 100%;
 }
+
+abbr {
+  display: inline-block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.mytooltip {
+  position: relative;
+
+  .tooltiptext {
+    visibility: hidden;
+    width: 100%;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    bottom: 100%;  // At the top of the tooltip
+    left: 0%;
+
+    // Position the tooltip
+    position: absolute;
+    z-index: 1;
+  }
+
+  &:hover .tooltiptext {
+    visibility: visible;
+  }
+}

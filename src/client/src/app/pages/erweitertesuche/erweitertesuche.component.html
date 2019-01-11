@@ -11,21 +11,21 @@
     <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12" *ngFor="let filter of filters" [ngSwitch]="filter.type">
 
       <div *ngSwitchCase="1">
-        <app-dropdown *ngSwitchCase="1" [dropdown]="filter"></app-dropdown>
+        <app-dropdown [dropdown]="filter" [userFilter]="userFilter"></app-dropdown>
       </div>
 
 
       <div *ngSwitchCase="2">
-        <app-checkbox [checkbox]="filter"></app-checkbox>
+        <app-checkbox [checkbox]="filter" [userFilter]="userFilter"></app-checkbox>
       </div>
 
 
       <div *ngSwitchCase="3">
-        <app-schieberegler *ngSwitchCase="3" [schieberegler]="filter"></app-schieberegler>
+        <app-schieberegler [schieberegler]="filter" [userFilter]="userFilter"></app-schieberegler>
       </div>
 
       <div *ngSwitchCase="4">
-        <app-zahleingabe *ngSwitchCase="5" [zahleingabe]="filter"></app-zahleingabe>
+        <app-zahleingabe [zahleingabe]="filter" [userFilter]="userFilter"></app-zahleingabe>
       </div>
 
       <div *ngSwitchDefault>
