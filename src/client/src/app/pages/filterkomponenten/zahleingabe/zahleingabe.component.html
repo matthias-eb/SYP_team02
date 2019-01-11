@@ -1,7 +1,6 @@
 <div ng-app ng-controller="formCtrl" *ngIf="zahleingabe">
   <form name="myForm" ng-submit="onSubmit()">
-    <h2>Eingabefeld für: {{zahleingabe.name}}</h2>
-    <input class="but" type="number" (input)="onChange(zahleingabe.id, $event.target.value)">
+    <input class="but" type="number" placeholder="{{zahleingabe.name}} (input)="onChange(zahleingabe.id, $event.target.value)">
   </form>
   <p>&nbsp;</p>
 </div>
