@@ -12,7 +12,8 @@ const db = require('./../database/database.js');
  */
 function getFilter(req, res, next) {
  Filter.findAll({
-    where: { visibility: true }
+    where: { visibility: true },
+    order: [ 'weight', 'type' ]
   }).then(filters => {
     let actions = filters.map(prepareFilter);
     Promise.all(actions).then(filters => {
