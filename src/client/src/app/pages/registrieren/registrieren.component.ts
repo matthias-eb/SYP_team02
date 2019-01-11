@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 import { Title }  from '@angular/platform-browser';
 import { AuthentificationService } from '../../services/authentification.service';
 import { SharedService } from '../../services/shared.service';
+import {Router} from "@angular/router"
 
 @Component({
   selector: 'app-registrieren',
@@ -20,10 +21,15 @@ export class RegistrierenComponent implements OnInit {
   private registrmessage:string;
   private type:string;
   private emailcheck:boolean;
+  private authUserId: number;
 
-  constructor(private sharedService: SharedService, private titleService: Title, private authService: AuthentificationService) { }
+  constructor(private sharedService: SharedService, private titleService: Title, private authService: AuthentificationService, private router: Router) { }
   
   ngOnInit() {
+    this.authUserId = this.sharedService.getUserIdFromCache();
+    if(this.authUserId != 0){
+      this.router.navigate([''])
+    }
     this.titleService.setTitle('Registrieren');
     this.sharedService.emitTitleChange('Registrieren');
     this.email.valueChanges.subscribe((data: any)=>{
@@ -45,7 +51,7 @@ export class RegistrierenComponent implements OnInit {
           this.authService.register(this.benutzername.value, this.email.value, this.password.value).subscribe((data: any) => {
             this.userId=data.user.id;
             this.type = 'success';
-            this.registrmessage='User erfolgreich registriert. DEV:UserID: '+this.userId;
+            this.registrmessage='Benutzer wurde erfolgreich registriert.';
           },(err:any) => {
             //this.registrmessage='Dieser Benutzername ist bereits vergeben.';
             this.errorHandler(4);
@@ -68,9 +74,8 @@ export class RegistrierenComponent implements OnInit {
 
 
   private errorHandler(errId: number){
-    this.password.setValue('')
-    this.passwordConfirm.setValue('')
-    this.userId = 0;
+    this.password.setValue('');
+    this.passwordConfirm.setValue('');
     this.type = 'danger';
 
     switch(errId){
