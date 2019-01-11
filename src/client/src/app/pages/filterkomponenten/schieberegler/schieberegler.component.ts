@@ -9,12 +9,16 @@ export class SchiebereglerComponent implements OnInit {
 
   @Input() schieberegler: Object;
   @Input() userFilter: Object;
+  private value: number;
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.value = Number(this.schieberegler['data'][0].value);
+  }
 
   onChange(filter: number, value: number) {
-    this.userFilter[filter] = value.toString();
+    this.value = value;
+    this.userFilter[filter] = this.value.toString();
   }
 }
