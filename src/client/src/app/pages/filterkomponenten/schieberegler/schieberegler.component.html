@@ -1,6 +1,9 @@
 <div class="slidecontainer" *ngIf="schieberegler">
-  <h2>Slider für: {{schieberegler.name}}</h2>
-  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-
+  <h2>{{schieberegler.name}} [{{value}}]</h2>
+  <input id="range_{{schieberegler.id}}" class="slider" type="range"
+    min="{{schieberegler['data'][0].value}}"
+    max="{{schieberegler['data'][schieberegler['data'].length - 1].value}}"
+    value="{{value}}"
+    (input)="onChange(schieberegler.id, $event.target.value)">
   <p>&nbsp;</p>
 </div>

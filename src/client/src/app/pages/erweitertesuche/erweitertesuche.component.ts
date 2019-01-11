@@ -18,35 +18,21 @@ export class ErweitertesucheComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.titleService.setTitle('Erweiterte Suche');
     this.sharedService.emitTitleChange('Erweiterte Suche');
     this.autoService.getFilter().subscribe((res: any) => {
       this.filters = res.data;
       console.log(this.filters);
     });
-
   }
 
-
   process() {
+    console.log(this.userFilter);
     this.autoService.getFilterAutos(this.userFilter).subscribe((res: any) => {
         this.filteredAutos = res.data;
         console.log(res);
-      },
-      (res: any) => {
-        console.error(res);
-      });
-    console.log(this.userFilter);
-  }
-
-
-  onChange(filter, value) {
-    if (value === '') {
-      delete this.userFilter[filter];
-    } else {
-      this.userFilter[filter] = value;
-      console.log('Selected car', value);
-    }
+    }, (res: any) => {
+      console.error(res);
+    });
   }
 }
