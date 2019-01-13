@@ -11,6 +11,6 @@ router.get('/user/:id', authService.checkAuth, ratingService.getUserRating);
 router.get('/auto/:id', authService.checkAuth, ratingService.getAutoRating);
 
 // SET rating for a ecar from by a specific user
-router.post('/auto', authService.checkAuth, ratingService.getAutoRating);
+router.post('/auto', authService.checkAuth, ratingService.setUserRating);
 
 module.exports = router;
