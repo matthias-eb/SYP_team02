@@ -21,7 +21,7 @@ h4 {
 
 h5 {
   color: #333333;
-  font-size: 2.0em;
+  font-size: 1.5em;
 }
 
 img {
@@ -42,3 +42,11 @@ img {
   display: inline-block;
   padding-left: 2em;
 }
+
+
+.col-xs-6 {
+  max-width: 50%;
+  display: inline-block;
+}
+
+

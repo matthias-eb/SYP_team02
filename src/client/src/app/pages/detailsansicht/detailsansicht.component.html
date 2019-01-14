@@ -15,9 +15,6 @@
            alt="...">
     </div>
     <div class="col-lg-6">
-      <p>&nbsp;</p>
-
-
       <h3>
         <i class="material-icons md-36">money</i> Preis: {{a.price}} €</h3>
       <hr>
@@ -37,13 +34,13 @@
       <h3>
         <i class="material-icons md-36">stars</i> Bewertungen: <b>{{currentRate}}</b>
 
-       <div class="mystars">
+        <div class="mystars">
           <ngb-rating [(rate)]="currentRate" max="5">
             <ng-template let-fill="fill" let-index="index">
               <span class="star" [class.filled]="fill === 100" [class.bad]="index == 0">&#9733;</span>
             </ng-template>
           </ngb-rating>
-       </div>
+        </div>
       </h3>
     </div>
   </div>
@@ -63,83 +60,152 @@
 
 
   <ng-container *ngIf="show">
-    
-    <div class="container">
-      <div class="row">
-
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
-          <h4>ABS: </h4>
-          <h4>Autoparkfunktion: </h4>
-          <h4>Batterieart:</h4>
-          <h4>Batteriekapazität:</h4>
-          <h4>Beifahrerairbag:</h4>
-          <h4>Beschleunigung:</h4>
-          <h4>Bluetooth:</h4>
-          <h4>Bordcomputer:</h4>
-          <h4>Farbe:</h4>
-          <h4>Fensterheber:</h4>
-          <h4>Gesamtgewicht in kg:</h4>
-          <h4>Höchstgeschwindigkeit:</h4>
-          <h4>Klimaanlage:</h4>
-          <h4>Laderaum in Litern:</h4>
-          <h4>Leasingpreis:</h4>
-        </div>
 
 
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
-          <h4>{{a.abs}}</h4>
-          <h4>{{a.automatic_parking}}</h4>
-          <h4>{{a.battery_type}}</h4>
-          <h4>{{a.battery_capacity}}</h4>
-          <h4>{{a.codriver_airbag}}</h4>
-          <h4>{{a.acceleration}} s</h4>
-          <h4>{{a.bluetooth}}</h4>
-          <h4>{{a.board_computer}}</h4>
-          <h4>{{a.color}}</h4>
-          <h4>{{a.window_lifter}}</h4>
-          <h4>{{a.weight_complete}}</h4>
-          <h4>{{a.topSpeed}} km/h</h4>
-          <h4>{{a.airCon}}</h4>
-          <h4>{{a.storage}}</h4>
-          <h4>{{a.leasing}} €</h4>
-        </div>
+    <h5>Merkmale:</h5>
+    <div class="row">
 
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
-          <h4>Leergewicht in kg:</h4>
-          <h4>Maximales Drehmoment in Nm:</h4>
-          <h4>Navi:</h4>
-          <h4>Parkhilfe:</h4>
-          <h4>Reifendrucksensor:</h4>
-          <h4>Rekuperation:</h4>
-          <h4>Sitze:</h4>
-          <h4>Sitzheizung:</h4>
-          <h4>Sitzmaterial:</h4>
-          <h4>Spurhalter:</h4>
-          <h4>Stecker:</h4>
-          <h4>Tempomat:</h4>
-          <h4>Verbrauch:</h4>
-          <h4>Verkleidungsmaterial:</h4>
-        </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <h4>Modell:</h4>
+        <h4>Beschleunigung:</h4>
+        <h4>Farbe:</h4>
+        <h4>Gesamtgewicht in kg:</h4>
+        <h4>Höchstgeschwindigkeit:</h4>
+        <h4>Laderaum in Litern:</h4>
+        <h4>Leasingpreis:</h4>
+        <h4>Leergewicht in kg:</h4>
+        <h4>max Drehmoment in Nm:</h4>
+        <h4>Verbrauch:</h4>
 
+      </div>
 
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
-          <h4>{{a.weight_empty}}</h4>
-          <h4>{{a.max_torque}}</h4>
-          <h4>{{a.nav}}</h4>
-          <h4>{{a.parkinghelp}}</h4>
-          <h4>{{a.tirepressure_sensor}}</h4>
-          <h4>{{a.recuperation}}</h4>
-          <h4>{{a.seats}}</h4>
-          <h4>{{a.seat_radiator}}</h4>
-          <h4>{{a.seat_material}}</h4>
-          <h4>{{a.lane_assistant}}</h4>
-          <h4>{{a.plug}}</h4>
-          <h4>{{a.cruisecontrol}}</h4>
-          <h4>{{a.consumption}}</h4>
-          <h4>{{a.paneling_material}}</h4>
-        </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <h4>{{a.modelname}}</h4>
+        <h4>{{a.acceleration}} s</h4>
+        <h4>{{a.color}}</h4>
+        <h4>{{a.weight_complete}}</h4>
+        <h4>{{a.topSpeed}} km/h</h4>
+        <h4>{{a.storage}}</h4>
+        <h4>{{a.leasing}} €</h4>
+        <h4>{{a.weight_empty}}</h4>
+        <h4>{{a.max_torque}}</h4>
+        <h4>{{a.consumption}} kWh</h4>
 
       </div>
     </div>
+
+    <hr>
+
+    <h5>Ausstattung:</h5>
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+
+        <h4>Batterieart:</h4>
+        <h4>Batteriekapazität:</h4>
+        <h4>Fensterheber:</h4>
+        <h4>Klimaanlage:</h4>
+        <h4>Parkhilfe:</h4>
+        <h4>Reifendrucksensor:</h4>
+        <h4>Rekuperation:</h4>
+        <h4>Stecker:</h4>
+
+      </div>
+
+
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <h4>{{a.battery_type}}</h4>
+        <h4>{{a.battery_capacity}}</h4>
+        <h4>{{a.window_lifter}}</h4>
+        <h4>{{a.airCon}}</h4>
+        <h4>{{a.parkinghelp}}</h4>
+        <h4>{{a.tirepressure_sensor}}</h4>
+        <h4>{{a.recuperation}}</h4>
+        <h4>{{a.plug}}</h4>
+
+      </div>
+    </div>
+
+    <hr>
+
+    <h5>Innenausstattung:</h5>
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+
+        <h4>Sitze:</h4>
+        <h4>Sitzheizung:</h4>
+        <h4>Sitzmaterial:</h4>
+        <h4>Verkleidungsmaterial:</h4>
+
+      </div>
+
+
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <h4>{{a.seats}}</h4>
+        <h4>{{a.seat_radiator}}</h4>
+        <h4>{{a.seat_material}}</h4>
+        <h4>{{a.paneling_material}}</h4>
+      </div>
+    </div>
+
+    <hr>
+
+    <h5>Unterhaltung/Medien:</h5>
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+
+        <h4>Bluetooth:</h4>
+        <h4>Bordcomputer:</h4>
+        <h4>Navi:</h4>
+
+      </div>
+
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <h4>{{a.bluetooth}}</h4>
+        <h4>{{a.board_computer}}</h4>
+        <h4>{{a.nav}}</h4>
+
+      </div>
+    </div>
+
+    <hr>
+
+    <h5>Extras:</h5>
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+
+        <h4>Autoparkfunktion: </h4>
+        <h4>Spurhalter:</h4>
+        <h4>Tempomat:</h4>
+
+      </div>
+
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <h4>{{a.automatic_parking}}</h4>
+        <h4>{{a.lane_assistant}}</h4>
+        <h4>{{a.cruisecontrol}}</h4>
+      </div>
+    </div>
+
+    <hr>
+
+    <h5>Sicherheit:</h5>
+
+    <div class="row ">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+
+        <h4>ABS: </h4>
+        <h4>Beifahrerairbag:</h4>
+
+      </div>
+
+
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <h4>{{a.abs}}</h4>
+        <h4>{{a.codriver_airbag}}</h4>
+      </div>
+    </div>
+
+    <hr>
+
   </ng-container>
 </div>
