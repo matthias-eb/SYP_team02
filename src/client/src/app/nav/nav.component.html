@@ -74,7 +74,14 @@
           Hauptseite
         </div>
       </a>
-      
+
+      <a *ngIf="navtitle!='Erweiterte Suche'" routerLink="/erweitertesuche" (click)="onAusloggen()">
+        <hr class="hr-menu">
+        <div class="card-body btn-outline-secondary btn-lg">
+          Erweiterte Suche
+        </div>
+      </a>
+
       <a *ngIf="!authUserId" routerLink="/anmelden" (click)="isCollapsed = true">
         <hr class="hr-menu">
         <div class="card-body btn-outline-secondary btn-lg card-size" >
