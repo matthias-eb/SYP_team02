@@ -1,10 +1,12 @@
 #!/bin/bash
 #ToDo: Erstellte Dateien wieder löschen (create_statements.sh, Setuplog.txt)
+clienterstellt=0
 
-showmenu(){
+menueauswahl() {
 	menueauswahl=0
-	while [[ $menueauswahl -eq 0 ]]; do
-		printf "------MENUE------\n"
+	while [[ $menueauswahl -eq 0 ]]
+	do
+		printf "##### MENUE #####\n"
 		printf "1) Server installieren\n"
 		printf "2) Client installieren\n"
 		printf "3) Setup beenden\n"
@@ -16,6 +18,9 @@ showmenu(){
 	done
 	return $menueauswahl
 }
+
+port=3000
+hostaddress="http://localhost"
 
 paketmanager="keiner"
 printf "Willkommen zum Installationsskript.\n"
@@ -57,7 +62,7 @@ fi
 
 while [ 1 -eq 1 ] # Endlosschleife
 do
-	showmenu
+	menueauswahl
 	if [ $? -eq 1 ]
 	then
 		printf "Installiere Apache..\n"
@@ -75,11 +80,13 @@ do
 		fi
 
 		cat /etc/httpd/conf/httpd.conf | grep "## Changed: ##" >/dev/null
-		if [ $? -ne 0 ]; then
+		if [ $? -ne 0 ]
+		then
 			printf "## Changed: ##\n" | sudo tee -a /etc/httpd/conf/httpd.conf >/dev/null
 		fi
 		cat /etc/httpd/conf/httpd.conf | grep -w "#LoadModule unique_id_module" >/dev/null
-		if [ $? -ne 0 ]; then
+		if [ $? -ne 0 ]
+		then
 			sudo sed -i '/LoadModule\ unique_id_module\ modules\/mod_unique_id.so/d' /etc/httpd/conf/httpd.conf
 			printf "#LoadModule unique_id_module modules/mod_unique_id.so\n" | sudo tee -a /etc/httpd/conf/httpd.conf >/dev/null
 		fi
@@ -150,7 +157,7 @@ do
 		dbname="ECarDB"
 		mysql --user=root --password=$password -e "create database $dbname;"
 		printf "use $dbname;\n" > create_statements.sql
-		awk 'NR < 35 { next } { print }' $0/docs/Systemdokumentation/Create\ Statements.sql >> create_statements.sql 
+		cat ../../docs/Systemdokumentation/Create\ Statements.sql >> create_statements.sql 
 		mysql --user=root --password=$password < create_statements.sql
 
 		printf "Installiere php...\n"
@@ -177,21 +184,25 @@ do
 
 		printf "Konfiguriere Php..\n"
 		cat /etc/httpd/conf/httpd.conf | grep "#LoadModule npm_event_module modules"
-		if [ $? -ne 0 ]; then
+		if [ $? -ne 0 ]
+		then
 			sudo sed -i '/LoadModule\ npm_event_module\ modules\/mod_npm_event.so/d' /etc/httpd/conf/httpd.conf
 			printf "#LoadModule npm_event_module modules/mod_npm_event.so" | sudo tee -a /etc/httpd/conf/httpd.conf >/dev/null
 		fi
 		cat /etc/httpd/conf/httpd.conf | grep "#LoadModule unique_id_module modules"
-		if [ $? -ne 0 ]; then
+		if [ $? -ne 0 ]
+		then
 			sudo sed -i '/LoadModule\ unique_id_module\ modules\/mod_unique_id.so/d' /etc/httpd/conf/httpd.conf
 			printf "#LoadModule unique_id_module modules/mod_unique_id.so\n" | sudo tee -a /etc/httpd/conf/httpd.conf >/dev/null
 		fi
 		cat /etc/httpd/conf/httpd.conf | grep "LoadModule mpm_prefork_module"
-		if [ $? -ne 0 ]; then
+		if [ $? -ne 0 ]
+		then
 			printf "LoadModule mpm_prefork_module modules/mod_mpm_prefork.so\n"  | sudo tee -a /etc/httpd/conf/httpd.conf >/dev/null
 		fi
 		cat /etc/httpd/conf/httpd.conf | grep "LoadModule php7_module"
-		if [ $? -ne 0 ]; then
+		if [ $? -ne 0 ]
+		then
 			printf "LoadModule php7_module modules/libphp7.so\n" | sudo tee -a /etc/httpd/conf/httpd.conf >/dev/null
 			printf "AddHandler php7-script php\nInclude conf/extra/php7_module.conf\n" | sudo tee -a /etc/httpd/conf/httpd.conf >/dev/null
 			printf "Include conf/extra/php7_module.conf\n" | sudo tee -a /etc/httpd/conf/httpd.conf >/dev/null
@@ -201,7 +212,7 @@ do
 		printf "phpMyAdmin wird installiert..."
 		if [ $paketmanager == "pacman" ]
 		then
-			sudo pacman -S phpmyadmin php-mcrypt
+			sudo pacman -S phpmyadmin
 		elif [ $paketmanager == "apt" ]
 		then
 			sudo apt-get install phpmyadmin
@@ -214,7 +225,7 @@ do
 
 		printf "phpMyAdmin wird konfiguriert..\n"
 		cat /etc/php/php.ini | grep "; [Changed]" >/dev/null
-		if[ $? -ne 0 ]
+		if [ $? -ne 0 ]
 		then
 			printf "; [Changed]\n" | sudo tee -a /etc/php/php.ini >/dev/null
 			sudo sed -i '/extension=bz2.so/d' /etc/php/php.ini
@@ -225,6 +236,7 @@ do
 			printf "extension=mysqli.so\n" | sudo tee -a /etc/php/php.ini >/dev/null
 			printf "; \n" | sudo tee -a /etc/php/php.ini >/dev/null
 		fi
+
 		touch /etc/httpd/conf/extra/phpmyadmin.conf > /dev/null
 		if [ $? -ne 0 ]
 		then
@@ -233,7 +245,8 @@ do
 		fi
 
 		cat /etc/httpd/conf/httpd.conf | grep "Include conf/extra/phpmyadmin.conf" >/dev/null
-		if [ $? -ne 0 ]; then
+		if [ $? -ne 0 ]
+		then
 			printf "Include conf/extra/phpmyadmin.conf\n" | sudo tee -a /etc/httpd/conf/httpd.conf >/dev/null
 			printf "#########\n" | sudo tee -a /etc/httpd/conf/httpd.conf >/dev/null
 		fi
@@ -303,7 +316,7 @@ do
 			done
 		fi
 
-		hostaddress="localhost"
+		
 		if [ $createconfig -eq 0 ]
 		then
 			printf "Geben sie die adresse ihrer Datenbank an (Voreingestellt: $hostaddress).\n"
@@ -321,9 +334,12 @@ do
 			fi
 			rm Setuplog.txt
 
-			port=3000
 			printf "Port Nummer (Voreingestellt: $port): \n"
-			read port
+			read eingabe
+			if [ ! -z $eingabe ]
+			then
+				port=$eingabe
+			fi
 			printf "Portnummer ist $port\n"
 
 			printf "Erstelle config.json...\n"
@@ -334,8 +350,7 @@ do
 				printf "Lösche config.json\n"
 				rm config.json
 			fi
-			printf "json\n" > config.json
-			printf "{\n" >> config.json
+			printf "{\n" > config.json
 			printf "\t\"db\": {\n" >> config.json
 			printf "\t\t\"host\": \"$hostaddress\",\n" >> config.json
 			printf "\t\t\"database\": \"$dbname\",\n" >> config.json
@@ -400,7 +415,6 @@ do
 			done
 		fi
 
-		hostaddress="localhost"
 		if [ $createconfig -eq 0 ]
 		then
 			printf "Geben sie die Adresse ihres Servers an (Voreingestellt: $hostaddress).\n"
@@ -418,9 +432,13 @@ do
 			fi
 			rm Setuplog.txt
 
-			port=3000
+			
 			printf "Port Nummer (Voreingestellt: $port): \n"
-			read port
+			read eingabe
+			if [ ! -z $eingabe ]
+			then
+				port=$eingabe
+			fi
 			printf "Portnummer ist $port\n"
 
 			printf "Erstelle config.json...\n"
@@ -431,9 +449,28 @@ do
 				printf "Lösche config.json\n"
 				rm config.json
 			fi
-			printf "json\n" > config.json
-			printf "{\n" >> config.json
+			printf "{\n" > config.json
+			printf "\t\"ServerBaseUrl\": \"$hostaddress:$port\"\n" >> config.json
 			printf "}\n" >> config.json
+		fi
+
+		eingabe="X"
+		while [ $eingabe != "J" ] && [ $eingabe != "N" ]
+		do
+			printf "Wollen sie eine Android App erstellen? (J,N)\n"
+			read eingabe
+			if [ $eingabe != "J" ] && [ $eingabe != "N" ]
+			then
+				printf "Falsche eingabe\n"
+			fi
+		done
+		if [ $eingabe == "J" ]
+		then
+			ionic cordova platform add android
+			npm run build
+
+			printf "APK wird erstellt..."
+			ionic cordova build android --release
 		fi
 
 	else

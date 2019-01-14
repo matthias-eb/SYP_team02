@@ -1,4 +1,4 @@
-INSERT INTO Hersteller (Name) VALUES ('Mercedes'),('Volkswagen'),('Tesla'),('Ford'),('Audi');
+INSERT INTO Hersteller (Name) VALUES ('Mercedes'),('Volkswagen'),('Tesla'),('Ford'),('Audi'),('Nissan');
 
 INSERT INTO Werkstaetten(Hersteller_HId, Name, Laengengrad, Breitengrad)
 VALUES
@@ -238,6 +238,44 @@ INSERT INTO
 			1,				-- Navi
 			1);				-- Beifahrerairbag
 
+
+			((SELECT HId FROM Hersteller WHERE Name='Nissan'),
+			'Nissan Leaf', -- Modellname
+			'Kombolimousine', 	-- Typ
+			'CCS Typ2',		-- Stecker
+			'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/2017_Nissan_LEAF_%28ZE0_MY17%29_hatchback_%282018-11-02%29_01.jpg/1280px-2017_Nissan_LEAF_%28ZE0_MY17%29_hatchback_%282018-11-02%29_01.jpg',
+			2010,			-- Erscheinungsjahr
+			80,			-- Leistung
+			5,				-- Sitze
+			1520,			-- Leergewicht
+			1520,			-- Gesamtgewicht
+			160,			-- Reichweite
+			254,			-- Maximales Drehmoment
+			144,			-- Hoechstgeschwindigkeit
+			355,			-- Laderaum
+			31950,			-- Kaufpreis
+			35,			-- Leasingpreis
+			7.9,			-- Beschleunigung
+			62,				-- Batteriekapazität
+			15,			-- Verbrauch
+			'Lithium-Ionen',	-- Batterieart
+			'Leder, Schaumstoff',	-- Sitzmaterial
+			'Silber',		-- Farbe
+			'Plastik, Eiche',		-- Verkleidungsmaterial
+			1,				-- Rekuperation
+			1,				-- Klimaanlage
+			1,				-- Parkhilfe
+			1,				-- Tempomat
+			0,				-- Reifendrucksensor
+			1,				-- Autoparkfunktion
+			1,				-- Sitzheizung
+			1,				-- ABS
+			1,				-- Fensterheber
+			1,				-- Spurhalter
+			0,				-- Bluetooth
+			0,				-- Bordcomputer
+			0,				-- Navi
+			1);				-- Beifahrerairbag
 
 INSERT INTO Benutzer(Benutzername, Email, Passwort)
 VALUES
