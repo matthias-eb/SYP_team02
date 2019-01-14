@@ -34,7 +34,11 @@ export class MainComponent implements OnInit {
     });
   }
 
+  /**
+   * Function for the Search Button to receive filtered Cars from the getFilterAutos function
+   */
   process() {
+
     this.autoService.getFilterAutos(this.userFilter).subscribe((res: any) => {
       this.filteredAutos = res.data;
       console.log(res);
@@ -45,7 +49,13 @@ export class MainComponent implements OnInit {
     console.log(this.userFilter);
   }
 
-
+  /**
+   * Function to register changed values in the filters.
+   *
+   * @param filter ist the selected filter.
+   * @param value is the current value in the filter.
+   * @return the values for the filters if the value is not empty.
+   */
   onChange(filter, value) {
     if (value === '') {
       delete this.userFilter[filter];

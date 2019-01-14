@@ -26,6 +26,9 @@ export class ErweitertesucheComponent implements OnInit {
     });
   }
 
+  /**
+   * Function to get filtered ecars
+   */
   process() {
     console.log(this.userFilter);
     this.autoService.getFilterAutos(this.userFilter).subscribe((res: any) => {
