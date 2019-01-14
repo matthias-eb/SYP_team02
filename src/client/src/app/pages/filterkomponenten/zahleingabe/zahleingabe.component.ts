@@ -14,6 +14,13 @@ export class ZahleingabeComponent implements OnInit {
 
   ngOnInit() { }
 
+  /**
+   *
+   * @param filter integer number of the filter
+   * @param value integer number of the value
+   *
+   * @return value of the current filter if value ist not null.
+   */
   onChange(filter: number, value: number) {
     if (value.toString() === '') {
       delete this.userFilter[filter];

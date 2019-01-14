@@ -20,6 +20,8 @@ export class DetailsansichtComponent implements OnInit {
 
 
   ngOnInit() {
+    this.titleService.setTitle('Auto Detailsansicht');
+    this.sharedService.emitTitleChange('Auto Detailsansicht');
    const id = +this.route.snapshot.paramMap.get('id');
     this.autoService.getFilterAutos({'id' : id }).subscribe((res: any) => {
       this.auto = res.data;
@@ -27,6 +29,9 @@ export class DetailsansichtComponent implements OnInit {
     });
   }
 
+  /**
+   * Function to toggle the  Weitere Details anzeigen/verbergen button.
+   */
   toggle() {
     this.show = !this.show;
 
