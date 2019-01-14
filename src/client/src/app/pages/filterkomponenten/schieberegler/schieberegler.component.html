@@ -1,9 +1,14 @@
 <div class="slidecontainer" *ngIf="schieberegler">
   <h2>{{schieberegler.name}} [{{value}}]</h2>
-  <input id="range_{{schieberegler.id}}" class="slider" type="range"
-    min="{{schieberegler['data'][0].value}}"
-    max="{{schieberegler['data'][schieberegler['data'].length - 1].value}}"
-    value="{{value}}"
-    (input)="onChange(schieberegler.id, $event.target.value)">
+   <div class="d-flex align-items-center">
+      <input id="range_{{schieberegler.id}}" class="slider" type="range"
+        min="{{schieberegler['data'][0].value}}"
+        max="{{schieberegler['data'][schieberegler['data'].length - 1].value}}"
+        value="{{value}}"
+        (input)="onChange(schieberegler.id, $event.target.value)">
+        
+        <button *ngIf="btnDisabled" id="range_btn_{{schieberegler.id}}" class="btn-reset" (click)="onClick(schieberegler.id)" disabled>Reset</button>
+        <button *ngIf="!btnDisabled" id="range_btn_{{schieberegler.id}}" class="btn-reset" (click)="onClick(schieberegler.id)">Reset</button>
+   </div>
   <p>&nbsp;</p>
 </div>
