@@ -39,7 +39,8 @@ const filter = {
   '33' : 'cruisecontrol',       // Tempomat
   '34' : 'type',                // Typ
   '35' : 'consumption',         // Verbrauch
-  '36' : 'paneling_material'    // Verkleidungsmaterial
+  '36' : 'paneling_material',   // Verkleidungsmaterial
+  'id' : 'id'                   // Elektroauto ID
 };
 
 

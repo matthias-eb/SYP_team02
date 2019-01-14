@@ -4,7 +4,7 @@
 
       <div class="thumbnail text-center">
         <div class="img-container">
-          <img [src]="auto.image" class=" img-responsive" alt="Thumbnail Image {{auto.modelname}}">
+          <a routerLink="/auto/{{auto.id}}"> <img [src]="auto.image" class=" img-responsive" alt="Thumbnail Image {{auto.modelname}}"></a>
         </div>
 
         <hr>
@@ -12,7 +12,7 @@
         <div class="caption">
           <div style="width: 100%; margin: fill;">
             <div class="mytooltip">
-              <h1><abbr>{{auto.modelname}}</abbr></h1>
+              <a routerLink="/auto/{{auto.id}}">   <h1><abbr>{{auto.modelname}}</abbr></h1> </a>
               <span class="tooltiptext">{{auto.modelname}}</span>
             </div>
           </div>
@@ -33,7 +33,7 @@
             </ng-template>
           </ngb-rating>
           <hr>
-          <p class="text-center"><a href="#" class="btn btn-success" role="button">Details</a></p>
+          <p class="text-center"><a routerLink="/auto/{{auto.id}}" class="btn btn-success" role="button">Details</a></p>
 
           <p>&nbsp;</p>
 

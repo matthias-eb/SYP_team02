@@ -8,6 +8,7 @@ import { AutosComponent } from './pages/autos/autos.component';
 import { ErweitertesucheComponent } from './pages/erweitertesuche/erweitertesuche.component';
 import { ImpressumComponent } from './pages/impressum/impressum.component';
 import { KontaktComponent } from './pages/kontakt/kontakt.component';
+import {DetailsansichtComponent} from './pages/detailsansicht/detailsansicht.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'autos', component: AutosComponent },
   { path: 'erweitertesuche', component: ErweitertesucheComponent },
   { path: 'impressum', component: ImpressumComponent },
-  { path: 'kontakt', component: KontaktComponent }
+  { path: 'kontakt', component: KontaktComponent },
+  { path: 'auto/:id', component: DetailsansichtComponent }
 
 
 ];
