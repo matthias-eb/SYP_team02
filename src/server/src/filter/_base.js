@@ -40,7 +40,7 @@ const filter = {
   '34' : 'type',                // Typ
   '35' : 'consumption',         // Verbrauch
   '36' : 'paneling_material',   // Verkleidungsmaterial
-  '99' : 'id'                   // Elektroauto ID
+  'id' : 'id'                   // Elektroauto ID
 };
 
 

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {SharedService} from '../../services/shared.service';
 import {Title} from '@angular/platform-browser';
 import {AutoService} from '../../services/auto.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-detailsansicht',
@@ -14,12 +15,13 @@ export class DetailsansichtComponent implements OnInit {
   private buttonName: any = 'Weitere Details anzeigen';
   private auto: Object;
 
-  constructor(private sharedService: SharedService, private titleService: Title, private autoService: AutoService) {
+  constructor(  private route: ActivatedRoute, private sharedService: SharedService, private titleService: Title, private autoService: AutoService) {
   }
 
 
   ngOnInit() {
-    this.autoService.getBestAutos(6).subscribe((res: any) => {
+   const id = +this.route.snapshot.paramMap.get('id');
+    this.autoService.getFilterAutos({'id' : id }).subscribe((res: any) => {
       this.auto = res.data;
       console.log('auto', this.auto);
     });

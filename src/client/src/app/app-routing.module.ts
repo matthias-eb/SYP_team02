@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'erweitertesuche', component: ErweitertesucheComponent },
   { path: 'impressum', component: ImpressumComponent },
   { path: 'kontakt', component: KontaktComponent },
-  { path: 'detailsansicht', component: DetailsansichtComponent }
+  { path: 'auto/:id', component: DetailsansichtComponent }
 
 
 ];
