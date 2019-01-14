@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: driving-e-car - doc</title>
+    <title>JSDoc: Global</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Global | Server JavaScript Documentation</h1>
+    <h1 class="page-title">Global</h1>
 
     
 
@@ -104,7 +104,7 @@
     
 
     
-    <h4 class="name" id="buildWhereClause"><span class="type-signature"></span>buildWhereClause<span class="signature">(batteryType)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="buildWhereClause"><span class="type-signature"></span>buildWhereClause<span class="signature">(bluetooth)</span><span class="type-signature"></span></h4>
     
 
     
@@ -113,7 +113,7 @@
 
 <div class="description">
     Build specific WHERE-clause object
-to filter battery type.
+to filter ecar with/without bluetooth
 </div>
 
 
@@ -149,7 +149,7 @@ to filter battery type.
 
         <tr>
             
-                <td class="name"><code>batteryType</code></td>
+                <td class="name"><code>bluetooth</code></td>
             
 
             <td class="type">
@@ -160,7 +160,7 @@ to filter battery type.
 
             
 
-            <td class="description last">type of battery</td>
+            <td class="description last">0 if false; otherwise 1 for true</td>
         </tr>
 
     
@@ -201,7 +201,7 @@ to filter battery type.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="filter_battery_type.js.html">filter/battery_type.js</a>, <a href="filter_battery_type.js.html#line18">line 18</a>
+        <a href="filter_bluetooth.js.html">filter/bluetooth.js</a>, <a href="filter_bluetooth.js.html#line18">line 18</a>
     </li></ul></dd>
     
 
@@ -245,7 +245,7 @@ to filter battery type.
     
 
     
-    <h4 class="name" id="buildWhereClause"><span class="type-signature"></span>buildWhereClause<span class="signature">(consumption)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="buildWhereClause"><span class="type-signature"></span>buildWhereClause<span class="signature">(cruiseControl)</span><span class="type-signature"></span></h4>
     
 
     
@@ -254,7 +254,7 @@ to filter battery type.
 
 <div class="description">
     Build specific WHERE-clause object
-to filter for the maximal consumption value.
+to filter ecar with/without cruise control
 </div>
 
 
@@ -290,7 +290,7 @@ to filter for the maximal consumption value.
 
         <tr>
             
-                <td class="name"><code>consumption</code></td>
+                <td class="name"><code>cruiseControl</code></td>
             
 
             <td class="type">
@@ -301,7 +301,7 @@ to filter for the maximal consumption value.
 
             
 
-            <td class="description last">maximal consumption value</td>
+            <td class="description last">0 if false; otherwise 1 for true</td>
         </tr>
 
     
@@ -342,7 +342,148 @@ to filter for the maximal consumption value.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="filter_consumption.js.html">filter/consumption.js</a>, <a href="filter_consumption.js.html#line18">line 18</a>
+        <a href="filter_cruisecontrol.js.html">filter/cruisecontrol.js</a>, <a href="filter_cruisecontrol.js.html#line18">line 18</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    WHERE-clause object (Sequelize)
+</div>
+
+
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="buildWhereClause"><span class="type-signature"></span>buildWhereClause<span class="signature">(windowLifter)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Build specific WHERE-clause object
+to filter ecar with/without window lifter
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>windowLifter</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">0 if false; otherwise 1 for true</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="filter_window_lifter.js.html">filter/window_lifter.js</a>, <a href="filter_window_lifter.js.html#line18">line 18</a>
     </li></ul></dd>
     
 
@@ -484,147 +625,6 @@ to filter for the maximal weight empty value.
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
         <a href="filter_weight_empty.js.html">filter/weight_empty.js</a>, <a href="filter_weight_empty.js.html#line18">line 18</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    WHERE-clause object (Sequelize)
-</div>
-
-
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="buildWhereClause"><span class="type-signature"></span>buildWhereClause<span class="signature">(weightComplete)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Build specific WHERE-clause object
-to filter for the maximal weight complete value.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>weightComplete</code></td>
-            
-
-            <td class="type">
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">maximal weight complete value</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="filter_weight_complete.js.html">filter/weight_complete.js</a>, <a href="filter_weight_complete.js.html#line18">line 18</a>
     </li></ul></dd>
     
 
@@ -816,6 +816,147 @@ to filter for the maximal weight complete value.
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
         <a href="services_auto.js.html">services/auto.js</a>, <a href="services_auto.js.html#line68">line 68</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    WHERE-clause object (Sequelize)
+</div>
+
+
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="buildWhereClause"><span class="type-signature"></span>buildWhereClause<span class="signature">(weightComplete)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Build specific WHERE-clause object
+to filter for the maximal weight complete value.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>weightComplete</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">maximal weight complete value</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="filter_weight_complete.js.html">filter/weight_complete.js</a>, <a href="filter_weight_complete.js.html#line18">line 18</a>
     </li></ul></dd>
     
 
@@ -1846,147 +1987,6 @@ to filter ecar with seat material.
     
 
     
-    <h4 class="name" id="buildWhereClause"><span class="type-signature"></span>buildWhereClause<span class="signature">(recuperation)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Build specific WHERE-clause object
-to filter ecar with/without recuperation
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>recuperation</code></td>
-            
-
-            <td class="type">
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">0 if false; otherwise 1 for true</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="filter_recuperation.js.html">filter/recuperation.js</a>, <a href="filter_recuperation.js.html#line18">line 18</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    WHERE-clause object (Sequelize)
-</div>
-
-
-
-    
-
-
-
-
-
-        
-            
-
-    
-
-    
     <h4 class="name" id="buildWhereClause"><span class="type-signature"></span>buildWhereClause<span class="signature">(abs)</span><span class="type-signature"></span></h4>
     
 
@@ -2692,7 +2692,7 @@ to filter ecar with min battery capacity.
     
 
     
-    <h4 class="name" id="buildWhereClause"><span class="type-signature"></span>buildWhereClause<span class="signature">(windowLifter)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="buildWhereClause"><span class="type-signature"></span>buildWhereClause<span class="signature">(batteryType)</span><span class="type-signature"></span></h4>
     
 
     
@@ -2701,7 +2701,7 @@ to filter ecar with min battery capacity.
 
 <div class="description">
     Build specific WHERE-clause object
-to filter ecar with/without window lifter
+to filter battery type.
 </div>
 
 
@@ -2737,7 +2737,7 @@ to filter ecar with/without window lifter
 
         <tr>
             
-                <td class="name"><code>windowLifter</code></td>
+                <td class="name"><code>batteryType</code></td>
             
 
             <td class="type">
@@ -2748,7 +2748,7 @@ to filter ecar with/without window lifter
 
             
 
-            <td class="description last">0 if false; otherwise 1 for true</td>
+            <td class="description last">type of battery</td>
         </tr>
 
     
@@ -2789,7 +2789,7 @@ to filter ecar with/without window lifter
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="filter_window_lifter.js.html">filter/window_lifter.js</a>, <a href="filter_window_lifter.js.html#line18">line 18</a>
+        <a href="filter_battery_type.js.html">filter/battery_type.js</a>, <a href="filter_battery_type.js.html#line18">line 18</a>
     </li></ul></dd>
     
 
@@ -2833,7 +2833,7 @@ to filter ecar with/without window lifter
     
 
     
-    <h4 class="name" id="buildWhereClause"><span class="type-signature"></span>buildWhereClause<span class="signature">(bluetooth)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="buildWhereClause"><span class="type-signature"></span>buildWhereClause<span class="signature">(id)</span><span class="type-signature"></span></h4>
     
 
     
@@ -2842,7 +2842,7 @@ to filter ecar with/without window lifter
 
 <div class="description">
     Build specific WHERE-clause object
-to filter ecar with/without bluetooth
+to filter ecar id.
 </div>
 
 
@@ -2878,7 +2878,7 @@ to filter ecar with/without bluetooth
 
         <tr>
             
-                <td class="name"><code>bluetooth</code></td>
+                <td class="name"><code>id</code></td>
             
 
             <td class="type">
@@ -2889,7 +2889,7 @@ to filter ecar with/without bluetooth
 
             
 
-            <td class="description last">0 if false; otherwise 1 for true</td>
+            <td class="description last">ecar id</td>
         </tr>
 
     
@@ -2930,7 +2930,7 @@ to filter ecar with/without bluetooth
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="filter_bluetooth.js.html">filter/bluetooth.js</a>, <a href="filter_bluetooth.js.html#line18">line 18</a>
+        <a href="filter_id.js.html">filter/id.js</a>, <a href="filter_id.js.html#line18">line 18</a>
     </li></ul></dd>
     
 
@@ -3538,7 +3538,7 @@ to filter ecar color.
     
 
     
-    <h4 class="name" id="buildWhereClause"><span class="type-signature"></span>buildWhereClause<span class="signature">(reach)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="buildWhereClause"><span class="type-signature"></span>buildWhereClause<span class="signature">(consumption)</span><span class="type-signature"></span></h4>
     
 
     
@@ -3547,7 +3547,7 @@ to filter ecar color.
 
 <div class="description">
     Build specific WHERE-clause object
-to filter ecar with min reach.
+to filter for the maximal consumption value.
 </div>
 
 
@@ -3583,7 +3583,7 @@ to filter ecar with min reach.
 
         <tr>
             
-                <td class="name"><code>reach</code></td>
+                <td class="name"><code>consumption</code></td>
             
 
             <td class="type">
@@ -3594,7 +3594,7 @@ to filter ecar with min reach.
 
             
 
-            <td class="description last">min reach</td>
+            <td class="description last">maximal consumption value</td>
         </tr>
 
     
@@ -3635,7 +3635,7 @@ to filter ecar with min reach.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="filter_reach.js.html">filter/reach.js</a>, <a href="filter_reach.js.html#line18">line 18</a>
+        <a href="filter_consumption.js.html">filter/consumption.js</a>, <a href="filter_consumption.js.html#line18">line 18</a>
     </li></ul></dd>
     
 
@@ -3679,7 +3679,7 @@ to filter ecar with min reach.
     
 
     
-    <h4 class="name" id="buildWhereClause"><span class="type-signature"></span>buildWhereClause<span class="signature">(cruiseControl)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="buildWhereClause"><span class="type-signature"></span>buildWhereClause<span class="signature">(recuperation)</span><span class="type-signature"></span></h4>
     
 
     
@@ -3688,7 +3688,7 @@ to filter ecar with min reach.
 
 <div class="description">
     Build specific WHERE-clause object
-to filter ecar with/without cruise control
+to filter ecar with/without recuperation
 </div>
 
 
@@ -3724,7 +3724,7 @@ to filter ecar with/without cruise control
 
         <tr>
             
-                <td class="name"><code>cruiseControl</code></td>
+                <td class="name"><code>recuperation</code></td>
             
 
             <td class="type">
@@ -3776,7 +3776,7 @@ to filter ecar with/without cruise control
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="filter_cruisecontrol.js.html">filter/cruisecontrol.js</a>, <a href="filter_cruisecontrol.js.html#line18">line 18</a>
+        <a href="filter_recuperation.js.html">filter/recuperation.js</a>, <a href="filter_recuperation.js.html#line18">line 18</a>
     </li></ul></dd>
     
 
@@ -5328,6 +5328,147 @@ to filter for the ecars only since a specific year.
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
         <a href="filter_pub_year.js.html">filter/pub_year.js</a>, <a href="filter_pub_year.js.html#line18">line 18</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    WHERE-clause object (Sequelize)
+</div>
+
+
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="buildWhereClause"><span class="type-signature"></span>buildWhereClause<span class="signature">(reach)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Build specific WHERE-clause object
+to filter ecar with min reach.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>reach</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">min reach</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="filter_reach.js.html">filter/reach.js</a>, <a href="filter_reach.js.html#line18">line 18</a>
     </li></ul></dd>
     
 
@@ -7375,7 +7516,7 @@ to filter for the ecars only since a specific year.
     
 
     
-    <h4 class="name" id="setAutoRating"><span class="type-signature"></span>setAutoRating<span class="signature">(req, res, next)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="setUserRating"><span class="type-signature"></span>setUserRating<span class="signature">(req, res, next)</span><span class="type-signature"></span></h4>
     
 
     
@@ -7576,13 +7717,13 @@ to filter for the ecars only since a specific year.
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#buildWhereClause">buildWhereClause</a></li><li><a href="global.html#checkAuth">checkAuth</a></li><li><a href="global.html#getAuto">getAuto</a></li><li><a href="global.html#getAutoRating">getAutoRating</a></li><li><a href="global.html#getBestAutos">getBestAutos</a></li><li><a href="global.html#getFilter">getFilter</a></li><li><a href="global.html#getMainFilter">getMainFilter</a></li><li><a href="global.html#getUserRating">getUserRating</a></li><li><a href="global.html#login">login</a></li><li><a href="global.html#postSqlFiltering">postSqlFiltering</a></li><li><a href="global.html#prepareFilter">prepareFilter</a></li><li><a href="global.html#register">register</a></li><li><a href="global.html#setAutoRating">setAutoRating</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#buildWhereClause">buildWhereClause</a></li><li><a href="global.html#checkAuth">checkAuth</a></li><li><a href="global.html#getAuto">getAuto</a></li><li><a href="global.html#getAutoRating">getAutoRating</a></li><li><a href="global.html#getBestAutos">getBestAutos</a></li><li><a href="global.html#getFilter">getFilter</a></li><li><a href="global.html#getMainFilter">getMainFilter</a></li><li><a href="global.html#getUserRating">getUserRating</a></li><li><a href="global.html#login">login</a></li><li><a href="global.html#postSqlFiltering">postSqlFiltering</a></li><li><a href="global.html#prepareFilter">prepareFilter</a></li><li><a href="global.html#register">register</a></li><li><a href="global.html#setUserRating">setUserRating</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Jan 12 2019 18:26:40 GMT+0100 (GMT+01:00)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Jan 14 2019 17:24:28 GMT+0100 (GMT+01:00)
 </footer>
 
 <script> prettyPrint(); </script>

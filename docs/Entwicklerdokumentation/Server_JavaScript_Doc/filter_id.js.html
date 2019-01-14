@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: filter/weight_complete.js</title>
+    <title>JSDoc: Source: filter/id.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: filter/weight_complete.js</h1>
+    <h1 class="page-title">Source: filter/id.js</h1>
 
     
 
@@ -28,30 +28,30 @@
         <article>
             <pre class="prettyprint source linenums"><code>/**
  * Filter:
- *   ID: 12
- *   name: weight_complete (german: Gesamtgewicht)
- *   description: filter weight complete by maximal value
- *   data-example: { data: '&lt;weight-complete>' }
+ *   ID: 99
+ *   name: id (german: EId)
+ *   description: filter ecar id
+ *   data-example: { data: '&lt;ecar-id>' }
  */
 
 
 /**
  * Build specific WHERE-clause object
- * to filter for the maximal weight complete value.
+ * to filter ecar id.
  *
- * @param weightComplete maximal weight complete value
+ * @param id ecar id
  *
  * @returns WHERE-clause object (Sequelize)
  */
-function buildWhereClause(weightComplete) {
-  return { weight_complete: { lte: weightComplete } };
+function buildWhereClause(id) {
+  return { id: id };
 }
 
 
 module.exports = {
   buildWhereClause: buildWhereClause
 };
-</code></pre>
+  </code></pre>
         </article>
     </section>
 
