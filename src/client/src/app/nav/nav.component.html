@@ -9,6 +9,17 @@
         <h1 class="menu-text-light">
           {{navtitle}}
         </h1>
+
+        <ng-container *ngIf="navtitle!='Hauptseite'">
+          <h1 class="menu-text-light ml-4 mr-4">
+            |
+          </h1>
+
+          <a class="btn btn-outline-secondary menu-button-border menu-text-light menu-web-button" routerLink="/" role="button">
+           Hauptseite
+          </a>
+        </ng-container>
+        
       </div>
 
       <div *ngIf="!authUserId" class="btn-group mr-2" role="group">
@@ -57,6 +68,13 @@
   <div id="collapseExample" [ngbCollapse]="isCollapsed">
     <div class="card">
 
+      <a *ngIf="navtitle!='Hauptseite'" routerLink="/" (click)="onAusloggen()">
+        <hr class="hr-menu">
+        <div class="card-body btn-outline-secondary btn-lg">
+          Hauptseite
+        </div>
+      </a>
+      
       <a *ngIf="!authUserId" routerLink="/anmelden" (click)="isCollapsed = true">
         <hr class="hr-menu">
         <div class="card-body btn-outline-secondary btn-lg card-size" >
@@ -77,6 +95,8 @@
           Hallo, {{authUserName}}
         </div>
       </a>
+
+      
 
       <a *ngIf="authUserId" routerLink="/" (click)="onAusloggen()">
         <hr class="hr-menu">

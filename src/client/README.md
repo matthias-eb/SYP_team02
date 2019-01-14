@@ -114,6 +114,7 @@ ionic cordova build android --prod --release -- -- --keystore=filename.keystore 
 
 For running a desktop apps you also need to build the application first.
 ```bash
+npm install electron
 npm run build
 npm run electron
 ```
