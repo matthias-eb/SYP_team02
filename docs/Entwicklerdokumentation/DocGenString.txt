@@ -1,0 +1,18 @@
+
+> TypeScript-Doc generieren:
+> Gehe in das Verzeichnis "src/Client" und rufe folgenden Befehl auf:
+
+typedoc --out ./docs/ src/
+
+-------------------------------------------------------------------
+
+> JavaScript-Doc generieren:
+> Gehe in das Verzeichnis "src/Server" und rufe folgenden Befehl auf:
+
+
+jsdoc src/services/authentication.js src/services/auto.js src/services/filter.js src/services/filterTypes.js src/services/rating.js src/filter/_base.js src/filter/_filterTemplate.js src/filter/abs.js src/filter/acceleration.js src/filter/airCon.js src/filter/automatic_parking.js src/filter/battery_capacity.js src/filter/battery_type.js src/filter/bluetooth.js src/filter/board_computer.js src/filter/capacity.js src/filter/codriver_airbag.js src/filter/color.js src/filter/consumption.js src/filter/cruisecontrol.js src/filter/lane_assistant.js src/filter/leasing.js src/filter/manufacturer.js src/filter/max_torque.js src/filter/modelname.js src/filter/nav.js src/filter/paneling_material.js src/filter/parkinghelp.js src/filter/plug.js src/filter/price.js src/filter/pub_year.js src/filter/reach.js src/filter/recuperation.js src/filter/seat_material.js src/filter/seat_radiator.js src/filter/seats.js src/filter/storage.js src/filter/tirepressure_sensor.js src/filter/topSpeed.js src/filter/type.js src/filter/weight_complete.js src/filter/weight_empty.js src/filter/window_lifter.js
+
+jsdoc src/services/authentication.js src/services/auto.js src/services/filter.js src/services/filterTypes.js src/services/rating.js src/filter/_base.js src/filter/_filterTemplate.js src/filter/abs.js src/filter/acceleration.js src/filter/airCon.js src/filter/automatic_parking.js src/filter/battery_capacity.js src/filter/battery_type.js src/filter/bluetooth.js src/filter/board_computer.js src/filter/capacity.js src/filter/codriver_airbag.js src/filter/color.js src/filter/consumption.js src/filter/cruisecontrol.js src/filter/lane_assistant.js src/filter/leasing.js src/filter/manufacturer.js src/filter/max_torque.js src/filter/modelname.js src/filter/nav.js src/filter/paneling_material.js src/filter/parkinghelp.js src/filter/plug.js src/filter/price.js src/filter/pub_year.js src/filter/reach.js src/filter/recuperation.js src/filter/seat_material.js src/filter/seat_radiator.js src/filter/seats.js src/filter/storage.js src/filter/tirepressure_sensor.js src/filter/topSpeed.js src/filter/type.js src/filter/weight_complete.js src/filter/weight_empty.js src/filter/window_lifter.js
+
+
+> Info: Aufgrund des langen Strings bitte immer mindesten eine Sicherung des Strings hinzu kopieren, danke.

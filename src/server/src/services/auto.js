@@ -47,12 +47,12 @@ function getBestAutos(req, res, next) {
     res.status(200).json({
       'data': autos.slice(0, req.body.limit || DEFAULT_LIMIT)
     });
-  })/*.catch(err => {
+  }).catch(err => {
     res.status(500).json({
       msg: err.message,
       error: err
     });
-  })*/;
+  });
 }
 
 

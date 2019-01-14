@@ -76,7 +76,7 @@ function getAutoRating(req, res, next) {
  *
  * @returns success msg or error.
  */
-function setAutoRating(req, res, next) {
+function setUserRating(req, res, next) {
   if (!req.body.userId || !req.body.autoId || !req.body.rating) {
     return res.status(400).json({
       msg: 'Bad data. userId and/or autoId and/or rating are/is missing'
@@ -120,5 +120,5 @@ function setAutoRating(req, res, next) {
 module.exports = {
   getUserRating: getUserRating,
   getAutoRating: getAutoRating,
-  setUserRating: setAutoRating
+  setUserRating: setUserRating
 };
