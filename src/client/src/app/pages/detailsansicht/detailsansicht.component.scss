@@ -14,7 +14,31 @@ h3 {
   font-size: 2.0em;
 }
 
+h4 {
+  color: lightslategrey;
+  font-size: 1.0em;
+}
+
+h5 {
+  color: #333333;
+  font-size: 2.0em;
+}
+
 img {
   width: 100%;
   height: 300px;
+}
+
+.star {
+  font-size: 2rem;
+  color: #b0c4de;
+}
+
+.filled {
+  color: #ffe700;
+}
+
+.mystars {
+  display: inline-block;
+  padding-left: 2em;
 }

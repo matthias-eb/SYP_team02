@@ -14,6 +14,7 @@ export class DetailsansichtComponent implements OnInit {
   private show = false;
   private buttonName: any = 'Weitere Details anzeigen';
   private auto: Object;
+  private currentRate;
 
   constructor(  private route: ActivatedRoute, private sharedService: SharedService, private titleService: Title, private autoService: AutoService) {
   }
@@ -27,6 +28,7 @@ export class DetailsansichtComponent implements OnInit {
       this.auto = res.data;
       console.log('auto', this.auto);
     });
+    this.currentRate = 0;
   }
 
   /**
