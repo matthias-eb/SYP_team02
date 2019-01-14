@@ -23,6 +23,7 @@ import { CheckboxComponent } from './pages/filterkomponenten/checkbox/checkbox.c
 import { DropdownComponent } from './pages/filterkomponenten/dropdown/dropdown.component';
 import { SchiebereglerComponent } from './pages/filterkomponenten/schieberegler/schieberegler.component';
 import { ZahleingabeComponent } from './pages/filterkomponenten/zahleingabe/zahleingabe.component';
+import { DetailsansichtComponent } from './pages/detailsansicht/detailsansicht.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { ZahleingabeComponent } from './pages/filterkomponenten/zahleingabe/zahl
     CheckboxComponent,
     DropdownComponent,
     SchiebereglerComponent,
-    ZahleingabeComponent
+    ZahleingabeComponent,
+    DetailsansichtComponent
   ],
   imports: [
     BrowserModule,
