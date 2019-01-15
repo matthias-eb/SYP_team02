@@ -17,6 +17,9 @@ h3 {
 h4 {
   color: lightslategrey;
   font-size: 1.0em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 h5 {
@@ -27,6 +30,7 @@ h5 {
 img {
   width: 100%;
   height: 300px;
+  object-fit: cover;
 }
 
 .star {
@@ -49,4 +53,16 @@ img {
   display: inline-block;
 }
 
+
+.grun {
+font-size: 10px;
+  color: #4CAF50;
+
+}
+
+.rot {
+  font-size: 10px;
+  color: darkred;
+
+}
 
