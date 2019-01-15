@@ -84,7 +84,7 @@ do
 		then
 			printf "## Changed: ##\n" | sudo tee -a /etc/httpd/conf/httpd.conf >/dev/null
 		fi
-		cat /etc/httpd/conf/httpd.conf | grep -w "#LoadModule unique_id_module" >/dev/null
+		cat /etc/httpd/conf/httpd.conf | grep -w "LoadModule unique_id_module modules/mod_unique_id.so" >/dev/null
 		if [ $? -ne 0 ]
 		then
 			sudo sed -i '/LoadModule\ unique_id_module\ modules\/mod_unique_id.so/d' /etc/httpd/conf/httpd.conf
@@ -183,19 +183,13 @@ do
 		fi
 
 		printf "Konfiguriere Php..\n"
-		cat /etc/httpd/conf/httpd.conf | grep "#LoadModule npm_event_module modules"
+		cat /etc/httpd/conf/httpd.conf | grep "LoadModule mpm_event_module modules"
 		if [ $? -ne 0 ]
 		then
-			sudo sed -i '/LoadModule\ npm_event_module\ modules\/mod_npm_event.so/d' /etc/httpd/conf/httpd.conf
-			printf "#LoadModule npm_event_module modules/mod_npm_event.so" | sudo tee -a /etc/httpd/conf/httpd.conf >/dev/null
+			sudo sed -i '/LoadModule\ mpm_event_module\ modules\/mod_mpm_event.so/d' /etc/httpd/conf/httpd.conf
+			printf "#LoadModule mpm_event_module modules/mod_mpm_event.so\n" | sudo tee -a /etc/httpd/conf/httpd.conf >/dev/null
 		fi
-		cat /etc/httpd/conf/httpd.conf | grep "#LoadModule unique_id_module modules"
-		if [ $? -ne 0 ]
-		then
-			sudo sed -i '/LoadModule\ unique_id_module\ modules\/mod_unique_id.so/d' /etc/httpd/conf/httpd.conf
-			printf "#LoadModule unique_id_module modules/mod_unique_id.so\n" | sudo tee -a /etc/httpd/conf/httpd.conf >/dev/null
-		fi
-		cat /etc/httpd/conf/httpd.conf | grep "LoadModule mpm_prefork_module"
+		cat /etc/httpd/conf/httpd.conf | grep "LoadModule mpm_prefork_module modules"
 		if [ $? -ne 0 ]
 		then
 			printf "LoadModule mpm_prefork_module modules/mod_mpm_prefork.so\n"  | sudo tee -a /etc/httpd/conf/httpd.conf >/dev/null
@@ -204,7 +198,7 @@ do
 		if [ $? -ne 0 ]
 		then
 			printf "LoadModule php7_module modules/libphp7.so\n" | sudo tee -a /etc/httpd/conf/httpd.conf >/dev/null
-			printf "AddHandler php7-script php\nInclude conf/extra/php7_module.conf\n" | sudo tee -a /etc/httpd/conf/httpd.conf >/dev/null
+			printf "AddHandler php7-script php\n" | sudo tee -a /etc/httpd/conf/httpd.conf >/dev/null
 			printf "Include conf/extra/php7_module.conf\n" | sudo tee -a /etc/httpd/conf/httpd.conf >/dev/null
 		fi
 
@@ -228,12 +222,10 @@ do
 		if [ $? -ne 0 ]
 		then
 			printf "; [Changed]\n" | sudo tee -a /etc/php/php.ini >/dev/null
-			sudo sed -i '/extension=bz2.so/d' /etc/php/php.ini
-			printf "extension=bz2.so\n" | sudo tee -a /etc/php/php.ini >/dev/null
-			sudo sed -i '/extension=mcrypt.so/d' /etc/php/php.ini
-			printf "extension=mcrypt.so\n" | sudo tee -a /etc/php/php.ini >/dev/null
-			sudo sed -i '/extension=mysqli.so/d' /etc/php/php.ini
-			printf "extension=mysqli.so\n" | sudo tee -a /etc/php/php.ini >/dev/null
+			sudo sed -i '/extension=bz2/d' /etc/php/php.ini
+			printf "extension=bz2\n" | sudo tee -a /etc/php/php.ini >/dev/null
+			sudo sed -i '/extension=mysqli/d' /etc/php/php.ini
+			printf "extension=mysqli\n" | sudo tee -a /etc/php/php.ini >/dev/null
 			printf "; \n" | sudo tee -a /etc/php/php.ini >/dev/null
 		fi
 
