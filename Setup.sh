@@ -187,7 +187,7 @@ do
 		if [ $? -ne 0 ]
 		then
 			sudo sed -i '/LoadModule\ npm_event_module\ modules\/mod_npm_event.so/d' /etc/httpd/conf/httpd.conf
-			printf "#LoadModule npm_event_module modules/mod_npm_event.so" | sudo tee -a /etc/httpd/conf/httpd.conf >/dev/null
+			printf "#LoadModule npm_event_module modules/mod_npm_event.so\n" | sudo tee -a /etc/httpd/conf/httpd.conf >/dev/null
 		fi
 		cat /etc/httpd/conf/httpd.conf | grep "#LoadModule unique_id_module modules"
 		if [ $? -ne 0 ]
@@ -228,12 +228,10 @@ do
 		if [ $? -ne 0 ]
 		then
 			printf "; [Changed]\n" | sudo tee -a /etc/php/php.ini >/dev/null
-			sudo sed -i '/extension=bz2.so/d' /etc/php/php.ini
-			printf "extension=bz2.so\n" | sudo tee -a /etc/php/php.ini >/dev/null
-			sudo sed -i '/extension=mcrypt.so/d' /etc/php/php.ini
-			printf "extension=mcrypt.so\n" | sudo tee -a /etc/php/php.ini >/dev/null
-			sudo sed -i '/extension=mysqli.so/d' /etc/php/php.ini
-			printf "extension=mysqli.so\n" | sudo tee -a /etc/php/php.ini >/dev/null
+			sudo sed -i '/extension=bz2/d' /etc/php/php.ini
+			printf "extension=bz2\n" | sudo tee -a /etc/php/php.ini >/dev/null
+			sudo sed -i '/extension=mysqli/d' /etc/php/php.ini
+			printf "extension=mysqli\n" | sudo tee -a /etc/php/php.ini >/dev/null
 			printf "; \n" | sudo tee -a /etc/php/php.ini >/dev/null
 		fi
 
