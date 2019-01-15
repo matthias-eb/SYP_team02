@@ -11,7 +11,7 @@
         </h1>
 
         <ng-container *ngIf="navtitle!='Hauptseite'">
-          <h1 class="menu-text-light ml-4 mr-4">
+          <h1 class="menu-text-light ml-4 mr-1">
             |
           </h1>
 
@@ -68,7 +68,7 @@
   <div id="collapseExample" [ngbCollapse]="isCollapsed">
     <div class="card">
 
-      <a *ngIf="navtitle!='Hauptseite'" routerLink="/" (click)="onAusloggen()">
+      <a *ngIf="navtitle!='Hauptseite'" routerLink="/">
         <hr class="hr-menu">
         <div class="card-body btn-outline-secondary btn-lg">
           Hauptseite
@@ -96,7 +96,7 @@
         </div>
       </a>
 
-      <a *ngIf="navtitle!='Erweiterte Suche'" routerLink="/erweitertesuche" (click)="onAusloggen()">
+      <a *ngIf="navtitle!='Erweiterte Suche'" routerLink="/erweitertesuche">
         <hr class="hr-menu">
         <div class="card-body btn-outline-secondary btn-lg">
           Erweiterte Suche
