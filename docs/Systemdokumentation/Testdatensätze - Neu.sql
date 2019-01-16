@@ -1,4 +1,4 @@
-INSERT INTO Hersteller (Name) VALUES ('Mercedes'),('Volkswagen'),('Tesla'),('Ford'),('Audi');
+INSERT INTO Hersteller (Name) VALUES ('Mercedes'),('Volkswagen'),('Tesla'),('Ford'),('Audi'),('Nissan'),('Renault'),('Hyundai');
 
 INSERT INTO Werkstaetten(Hersteller_HId, Name, Laengengrad, Breitengrad) 
 VALUES 
@@ -161,7 +161,7 @@ INSERT INTO
 			1,				-- Bordcomputer
 			1,				-- Navi
 			1),				-- Beifahrerairbag
-			
+
 			((SELECT HId FROM Hersteller WHERE Name='Ford'),
 			'Ford Focus Electric', -- Modellname
 			'Kombi', 	-- Typ
@@ -236,14 +236,130 @@ INSERT INTO
 			1,				-- Bluetooth
 			1,				-- Bordcomputer
 			1,				-- Navi
-			1);				-- Beifahrerairbag
+			1),				-- Beifahrerairbag
 
+
+			((SELECT HId FROM Hersteller WHERE Name='Nissan'),
+			'Nissan Leaf', -- Modellname
+			'Kombolimousine', 	-- Typ
+			'CCS Typ2',		-- Stecker
+			'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/2017_Nissan_LEAF_%28ZE0_MY17%29_hatchback_%282018-11-02%29_01.jpg/1280px-2017_Nissan_LEAF_%28ZE0_MY17%29_hatchback_%282018-11-02%29_01.jpg',
+			2010,			-- Erscheinungsjahr
+			80,			-- Leistung
+			5,				-- Sitze
+			1520,			-- Leergewicht
+			1520,			-- Gesamtgewicht
+			160,			-- Reichweite
+			254,			-- Maximales Drehmoment
+			144,			-- Hoechstgeschwindigkeit
+			355,			-- Laderaum
+			31950,			-- Kaufpreis
+			35,			-- Leasingpreis
+			7.9,			-- Beschleunigung
+			62,				-- Batteriekapazität
+			15,			-- Verbrauch
+			'Lithium-Ionen',	-- Batterieart
+			'Leder, Schaumstoff',	-- Sitzmaterial
+			'Silber',		-- Farbe
+			'Plastik, Eiche',		-- Verkleidungsmaterial
+			1,				-- Rekuperation
+			1,				-- Klimaanlage
+			1,				-- Parkhilfe
+			1,				-- Tempomat
+			0,				-- Reifendrucksensor
+			1,				-- Autoparkfunktion
+			1,				-- Sitzheizung
+			1,				-- ABS
+			1,				-- Fensterheber
+			1,				-- Spurhalter
+			0,				-- Bluetooth
+			0,				-- Bordcomputer
+			0,				-- Navi
+			1),				-- Beifahrerairbag
+
+((SELECT HId FROM Hersteller WHERE Name='Renault'),
+			'Renault Twizy', -- Modellname
+			'Quad', 	-- Typ
+			'CCS Typ2',		-- Stecker
+			'https://utopia.de/app/uploads/2017/04/elektro-quad-renault-twizy-weiss-tuere-z-180116-renault-1280x800-640x400.jpg',
+			2018,			-- Erscheinungsjahr
+			5,			-- Leistung
+			2,				-- Sitze
+			500,			-- Leergewicht
+			500,			-- Gesamtgewicht
+			80,			-- Reichweite
+			33,			-- Maximales Drehmoment
+			80,			-- Hoechstgeschwindigkeit
+			156,			-- Laderaum
+			6950,			-- Kaufpreis
+			134,			-- Leasingpreis
+			15,			-- Beschleunigung
+			6,				-- Batteriekapazität
+			7,			-- Verbrauch
+			'Lithium-Ionen',	-- Batterieart
+			'Leder, Schaumstoff',	-- Sitzmaterial
+			'Weiß',		-- Farbe
+			'Plastik, Eiche',		-- Verkleidungsmaterial
+			1,				-- Rekuperation
+			0,				-- Klimaanlage
+			0,				-- Parkhilfe
+			1,				-- Tempomat
+			0,				-- Reifendrucksensor
+			0,				-- Autoparkfunktion
+			0,				-- Sitzheizung
+			1,				-- ABS
+			1,				-- Fensterheber
+			0,				-- Spurhalter
+			0,				-- Bluetooth
+			0,				-- Bordcomputer
+			0,				-- Navi
+			0),				-- Beifahrerairbag
+
+			((SELECT HId FROM Hersteller WHERE Name='Hyundai'),
+			'Hyundai Kona Elektro', -- Modellname
+			'Mini-SUV', 	-- Typ
+			'CCS Typ2',		-- Stecker
+			'https://utopia.de/app/uploads/2018/08/hyundai-kona-elektro-exterior-z-180831-hyundai-1280x800-640x400.jpg',
+			2018,			-- Erscheinungsjahr
+			150,			-- Leistung
+			5,				-- Sitze
+			500,			-- Leergewicht
+			500,			-- Gesamtgewicht
+			449,			-- Reichweite
+			395,			-- Maximales Drehmoment
+			167,			-- Hoechstgeschwindigkeit
+			332,			-- Laderaum
+			39000,			-- Kaufpreis
+			341,			-- Leasingpreis
+			7.6,			-- Beschleunigung
+			6,				-- Batteriekapazität
+			7,			-- Verbrauch
+			'Lithium-Ionen',	-- Batterieart
+			'Leder, Schaumstoff',	-- Sitzmaterial
+			'Weiß',		-- Farbe
+			'Plastik, Eiche',		-- Verkleidungsmaterial
+			1,				-- Rekuperation
+			1,				-- Klimaanlage
+			1,				-- Parkhilfe
+			1,				-- Tempomat
+			0,				-- Reifendrucksensor
+			0,				-- Autoparkfunktion
+			0,				-- Sitzheizung
+			1,				-- ABS
+			1,				-- Fensterheber
+			1,				-- Spurhalter
+			1,				-- Bluetooth
+			1,				-- Bordcomputer
+			1,				-- Navi
+			1);				-- Beifahrerairbag
 
 INSERT INTO Benutzer(Benutzername, Email, Passwort)
 VALUES
 	('Georg', 'georg@hotmail.de', 'D6E075AD15048C12F2974D121A25C3D9FC5898072C7A4236FE5245D342A41C7D'),
 	('Gettopunk96', 'messdiener22@gmail.com', '3F16A9535055AC7E33E184FAC4B148B90C6B0233F24F5E44DAB094E474087409'),
-	('XxGruftixX', 'grufti@grufti.com', 'A66FB722C08488CD9B54349529CAB266FEF869181713C29D52EF495D6D992C57');
+	('XxGruftixX', 'grufti@grufti.com', 'A66FB722C08488CD9B54349529CAB266FEF869181713C29D52EF495D6D992C57'),
+	('Griffith', 'griffith@gmx.com', 'E22633B9C529B6E08FC41592F9E4E6B30B7A7EDB47DEE17E936C44757C3F5A71'),
+	('Pascal', 'pascal_reichert@gmail.com', '826ECAD4AE11C8196AB3432CCBB22400691C248131B97FA4FE6F02DCF20F6049');
 
 INSERT INTO Filter(FId, Name, Typ, Daten, Gewichtung, Sichtbar)
 VALUES
@@ -287,10 +403,21 @@ VALUES
 
 INSERT INTO Bewertungen(Benutzer_BId, Elektroautos_EId, Bewertung)
 VALUES
-	((SELECT BId FROM Benutzer WHERE Benutzername='Gettopunk96'), (SELECT EId FROM Elektroautos WHERE Modellname='Mercedes EQC'), 8),
-	((SELECT BId FROM Benutzer WHERE Benutzername='Georg'), (SELECT EId FROM Elektroautos WHERE Modellname='Mercedes EQC'), 6),
-	((SELECT BId FROM Benutzer WHERE Benutzername='Gettopunk96'), (SELECT EId FROM Elektroautos WHERE Modellname='e-Golf'), 7),
-	((SELECT BId FROM Benutzer WHERE Benutzername='Georg'), (SELECT EId FROM Elektroautos WHERE ModellName='e-Golf'), 10);
+	((SELECT BId FROM Benutzer WHERE Benutzername='Gettopunk96'), (SELECT EId FROM Elektroautos WHERE Modellname='Mercedes EQC'), 4),
+	((SELECT BId FROM Benutzer WHERE Benutzername='Georg'), (SELECT EId FROM Elektroautos WHERE Modellname='Mercedes EQC'), 3),
+	((SELECT BId FROM Benutzer WHERE Benutzername='Gettopunk96'), (SELECT EId FROM Elektroautos WHERE Modellname='e-Golf'), 4),
+	((SELECT BId FROM Benutzer WHERE Benutzername='Georg'), (SELECT EId FROM Elektroautos WHERE ModellName='e-Golf'), 5),
+	((SELECT BId FROM Benutzer WHERE Benutzername='XxGruftixX'), (SELECT EId FROM Elektroautos WHERE ModellName='e-Golf'), 3),
+	((SELECT BId FROM Benutzer WHERE Benutzername='XxGruftixX'), (SELECT EId FROM Elektroautos WHERE ModellName='Ford Focus Electric'), 5),
+	((SELECT BId FROM Benutzer WHERE Benutzername='Pascal'), (SELECT EId FROM Elektroautos WHERE ModellName='Ford Focus Electric'), 3),
+	((SELECT BId FROM Benutzer WHERE Benutzername='Pascal'), (SELECT EId FROM Elektroautos WHERE ModellName='e-Golf'), 4),
+	((SELECT BId FROM Benutzer WHERE Benutzername='Pascal'), (SELECT EId FROM Elektroautos WHERE ModellName='Mercedes EQC'), 5),
+	((SELECT BId FROM Benutzer WHERE Benutzername='Griffith'), (SELECT EId FROM Elektroautos WHERE ModellName='Ford Focus Electric'), 5),
+	((SELECT BId FROM Benutzer WHERE Benutzername='Griffith'), (SELECT EId FROM Elektroautos WHERE ModellName='e-Golf'), 5),
+	((SELECT BId FROM Benutzer WHERE Benutzername='Griffith'), (SELECT EId FROM Elektroautos WHERE ModellName='Mercedes EQC'), 5),
+	((SELECT BId FROM Benutzer WHERE Benutzername='Pascal'), (SELECT EId FROM Elektroautos WHERE ModellName='Nissan Leaf'), 5),
+	((SELECT BId FROM Benutzer WHERE Benutzername='Griffith'), (SELECT EId FROM Elektroautos WHERE ModellName='Nissan Leaf'), 5),
+	((SELECT BId FROM Benutzer WHERE Benutzername='XxGruftixX'), (SELECT EId FROM Elektroautos WHERE ModellName='Nissan Leaf'), 2);
 
 INSERT INTO Ladestationen(Netzwerk, Bezeichnung, Betreiber, Postleitzahl, Stadt, Strasse, Stecker) VALUES
 ('RheinEnergie AG', 'TankE Köln', 'TankE - RheinEnergie Kundenparkplatz', 50823, 'Köln', 'Parkgürtel 24', 'CCS Typ2'),
