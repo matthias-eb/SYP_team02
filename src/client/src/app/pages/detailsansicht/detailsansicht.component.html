@@ -66,16 +66,16 @@
     <div class="row">
 
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <h4>Modell:</h4>
-        <h4>Beschleunigung:</h4>
-        <h4>Farbe:</h4>
-        <h4>Gesamtgewicht in kg:</h4>
-        <h4>Höchstgeschwindigkeit:</h4>
-        <h4>Laderaum in Litern:</h4>
-        <h4>Leasingpreis:</h4>
-        <h4>Leergewicht in kg:</h4>
-        <h4>max Drehmoment in Nm:</h4>
-        <h4>Verbrauch:</h4>
+        <h4 class="abbr">Modell:</h4>
+        <h4 class="abbr">Beschleunigung:</h4>
+        <h4 class="abbr">Farbe:</h4>
+        <h4 class="abbr">Gesamtgewicht:</h4>
+        <h4 class="abbr">Höchstgeschwindigkeit:</h4>
+        <h4 class="abbr">Laderaum in Litern:</h4>
+        <h4 class="abbr">Leasingpreis:</h4>
+        <h4 class="abbr">Leergewicht:</h4>
+        <h4 class="abbr">max Drehmoment:</h4>
+        <h4 class="abbr">Verbrauch:</h4>
 
       </div>
 
@@ -83,12 +83,12 @@
         <h4>{{a.modelname}}</h4>
         <h4>{{a.acceleration}} s</h4>
         <h4>{{a.color}}</h4>
-        <h4>{{a.weight_complete}}</h4>
+        <h4>{{a.weight_complete}} kg</h4>
         <h4>{{a.topSpeed}} km/h</h4>
-        <h4>{{a.storage}}</h4>
+        <h4>{{a.storage}} l</h4>
         <h4>{{a.leasing}} €</h4>
-        <h4>{{a.weight_empty}}</h4>
-        <h4>{{a.max_torque}}</h4>
+        <h4>{{a.weight_empty}} kg</h4>
+        <h4>{{a.max_torque}} Nm</h4>
         <h4>{{a.consumption}} kWh</h4>
 
       </div>
@@ -114,12 +114,59 @@
 
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
         <h4>{{a.battery_type}}</h4>
-        <h4>{{a.battery_capacity}}</h4>
-        <h4>{{a.window_lifter}}</h4>
-        <h4>{{a.airCon}}</h4>
-        <h4>{{a.parkinghelp}}</h4>
-        <h4>{{a.tirepressure_sensor}}</h4>
-        <h4>{{a.recuperation}}</h4>
+        <h4>{{a.battery_capacity}} Ah</h4>
+
+
+        <h4 *ngIf="a.window_lifter; else elseBlock">
+          <i class="material-icons md-24 grun">check</i>
+        </h4>
+
+        <ng-template #elseBlock>
+          <h4>
+            <i class="material-icons md-24 rot">close</i>
+          </h4>
+        </ng-template>
+
+        <h4 *ngIf="a.airCon; else elseBlock">
+          <i class="material-icons md-24 grun">check</i>
+        </h4>
+
+        <ng-template #elseBlock>
+          <h4>
+            <i class="material-icons md-24 rot">close</i>
+          </h4>
+        </ng-template>
+
+        <h4 *ngIf="a.parkinghelp; else elseBlock">
+          <i class="material-icons md-24 grun">check</i>
+        </h4>
+
+        <ng-template #elseBlock>
+          <h4>
+            <i class="material-icons md-24 rot">close</i>
+          </h4>
+        </ng-template>
+
+        <h4 *ngIf="a.tirepressure_sensor; else elseBlock">
+          <i class="material-icons md-24 grun">check</i>
+        </h4>
+
+        <ng-template #elseBlock>
+          <h4>
+            <i class="material-icons md-24 rot">close</i>
+          </h4>
+        </ng-template>
+
+        <h4 *ngIf="a.recuperation; else elseBlock">
+          <i class="material-icons md-24 grun">check</i>
+        </h4>
+
+        <ng-template #elseBlock>
+          <h4>
+            <i class="material-icons md-25 rot">close</i>
+          </h4>
+        </ng-template>
+
         <h4>{{a.plug}}</h4>
 
       </div>
@@ -141,7 +188,19 @@
 
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
         <h4>{{a.seats}}</h4>
-        <h4>{{a.seat_radiator}}</h4>
+
+
+        <h4 *ngIf="a.seat_radiator; else elseBlock">
+          <i class="material-icons md-24 grun">check</i>
+        </h4>
+
+        <ng-template #elseBlock>
+          <h4>
+            <i class="material-icons md-24 rot">close</i>
+          </h4>
+        </ng-template>
+
+
         <h4>{{a.seat_material}}</h4>
         <h4>{{a.paneling_material}}</h4>
       </div>
@@ -160,9 +219,38 @@
       </div>
 
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <h4>{{a.bluetooth}}</h4>
-        <h4>{{a.board_computer}}</h4>
-        <h4>{{a.nav}}</h4>
+
+        <h4 *ngIf="a.bluetooth; else elseBlock">
+          <i class="material-icons md-24 grun">check</i>
+        </h4>
+
+        <ng-template #elseBlock>
+          <h4>
+            <i class="material-icons md-24 rot">close</i>
+          </h4>
+        </ng-template>
+
+        <h4 *ngIf="a.board_computer; else elseBlock">
+          <i class="material-icons md-24 grun">check</i>
+        </h4>
+
+        <ng-template #elseBlock>
+          <h4>
+            <i class="material-icons md-24 rot">close</i>
+          </h4>
+        </ng-template>
+
+
+        <h4 *ngIf="a.nav; else elseBlock">
+          <i class="material-icons md-24 grun">check</i>
+        </h4>
+
+        <ng-template #elseBlock>
+          <h4>
+            <i class="material-icons md-24 rot">close</i>
+          </h4>
+        </ng-template>
+
 
       </div>
     </div>
@@ -180,9 +268,38 @@
       </div>
 
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <h4>{{a.automatic_parking}}</h4>
-        <h4>{{a.lane_assistant}}</h4>
-        <h4>{{a.cruisecontrol}}</h4>
+
+        <h4 *ngIf="a.automatic_parking; else elseBlock">
+          <i class="material-icons md-24 grun">check</i>
+        </h4>
+
+        <ng-template #elseBlock>
+          <h4>
+            <i class="material-icons md-24 rot">close</i>
+          </h4>
+        </ng-template>
+
+        <h4 *ngIf="a.lane_assistant; else elseBlock">
+          <i class="material-icons md-24 grun">check</i>
+        </h4>
+
+        <ng-template #elseBlock>
+          <h4>
+            <i class="material-icons md-24 rot">close</i>
+          </h4>
+        </ng-template>
+
+        <h4 *ngIf="a.cruisecontrol; else elseBlock">
+          <i class="material-icons md-24 grun">check</i>
+        </h4>
+
+        <ng-template #elseBlock>
+          <h4>
+            <i class="material-icons md-24 rot">close</i>
+          </h4>
+        </ng-template>
+
+
       </div>
     </div>
 
@@ -200,8 +317,29 @@
 
 
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <h4>{{a.abs}}</h4>
-        <h4>{{a.codriver_airbag}}</h4>
+
+        <h4 *ngIf="a.abs; else elseBlock">
+          <i class="material-icons md-24 grun">check</i>
+        </h4>
+
+        <ng-template #elseBlock>
+          <h4>
+            <i class="material-icons md-24 rot">close</i>
+          </h4>
+        </ng-template>
+
+
+        <h4 *ngIf="a.codriver_airbag; else elseBlock">
+          <i class="material-icons md-24 grun">check</i>
+        </h4>
+
+        <ng-template #elseBlock>
+          <h4>
+            <i class="material-icons md-24 rot">close</i>
+          </h4>
+        </ng-template>
+
+
       </div>
     </div>
 
