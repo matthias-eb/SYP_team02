@@ -1,4 +1,4 @@
-INSERT INTO Hersteller (Name) VALUES ('Mercedes'),('Volkswagen'),('Tesla'),('Ford'),('Audi'),('Nissan'),('Renault'),('Hyundai');
+INSERT INTO Hersteller (Name) VALUES ('Mercedes'),('Volkswagen'),('Tesla'),('Ford'),('Audi'),('Nissan'),('Renault'),('Hyundai'),('BMW'),('Citroen'), ('Opel'), ('Chevrolet');
 
 INSERT INTO Werkstaetten(Hersteller_HId, Name, Laengengrad, Breitengrad) 
 VALUES 
@@ -87,8 +87,9 @@ INSERT INTO
 			1,				-- Bordcomputer
 			1,				-- Navi
 			1),				-- Beifahrerairbag
+
 		((SELECT HId FROM Hersteller WHERE Name='Volkswagen'),
-			'e-Golf',
+			'VW e-Golf',
 			'Golf',
 			'CCS Typ2',
 			'https://www.volkswagen.de/content/dam/vw-ngw/international-mastersite/showrooms/e-golf-2016/content/highlights/efficiency/GL4811_e-inmotion.jpg/_jcr_content/renditions/original.transform/med/img.jpg',
@@ -124,6 +125,7 @@ INSERT INTO
 			1,
 			1,
 			1),
+
 			((SELECT HId FROM Hersteller WHERE Name='Tesla'),
 			'Tesla Model S P90D', -- Modellname
 			'Limousine', 	-- Typ
@@ -214,8 +216,8 @@ INSERT INTO
 			967,			-- Maximales Drehmoment
 			250,			-- Hoechstgeschwindigkeit
 			600,			-- Laderaum
-			0,			-- Kaufpreis
-			0,			-- Leasingpreis
+			70000,			-- Kaufpreis
+			600,			-- Leasingpreis
 			3.9,			-- Beschleunigung
 			90,				-- Batteriekapazität
 			22.3,			-- Verbrauch
@@ -350,6 +352,424 @@ INSERT INTO
 			1,				-- Spurhalter
 			1,				-- Bluetooth
 			1,				-- Bordcomputer
+			1,				-- Navi
+			1),				-- Beifahrerairbag
+
+			((SELECT HId FROM Hersteller WHERE Name='BMW'),
+			'BMW i3', -- Modellname
+			'Mini-SUV', 	-- Typ
+			'CCS Typ2',		-- Stecker
+			'https://utopia.de/app/uploads/2017/04/elektroauto-bmw-i3s-z-180117-bmw-1280x800-640x400.jpg',
+			2018,			-- Erscheinungsjahr
+			150,			-- Leistung
+			5,				-- Sitze
+			800,			-- Leergewicht
+			800,			-- Gesamtgewicht
+			290,			-- Reichweite
+			395,			-- Maximales Drehmoment
+			150,			-- Hoechstgeschwindigkeit
+			332,			-- Laderaum
+			37550,			-- Kaufpreis
+			341,			-- Leasingpreis
+			5,			-- Beschleunigung
+			94,				-- Batteriekapazität
+			9,			-- Verbrauch
+			'Lithium-Ionen',	-- Batterieart
+			'Malvenfasern',	-- Sitzmaterial
+			'Weiß',		-- Farbe
+			'Plastik, Eiche',		-- Verkleidungsmaterial
+			1,				-- Rekuperation
+			1,				-- Klimaanlage
+			1,				-- Parkhilfe
+			1,				-- Tempomat
+			0,				-- Reifendrucksensor
+			0,				-- Autoparkfunktion
+			0,				-- Sitzheizung
+			1,				-- ABS
+			1,				-- Fensterheber
+			1,				-- Spurhalter
+			1,				-- Bluetooth
+			1,				-- Bordcomputer
+			1,				-- Navi
+			1),				-- Beifahrerairbag
+			
+			((SELECT HId FROM Hersteller WHERE Name='BMW'),
+			'BMW i3s', -- Modellname
+			'Mini-SUV', 	-- Typ
+			'CCS Typ2',		-- Stecker
+			'https://utopia.de/app/uploads/2017/04/elektroauto-bmw-i3s-z-180117-bmw-1280x800-640x400.jpg',
+			2018,			-- Erscheinungsjahr
+			150,			-- Leistung
+			5,				-- Sitze
+			800,			-- Leergewicht
+			800,			-- Gesamtgewicht
+			280,			-- Reichweite
+			395,			-- Maximales Drehmoment
+			160,			-- Hoechstgeschwindigkeit
+			332,			-- Laderaum
+			37550,			-- Kaufpreis
+			341,			-- Leasingpreis
+			5,			-- Beschleunigung
+			94,				-- Batteriekapazität
+			9,			-- Verbrauch
+			'Lithium-Ionen',	-- Batterieart
+			'Polyester',	-- Sitzmaterial
+			'Weiß',		-- Farbe
+			'Malvenfasern',		-- Verkleidungsmaterial
+			1,				-- Rekuperation
+			1,				-- Klimaanlage
+			1,				-- Parkhilfe
+			1,				-- Tempomat
+			0,				-- Reifendrucksensor
+			0,				-- Autoparkfunktion
+			0,				-- Sitzheizung
+			1,				-- ABS
+			1,				-- Fensterheber
+			1,				-- Spurhalter
+			1,				-- Bluetooth
+			1,				-- Bordcomputer
+			1,				-- Navi
+			1),				-- Beifahrerairbag
+
+			((SELECT HId FROM Hersteller WHERE Name='Citroen'),
+			'Citroen C-Zero', -- Modellname
+			'Mini-SUV', 	-- Typ
+			'Schuko',		-- Stecker
+			'https://utopia.de/app/uploads/2017/04/elektroauto-citroen-c-zero-z-180117-citroen2-1280x800-640x400.jpg',
+			2009,			-- Erscheinungsjahr
+			150,			-- Leistung
+			5,				-- Sitze
+			450,			-- Leergewicht
+			450,			-- Gesamtgewicht
+			100,			-- Reichweite
+			395,			-- Maximales Drehmoment
+			150,			-- Hoechstgeschwindigkeit
+			332,			-- Laderaum
+			20000,			-- Kaufpreis
+			341,			-- Leasingpreis
+			5,			-- Beschleunigung
+			94,				-- Batteriekapazität
+			6,			-- Verbrauch
+			'Lithium-Ionen',	-- Batterieart
+			'Polyester',	-- Sitzmaterial
+			'Silber',		-- Farbe
+			'Plastik',		-- Verkleidungsmaterial
+			1,				-- Rekuperation
+			1,				-- Klimaanlage
+			1,				-- Parkhilfe
+			1,				-- Tempomat
+			0,				-- Reifendrucksensor
+			0,				-- Autoparkfunktion
+			0,				-- Sitzheizung
+			1,				-- ABS
+			1,				-- Fensterheber
+			1,				-- Spurhalter
+			1,				-- Bluetooth
+			1,				-- Bordcomputer
+			1,				-- Navi
+			1),				-- Beifahrerairbag
+
+			((SELECT HId FROM Hersteller WHERE Name='Mercedes'),
+			'Mercedes Benz B-Klasse Electric Drive', -- Modellname
+			'Kombi', 	-- Typ
+			'CCS Typ2',		-- Stecker
+			'https://utopia.de/app/uploads/2017/04/elektroauto-mercedes-b-klasse-electric-drive-w242-zirruswei%C3%9F-z-180118-mercedes-benz-1280x600-640x400.jpg',
+			2018,			-- Erscheinungsjahr
+			132,			-- Leistung
+			4,				-- Sitze
+			600,			-- Leergewicht
+			660,			-- Gesamtgewicht
+			200,			-- Reichweite
+			350,			-- Maximales Drehmoment
+			160,			-- Hoechstgeschwindigkeit
+			260,			-- Laderaum
+			40000,			-- Kaufpreis
+			360,			-- Leasingpreis
+			4,			-- Beschleunigung
+			94,				-- Batteriekapazität
+			18,			-- Verbrauch
+			'Lithium-Ionen',	-- Batterieart
+			'Polyester',	-- Sitzmaterial
+			'Weiß',		-- Farbe
+			'Plastik',		-- Verkleidungsmaterial
+			1,				-- Rekuperation
+			1,				-- Klimaanlage
+			1,				-- Parkhilfe
+			1,				-- Tempomat
+			0,				-- Reifendrucksensor
+			0,				-- Autoparkfunktion
+			1,				-- Sitzheizung
+			1,				-- ABS
+			1,				-- Fensterheber
+			0,				-- Spurhalter
+			1,				-- Bluetooth
+			0,				-- Bordcomputer
+			1,				-- Navi
+			1),				-- Beifahrerairbag
+
+			((SELECT HId FROM Hersteller WHERE Name='Opel'),
+			'Opel Ampera-E', -- Modellname
+			'Kombi', 	-- Typ
+			'CCS Typ2',		-- Stecker
+			'https://utopia.de/app/uploads/2017/03/Opel_Ampera-e_vorne_p_Opel_170307_1280x800-1024x641.jpg',
+			2017,			-- Erscheinungsjahr
+			204,			-- Leistung
+			5,				-- Sitze
+			600,			-- Leergewicht
+			660,			-- Gesamtgewicht
+			520,			-- Reichweite
+			350,			-- Maximales Drehmoment
+			150,			-- Hoechstgeschwindigkeit
+			260,			-- Laderaum
+			43000,			-- Kaufpreis
+			360,			-- Leasingpreis
+			7.3,			-- Beschleunigung
+			60,				-- Batteriekapazität
+			8,			-- Verbrauch
+			'Lithium-Ionen',	-- Batterieart
+			'Polyester',	-- Sitzmaterial
+			'Gelb',		-- Farbe
+			'Plastik',		-- Verkleidungsmaterial
+			1,				-- Rekuperation
+			1,				-- Klimaanlage
+			1,				-- Parkhilfe
+			1,				-- Tempomat
+			1,				-- Reifendrucksensor
+			1,				-- Autoparkfunktion
+			1,				-- Sitzheizung
+			1,				-- ABS
+			1,				-- Fensterheber
+			1,				-- Spurhalter
+			1,				-- Bluetooth
+			1,				-- Bordcomputer
+			1,				-- Navi
+			1),				-- Beifahrerairbag
+
+			((SELECT HId FROM Hersteller WHERE Name='Renault'),
+			'Renault Zoe', -- Modellname
+			'Kleinwagen', 	-- Typ
+			'CCS Typ2',		-- Stecker
+			'https://utopia.de/app/uploads/2017/02/renault-zoe-im-test-teaser-u-christoph-schwarzer-170220-1280x600-1024x480.jpg',
+			2017,			-- Erscheinungsjahr
+			204,			-- Leistung
+			5,				-- Sitze
+			600,			-- Leergewicht
+			660,			-- Gesamtgewicht
+			400,			-- Reichweite
+			350,			-- Maximales Drehmoment
+			135,			-- Hoechstgeschwindigkeit
+			260,			-- Laderaum
+			22200,			-- Kaufpreis
+			100,			-- Leasingpreis
+			7.3,			-- Beschleunigung
+			65,				-- Batteriekapazität
+			8,			-- Verbrauch
+			'Lithium-Ionen',	-- Batterieart
+			'Polyester',	-- Sitzmaterial
+			'Weiß',		-- Farbe
+			'Plastik',		-- Verkleidungsmaterial
+			1,				-- Rekuperation
+			1,				-- Klimaanlage
+			1,				-- Parkhilfe
+			1,				-- Tempomat
+			1,				-- Reifendrucksensor
+			1,				-- Autoparkfunktion
+			1,				-- Sitzheizung
+			1,				-- ABS
+			1,				-- Fensterheber
+			0,				-- Spurhalter
+			1,				-- Bluetooth
+			1,				-- Bordcomputer
+			1,				-- Navi
+			1),				-- Beifahrerairbag
+
+			((SELECT HId FROM Hersteller WHERE Name='Volkswagen'),
+			'VW e-Up', -- Modellname
+			'Kleinwagen', 	-- Typ
+			'Schuko, CCS Typ2',		-- Stecker
+			'https://blob.freent.de/image/5134462/1200x684/1200/684/b0/36287d9a20a440ef9ae32d2f9dc9973f/Uu/vw-e-up.jpg',
+			2017,			-- Erscheinungsjahr
+			60,			-- Leistung
+			5,				-- Sitze
+			1160,			-- Leergewicht
+			1160,			-- Gesamtgewicht
+			160,			-- Reichweite
+			210,			-- Maximales Drehmoment
+			130,			-- Hoechstgeschwindigkeit
+			241,			-- Laderaum
+			26900,			-- Kaufpreis
+			300,			-- Leasingpreis
+			14,			-- Beschleunigung
+			19,				-- Batteriekapazität
+			12,			-- Verbrauch
+			'Lithium-Ionen',	-- Batterieart
+			'Polyester',	-- Sitzmaterial
+			'Weiß',		-- Farbe
+			'Plastik',		-- Verkleidungsmaterial
+			1,				-- Rekuperation
+			1,				-- Klimaanlage
+			1,				-- Parkhilfe
+			1,				-- Tempomat
+			1,				-- Reifendrucksensor
+			0,				-- Autoparkfunktion
+			1,				-- Sitzheizung
+			1,				-- ABS
+			1,				-- Fensterheber
+			0,				-- Spurhalter
+			1,				-- Bluetooth
+			0,				-- Bordcomputer
+			1,				-- Navi
+			1),				-- Beifahrerairbag
+
+			((SELECT HId FROM Hersteller WHERE Name='Chevrolet'),
+			'Chevrolet Bolt', -- Modellname
+			'Kleinwagen', 	-- Typ
+			'Schuko, CCS Typ2',		-- Stecker
+			'https://ecomento.de/wp-content/uploads/2016/01/Chevrolet-Opel-Bolt-Elektroauto20-740x425.jpg',
+			2017,			-- Erscheinungsjahr
+			150,			-- Leistung
+			5,				-- Sitze
+			1200,			-- Leergewicht
+			1200,			-- Gesamtgewicht
+			320,			-- Reichweite
+			200,			-- Maximales Drehmoment
+			145,			-- Hoechstgeschwindigkeit
+			241,			-- Laderaum
+			35000,			-- Kaufpreis
+			350,			-- Leasingpreis
+			7,			-- Beschleunigung
+			60,				-- Batteriekapazität
+			12,			-- Verbrauch
+			'Lithium-Ionen',	-- Batterieart
+			'Polyester',	-- Sitzmaterial
+			'Silbergrau',		-- Farbe
+			'Plastik',		-- Verkleidungsmaterial
+			1,				-- Rekuperation
+			1,				-- Klimaanlage
+			1,				-- Parkhilfe
+			1,				-- Tempomat
+			1,				-- Reifendrucksensor
+			0,				-- Autoparkfunktion
+			1,				-- Sitzheizung
+			1,				-- ABS
+			1,				-- Fensterheber
+			0,				-- Spurhalter
+			1,				-- Bluetooth
+			0,				-- Bordcomputer
+			1,				-- Navi
+			1),				-- Beifahrerairbag
+
+			((SELECT HId FROM Hersteller WHERE Name='Mercedes'),
+			'Mercedes Benz B250 e', -- Modellname
+			'Kleinwagen', 	-- Typ
+			'Schuko, CCS Typ2',		-- Stecker
+			'https://www.stadt-wien.at/typo3temp/pics/xMercedes-b250e_c1e2f2fc1c.jpg.pagespeed.ic.hkwmhH7YvY.jpg',
+			2016,			-- Erscheinungsjahr
+			123,			-- Leistung
+			5,				-- Sitze
+			1725,			-- Leergewicht
+			2170,			-- Gesamtgewicht
+			200,			-- Reichweite
+			340,			-- Maximales Drehmoment
+			160,			-- Hoechstgeschwindigkeit
+			501,			-- Laderaum
+			39800,			-- Kaufpreis
+			400,			-- Leasingpreis
+			7.9,			-- Beschleunigung
+			28,				-- Batteriekapazität
+			16.6,			-- Verbrauch
+			'Lithium-Ionen',	-- Batterieart
+			'Polyester',	-- Sitzmaterial
+			'Blau',		-- Farbe
+			'Plastik',		-- Verkleidungsmaterial
+			1,				-- Rekuperation
+			1,				-- Klimaanlage
+			1,				-- Parkhilfe
+			1,				-- Tempomat
+			1,				-- Reifendrucksensor
+			0,				-- Autoparkfunktion
+			1,				-- Sitzheizung
+			1,				-- ABS
+			1,				-- Fensterheber
+			0,				-- Spurhalter
+			1,				-- Bluetooth
+			0,				-- Bordcomputer
+			1,				-- Navi
+			1),				-- Beifahrerairbag
+
+			((SELECT HId FROM Hersteller WHERE Name='Nissan'),
+			'Nissan E-NV 200', -- Modellname
+			'Transporter', 	-- Typ
+			'Schuko, CCS Typ2',		-- Stecker
+			'https://www.meinauto.de/pics/wpimages/2018/12/nissan-e-nv200-aussen-seite-300x200.jpg',
+			2016,			-- Erscheinungsjahr
+			80,			-- Leistung
+			5,				-- Sitze
+			1725,			-- Leergewicht
+			2170,			-- Gesamtgewicht
+			260,			-- Reichweite
+			254,			-- Maximales Drehmoment
+			160,			-- Hoechstgeschwindigkeit
+			501,			-- Laderaum
+			34100,			-- Kaufpreis
+			400,			-- Leasingpreis
+			12,			-- Beschleunigung
+			28,				-- Batteriekapazität
+			25.9,			-- Verbrauch
+			'Lithium-Ionen',	-- Batterieart
+			'Polyester',	-- Sitzmaterial
+			'Weiß',		-- Farbe
+			'Plastik',		-- Verkleidungsmaterial
+			1,				-- Rekuperation
+			1,				-- Klimaanlage
+			1,				-- Parkhilfe
+			1,				-- Tempomat
+			1,				-- Reifendrucksensor
+			0,				-- Autoparkfunktion
+			1,				-- Sitzheizung
+			1,				-- ABS
+			1,				-- Fensterheber
+			0,				-- Spurhalter
+			1,				-- Bluetooth
+			0,				-- Bordcomputer
+			1,				-- Navi
+			1),				-- Beifahrerairbag
+
+			((SELECT HId FROM Hersteller WHERE Name='Hyundai'),
+			'Hyundai Ioniq Elektro', -- Modellname
+			'Limousine', 	-- Typ
+			'CCS Typ2',		-- Stecker
+			'https://utopia.de/app/uploads/2017/04/elektroauto-hyundai-ioniq-electric-2017-z-180118-hyundai-1280x800-640x400.jpg',
+			2016,			-- Erscheinungsjahr
+			88,			-- Leistung
+			5,				-- Sitze
+			1014,			-- Leergewicht
+			1100,			-- Gesamtgewicht
+			280,			-- Reichweite
+			400,			-- Maximales Drehmoment
+			165,			-- Hoechstgeschwindigkeit
+			443,			-- Laderaum
+			33300,			-- Kaufpreis
+			250,			-- Leasingpreis
+			6,			-- Beschleunigung
+			28,				-- Batteriekapazität
+			8,			-- Verbrauch
+			'Lithium-Ionen',	-- Batterieart
+			'Leder, Schaumstoff',	-- Sitzmaterial
+			'Weiß',		-- Farbe
+			'Plastik, Eiche',		-- Verkleidungsmaterial
+			1,				-- Rekuperation
+			1,				-- Klimaanlage
+			1,				-- Parkhilfe
+			1,				-- Tempomat
+			1,				-- Reifendrucksensor
+			0,				-- Autoparkfunktion
+			1,				-- Sitzheizung
+			1,				-- ABS
+			1,				-- Fensterheber
+			1,				-- Spurhalter
+			1,				-- Bluetooth
+			0,				-- Bordcomputer
 			1,				-- Navi
 			1);				-- Beifahrerairbag
 
