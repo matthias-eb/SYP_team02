@@ -1,4 +1,4 @@
-INSERT INTO Hersteller (Name) VALUES ('Mercedes'),('Volkswagen'),('Tesla'),('Ford'),('Audi'),('Nissan');
+INSERT INTO Hersteller (Name) VALUES ('Mercedes'),('Volkswagen'),('Tesla'),('Ford'),('Audi'),('Nissan'),('Renault'),('Hyundai');
 
 INSERT INTO Werkstaetten(Hersteller_HId, Name, Laengengrad, Breitengrad)
 VALUES
@@ -236,7 +236,7 @@ INSERT INTO
 			1,				-- Bluetooth
 			1,				-- Bordcomputer
 			1,				-- Navi
-			1);				-- Beifahrerairbag
+			1),				-- Beifahrerairbag
 
 
 			((SELECT HId FROM Hersteller WHERE Name='Nissan'),
@@ -275,30 +275,148 @@ INSERT INTO
 			0,				-- Bluetooth
 			0,				-- Bordcomputer
 			0,				-- Navi
+			1),				-- Beifahrerairbag
+
+((SELECT HId FROM Hersteller WHERE Name='Renault'),
+			'Renault Twizy', -- Modellname
+			'Quad', 	-- Typ
+			'CCS Typ2',		-- Stecker
+			'https://utopia.de/app/uploads/2017/04/elektro-quad-renault-twizy-weiss-tuere-z-180116-renault-1280x800-640x400.jpg',
+			2018,			-- Erscheinungsjahr
+			5,			-- Leistung
+			2,				-- Sitze
+			500,			-- Leergewicht
+			500,			-- Gesamtgewicht
+			80,			-- Reichweite
+			33,			-- Maximales Drehmoment
+			80,			-- Hoechstgeschwindigkeit
+			156,			-- Laderaum
+			6950,			-- Kaufpreis
+			134,			-- Leasingpreis
+			15,			-- Beschleunigung
+			6,				-- Batteriekapazität
+			7,			-- Verbrauch
+			'Lithium-Ionen',	-- Batterieart
+			'Leder, Schaumstoff',	-- Sitzmaterial
+			'Weiß',		-- Farbe
+			'Plastik, Eiche',		-- Verkleidungsmaterial
+			1,				-- Rekuperation
+			0,				-- Klimaanlage
+			0,				-- Parkhilfe
+			1,				-- Tempomat
+			0,				-- Reifendrucksensor
+			0,				-- Autoparkfunktion
+			0,				-- Sitzheizung
+			1,				-- ABS
+			1,				-- Fensterheber
+			0,				-- Spurhalter
+			0,				-- Bluetooth
+			0,				-- Bordcomputer
+			0,				-- Navi
+			0),				-- Beifahrerairbag
+
+			((SELECT HId FROM Hersteller WHERE Name='Hyundai'),
+			'Hyundai Kona Elektro', -- Modellname
+			'Mini-SUV', 	-- Typ
+			'CCS Typ2',		-- Stecker
+			'https://utopia.de/app/uploads/2018/08/hyundai-kona-elektro-exterior-z-180831-hyundai-1280x800-640x400.jpg',
+			2018,			-- Erscheinungsjahr
+			150,			-- Leistung
+			5,				-- Sitze
+			500,			-- Leergewicht
+			500,			-- Gesamtgewicht
+			449,			-- Reichweite
+			395,			-- Maximales Drehmoment
+			167,			-- Hoechstgeschwindigkeit
+			332,			-- Laderaum
+			39000,			-- Kaufpreis
+			341,			-- Leasingpreis
+			7.6,			-- Beschleunigung
+			6,				-- Batteriekapazität
+			7,			-- Verbrauch
+			'Lithium-Ionen',	-- Batterieart
+			'Leder, Schaumstoff',	-- Sitzmaterial
+			'Weiß',		-- Farbe
+			'Plastik, Eiche',		-- Verkleidungsmaterial
+			1,				-- Rekuperation
+			1,				-- Klimaanlage
+			1,				-- Parkhilfe
+			1,				-- Tempomat
+			0,				-- Reifendrucksensor
+			0,				-- Autoparkfunktion
+			0,				-- Sitzheizung
+			1,				-- ABS
+			1,				-- Fensterheber
+			1,				-- Spurhalter
+			1,				-- Bluetooth
+			1,				-- Bordcomputer
+			1,				-- Navi
 			1);				-- Beifahrerairbag
 
 INSERT INTO Benutzer(Benutzername, Email, Passwort)
 VALUES
 	('Georg', 'georg@hotmail.de', 'D6E075AD15048C12F2974D121A25C3D9FC5898072C7A4236FE5245D342A41C7D'),
 	('Gettopunk96', 'messdiener22@gmail.com', '3F16A9535055AC7E33E184FAC4B148B90C6B0233F24F5E44DAB094E474087409'),
-	('XxGruftixX', 'grufti@grufti.com', 'A66FB722C08488CD9B54349529CAB266FEF869181713C29D52EF495D6D992C57');
+	('XxGruftixX', 'grufti@grufti.com', 'A66FB722C08488CD9B54349529CAB266FEF869181713C29D52EF495D6D992C57'),
+	('Griffith', 'griffith@gmx.com', 'E22633B9C529B6E08FC41592F9E4E6B30B7A7EDB47DEE17E936C44757C3F5A71'),
+	('Pascal', 'pascal_reichert@gmail.com', '826ECAD4AE11C8196AB3432CCBB22400691C248131B97FA4FE6F02DCF20F6049');
 
 INSERT INTO Filter(FId, Name, Typ, Daten, Gewichtung, Sichtbar)
 VALUES
-	(1, 'Hersteller', 1, '{ "sql": "SELECT DISTINCT HId AS ''id'', Name AS ''value'' FROM Hersteller ORDER BY value ASC" }', 10, 1),
-	(2, 'Erscheinungsjahr', 1, '{ "sql": "SELECT DISTINCT Erscheinungsjahr AS ''id'', Erscheinungsjahr AS ''value'' FROM Elektroautos ORDER BY value DESC"}', 20, 1),
-	(3, 'Preis', 3, '{ "sql": "SELECT DISTINCT Kaufpreis AS ''id'', Kaufpreis AS ''value'' FROM Elektroautos ORDER BY value ASC"}', 20, 1),
-	(4, 'Modellname', 1, '{ "sql": "SELECT DISTINCT Modellname AS ''id'', Modellname AS ''value'' FROM Elektroautos ORDER BY value ASC"}', 20, 1),
-	(5, 'Autoparkfunktion', 2, '', 5, 1),
-	(6, 'Leistung', 3, '{"sql": "SELECT DISTINCT Leistung AS ''id'', Leistung AS ''value'' FROM Elektroautos ORDER BY value ASC"}', 10, 1),
-	(7, 'Höchstgeschwindigkeit', 3, '{ "sql": "SELECT DISTINCT Hoechstgeschwindigkeit AS ''id'', Hoechstgeschwindigkeit AS ''value'' FROM Elektroautos ORDER BY value ASC" }', 10, 1);
+(1, 'ABS', 2, '', 20, 1),
+(2, 'Autoparkfunktion', 2, '', 20, 1),
+(3, 'Batterieart', 1, '{ "sql": "SELECT DISTINCT Batterieart AS ''id'', Batterieart AS ''value'' FROM Elektroautos ORDER BY value ASC"}', 20, 1),
+(4, 'Batteriekapazitaet', 3, '{ "sql": "SELECT DISTINCT Batteriekapazitaet AS ''value'' FROM Elektroautos ORDER BY value ASC"}', 20, 1),
+(5, 'Beifahrerairbag', 2, '', 20, 1),
+(6, 'Beschleunigung', 3, '{ "sql": "SELECT DISTINCT Beschleunigung AS ''value'' FROM Elektroautos ORDER BY value ASC"}', 20, 1),
+(7, 'Bluetooth', 2, '', 20, 1),
+(8, 'Bordcomputer', 2, '', 20, 1),
+(9,'Erscheinungsjahr', 1, '{ "sql": "SELECT DISTINCT Erscheinungsjahr AS ''id'', Erscheinungsjahr AS ''value'' FROM Elektroautos ORDER BY value DESC"}', 20, 1),
+(10, 'Farbe', 1, '{ "sql": "SELECT DISTINCT Farbe AS ''id'', Farbe AS ''value'' FROM Elektroautos ORDER BY value ASC"}', 20, 1),
+(11, 'Fensterheber', 2, '', 20, 1),
+(12, 'Gesamtgewicht', 4, '', 20, 1),
+(13,'Hersteller', 1, '{ "sql": "SELECT DISTINCT HId AS ''id'', Name AS ''value'' FROM Hersteller ORDER BY value ASC" }', 10, 1),
+(14, 'Hoechstgeschwindigkeit', 3, '{ "sql": "SELECT DISTINCT Hoechstgeschwindigkeit AS ''value'' FROM Elektroautos ORDER BY value ASC"}', 20, 1),
+(15,'Preis', 3, '{ "sql": "SELECT DISTINCT Kaufpreis AS ''id'', Kaufpreis AS ''value'' FROM Elektroautos ORDER BY value ASC"}', 20, 1),
+(16, 'Klimaanlage', 2, '', 20, 1),
+(17, 'Laderaum', 4, '', 20, 1),
+(18, 'Leasingpreis', 3, '{ "sql": "SELECT DISTINCT Leasingpreis AS ''value'' FROM Elektroautos ORDER BY value ASC"}', 20, 1),
+(19, 'Leergewicht', 4, '', 20, 1),
+(20, 'Leistung', 3, '{ "sql": "SELECT DISTINCT Leistung AS ''value'' FROM Elektroautos ORDER BY value ASC"}', 20, 1),
+(21, 'MaxDrehmoment', 4, '', 20, 1),
+(22, 'Modellname', 1, '{ "sql": "SELECT DISTINCT Modellname AS ''id'', Modellname AS ''value'' FROM Elektroautos ORDER BY value ASC"}', 20, 1),
+(23, 'Navi', 2, '', 20, 1),
+(24, 'Parkhilfe', 2, '', 20, 1),
+(25, 'Reichweite', 3, '{ "sql": "SELECT DISTINCT Reichweite AS ''value'' FROM Elektroautos ORDER BY value ASC"}', 20, 1),
+(26, 'Reifendrucksensor', 2, '', 20, 1),
+(27, 'Rekuperation', 2, '', 20, 1),
+(28,'Sitze', 1, '{ "sql": "SELECT DISTINCT Sitze AS ''id'', Sitze AS ''value'' FROM Elektroautos ORDER BY value ASC" }', 10, 1),
+(29, 'Sitzheizung', 2, '', 20, 1),
+(30,'Sitzmaterial', 1, '{ "sql": "SELECT DISTINCT Sitzmaterial AS ''id'', Sitzmaterial AS ''value'' FROM Elektroautos ORDER BY value ASC" }', 10, 1),
+(31, 'Spurhalter', 2, '', 20, 1),
+(32,'Stecker', 1, '{ "sql": "SELECT DISTINCT Stecker AS ''id'', Stecker AS ''value'' FROM Elektroautos ORDER BY value ASC" }', 10, 1),
+(33, 'Tempomat', 2, '', 20, 1),
+(34,'Typ', 1, '{ "sql": "SELECT DISTINCT Typ AS ''id'', Typ AS ''value'' FROM Elektroautos ORDER BY value ASC" }', 10, 1),
+(35, 'Verbrauch', 4, '', 20, 1),
+(36,'Verkleidungsmaterial', 1, '{ "sql": "SELECT DISTINCT Verkleidungsmaterial AS ''id'', Verkleidungsmaterial AS ''value'' FROM Elektroautos ORDER BY value ASC" }', 10, 1);
 
 INSERT INTO Bewertungen(Benutzer_BId, Elektroautos_EId, Bewertung)
 VALUES
-	((SELECT BId FROM Benutzer WHERE Benutzername='Gettopunk96'), (SELECT EId FROM Elektroautos WHERE Modellname='Mercedes EQC'), 8),
-	((SELECT BId FROM Benutzer WHERE Benutzername='Georg'), (SELECT EId FROM Elektroautos WHERE Modellname='Mercedes EQC'), 6),
-	((SELECT BId FROM Benutzer WHERE Benutzername='Gettopunk96'), (SELECT EId FROM Elektroautos WHERE Modellname='e-Golf'), 7),
-	((SELECT BId FROM Benutzer WHERE Benutzername='Georg'), (SELECT EId FROM Elektroautos WHERE ModellName='e-Golf'), 10);
+	((SELECT BId FROM Benutzer WHERE Benutzername='Gettopunk96'), (SELECT EId FROM Elektroautos WHERE Modellname='Mercedes EQC'), 4),
+	((SELECT BId FROM Benutzer WHERE Benutzername='Georg'), (SELECT EId FROM Elektroautos WHERE Modellname='Mercedes EQC'), 3),
+	((SELECT BId FROM Benutzer WHERE Benutzername='Gettopunk96'), (SELECT EId FROM Elektroautos WHERE Modellname='e-Golf'), 4),
+	((SELECT BId FROM Benutzer WHERE Benutzername='Georg'), (SELECT EId FROM Elektroautos WHERE ModellName='e-Golf'), 5),
+	((SELECT BId FROM Benutzer WHERE Benutzername='XxGruftixX'), (SELECT EId FROM Elektroautos WHERE ModellName='e-Golf'), 3),
+	((SELECT BId FROM Benutzer WHERE Benutzername='XxGruftixX'), (SELECT EId FROM Elektroautos WHERE ModellName='Ford Focus Electric'), 5),
+	((SELECT BId FROM Benutzer WHERE Benutzername='Pascal'), (SELECT EId FROM Elektroautos WHERE ModellName='Ford Focus Electric'), 3),
+	((SELECT BId FROM Benutzer WHERE Benutzername='Pascal'), (SELECT EId FROM Elektroautos WHERE ModellName='e-Golf'), 4),
+	((SELECT BId FROM Benutzer WHERE Benutzername='Pascal'), (SELECT EId FROM Elektroautos WHERE ModellName='Mercedes EQC'), 5),
+	((SELECT BId FROM Benutzer WHERE Benutzername='Griffith'), (SELECT EId FROM Elektroautos WHERE ModellName='Ford Focus Electric'), 5),
+	((SELECT BId FROM Benutzer WHERE Benutzername='Griffith'), (SELECT EId FROM Elektroautos WHERE ModellName='e-Golf'), 5),
+	((SELECT BId FROM Benutzer WHERE Benutzername='Griffith'), (SELECT EId FROM Elektroautos WHERE ModellName='Mercedes EQC'), 5),
+	((SELECT BId FROM Benutzer WHERE Benutzername='Pascal'), (SELECT EId FROM Elektroautos WHERE ModellName='Nissan Leaf'), 5),
+	((SELECT BId FROM Benutzer WHERE Benutzername='Griffith'), (SELECT EId FROM Elektroautos WHERE ModellName='Nissan Leaf'), 5),
+	((SELECT BId FROM Benutzer WHERE Benutzername='XxGruftixX'), (SELECT EId FROM Elektroautos WHERE ModellName='Nissan Leaf'), 2);
 
 INSERT INTO Ladestationen(Netzwerk, Bezeichnung, Betreiber, Postleitzahl, Stadt, Strasse, Stecker) VALUES
 ('RheinEnergie AG', 'TankE Köln', 'TankE - RheinEnergie Kundenparkplatz', 50823, 'Köln', 'Parkgürtel 24', 'CCS Typ2'),
