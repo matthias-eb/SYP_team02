@@ -38,11 +38,11 @@ function getAuto(req, res, next) {
  * @returns best ecars or error.
  */
 function getBestAutos(req, res, next) {
-  const DEFAULT_LIMIT = 6;
+  const DEFAULT_LIMIT = 12;
   
   Auto.findAll({
     include: [ Rating ],
-    order: [ [{ model: Rating }, 'rating', 'ASC'], ['id', 'ASC'] ]
+    order: [ [{ model: Rating }, 'rating', 'DESC'], ['id', 'DESC'] ]
   }).then(autos => {
     res.status(200).json({
       'data': autos.slice(0, req.body.limit || DEFAULT_LIMIT)
