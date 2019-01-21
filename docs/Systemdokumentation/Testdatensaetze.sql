@@ -52,7 +52,7 @@ INSERT INTO
 
 	VALUES
 		((SELECT HId FROM Hersteller WHERE Name='Mercedes'),
-			1, --Sichtbar
+			1, 				-- Sichtbar
 			'Mercedes EQC', -- Modellname
 			'Limousine', 	-- Typ
 			'CCS Typ2',		-- Stecker
