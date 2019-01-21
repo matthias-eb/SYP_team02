@@ -1,0 +1,15 @@
+Installation
+	-Schritte in denen unser Produkt zum laufen gebracht werden kann
+<FW>
+Allgemeine Struktur
+	-Produkt baut auf npm auf
+	-npm greift über nodejs auf Datenbank zu
+	-Produkt wird komplett durch npm installiert
+
+	-LAMP Stack
+		-kein finaler Server -> Entwicklerdoku erstellt zum konf. und inst. des Lamp Stacks -> für Anbieter
+		-apache bietet einen Server an
+		-php nutzt diesen Server um Webseiten darzustellen
+		-phpmyadmin bietet GUI Schnittstelle zum Bearbeiten der Datenbank an.
+
+Config Dateien
