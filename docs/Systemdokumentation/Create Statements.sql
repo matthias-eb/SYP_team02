@@ -7,6 +7,7 @@ CREATE OR REPLACE TABLE Hersteller (
 
 CREATE OR REPLACE TABLE Elektroautos (
   EId int NOT NULL AUTO_INCREMENT,
+  Sichtbar tinyint NOT NULL DEFAULT 1,
   Hersteller_HId int NOT NULL DEFAULT 0,
   Modellname varchar(255),
   Typ varchar(45),

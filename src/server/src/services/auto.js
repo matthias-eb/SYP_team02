@@ -43,7 +43,8 @@ function getBestAutos(req, res, next) {
   
   Auto.findAll({
     include: [ Rating ],
-    order: [ [{ model: Rating }, 'rating', 'DESC'], ['id', 'DESC'] ]
+    order: [ [{ model: Rating }, 'rating', 'DESC'], ['id', 'DESC'] ],
+    where: { visibility: 1 }
   }).then(autos => {
     autos = sortByAverageAndRemoveRatingless(autos);
     res.status(200).json({
@@ -105,7 +106,7 @@ function calcAverage(auto) {
  * @returns WHERE-clause object (Sequelize)
  */
 function buildWhereClause(req, res, next) {
-  let whereArr = [ ];
+  let whereArr = [ { visibility: 1 } ];
   for (let id in req.body.filter) {
     if (typeof Filter[id].buildWhereClause === 'function') {
       whereArr.push(Filter[id].buildWhereClause(req.body.filter[id]));

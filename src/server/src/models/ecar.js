@@ -9,6 +9,10 @@ let ecar = db.sequelize.define('ecar', {
     autoIncrement: true,
     field: 'EId'
   },
+  visibility: {
+    type: Sequelize.BOOLEAN,
+    field: 'Sichtbar',
+  },
   modelname: {
     type: Sequelize.STRING,
     field: 'Modellname',

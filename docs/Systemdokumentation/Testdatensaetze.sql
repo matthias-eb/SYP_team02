@@ -11,7 +11,8 @@ VALUES
 	((SELECT HId FROM Hersteller WHERE Name='Ford'), 'Ford-KFZWerkstatt Brühl', 50.8192399, 6.9236327);
 
 INSERT INTO 
-	Elektroautos(Hersteller_HId, 
+	Elektroautos(Hersteller_HId,
+		Sichtbar,
 		Modellname,
 		Typ,
 		Stecker,
@@ -51,6 +52,7 @@ INSERT INTO
 
 	VALUES
 		((SELECT HId FROM Hersteller WHERE Name='Mercedes'),
+			1, --Sichtbar
 			'Mercedes EQC', -- Modellname
 			'Limousine', 	-- Typ
 			'CCS Typ2',		-- Stecker
@@ -89,6 +91,7 @@ INSERT INTO
 			1),				-- Beifahrerairbag
 
 		((SELECT HId FROM Hersteller WHERE Name='Volkswagen'),
+			1,
 			'VW e-Golf',
 			'Golf',
 			'CCS Typ2',
@@ -127,6 +130,7 @@ INSERT INTO
 			1),
 
 			((SELECT HId FROM Hersteller WHERE Name='Tesla'),
+			1,
 			'Tesla Model S P90D', -- Modellname
 			'Limousine', 	-- Typ
 			'CCS Typ2, Supercharger, Schuko',		-- Stecker
@@ -165,6 +169,7 @@ INSERT INTO
 			1),				-- Beifahrerairbag
 
 			((SELECT HId FROM Hersteller WHERE Name='Ford'),
+			1,
 			'Ford Focus Electric', -- Modellname
 			'Kombi', 	-- Typ
 			'CCS Typ2, Schuko',		-- Stecker
@@ -203,6 +208,7 @@ INSERT INTO
 			1),				-- Beifahrerairbag
 
 			((SELECT HId FROM Hersteller WHERE Name='Audi'),
+			1,
 			'Audi R8 e-tron', -- Modellname
 			'Sportwagen', 	-- Typ
 			'CCS Typ2',		-- Stecker
@@ -242,6 +248,7 @@ INSERT INTO
 
 
 			((SELECT HId FROM Hersteller WHERE Name='Nissan'),
+			1,
 			'Nissan Leaf', -- Modellname
 			'Kombolimousine', 	-- Typ
 			'CCS Typ2',		-- Stecker
@@ -280,6 +287,7 @@ INSERT INTO
 			1),				-- Beifahrerairbag
 
 ((SELECT HId FROM Hersteller WHERE Name='Renault'),
+			1,
 			'Renault Twizy', -- Modellname
 			'Quad', 	-- Typ
 			'CCS Typ2',		-- Stecker
@@ -318,6 +326,7 @@ INSERT INTO
 			0),				-- Beifahrerairbag
 
 			((SELECT HId FROM Hersteller WHERE Name='Hyundai'),
+			1,
 			'Hyundai Kona Elektro', -- Modellname
 			'Mini-SUV', 	-- Typ
 			'CCS Typ2',		-- Stecker
@@ -356,6 +365,7 @@ INSERT INTO
 			1),				-- Beifahrerairbag
 
 			((SELECT HId FROM Hersteller WHERE Name='BMW'),
+			1,
 			'BMW i3', -- Modellname
 			'Mini-SUV', 	-- Typ
 			'CCS Typ2',		-- Stecker
@@ -394,6 +404,7 @@ INSERT INTO
 			1),				-- Beifahrerairbag
 			
 			((SELECT HId FROM Hersteller WHERE Name='BMW'),
+			1,
 			'BMW i3s', -- Modellname
 			'Mini-SUV', 	-- Typ
 			'CCS Typ2',		-- Stecker
@@ -432,6 +443,7 @@ INSERT INTO
 			1),				-- Beifahrerairbag
 
 			((SELECT HId FROM Hersteller WHERE Name='Citroen'),
+			1,
 			'Citroen C-Zero', -- Modellname
 			'Mini-SUV', 	-- Typ
 			'Schuko',		-- Stecker
@@ -470,6 +482,7 @@ INSERT INTO
 			1),				-- Beifahrerairbag
 
 			((SELECT HId FROM Hersteller WHERE Name='Mercedes'),
+			1,
 			'Mercedes Benz B-Klasse Electric Drive', -- Modellname
 			'Kombi', 	-- Typ
 			'CCS Typ2',		-- Stecker
@@ -508,6 +521,7 @@ INSERT INTO
 			1),				-- Beifahrerairbag
 
 			((SELECT HId FROM Hersteller WHERE Name='Opel'),
+			1,
 			'Opel Ampera-E', -- Modellname
 			'Kombi', 	-- Typ
 			'CCS Typ2',		-- Stecker
@@ -546,6 +560,7 @@ INSERT INTO
 			1),				-- Beifahrerairbag
 
 			((SELECT HId FROM Hersteller WHERE Name='Renault'),
+			1,
 			'Renault Zoe', -- Modellname
 			'Kleinwagen', 	-- Typ
 			'CCS Typ2',		-- Stecker
@@ -584,6 +599,7 @@ INSERT INTO
 			1),				-- Beifahrerairbag
 
 			((SELECT HId FROM Hersteller WHERE Name='Volkswagen'),
+			1,
 			'VW e-Up', -- Modellname
 			'Kleinwagen', 	-- Typ
 			'Schuko, CCS Typ2',		-- Stecker
@@ -622,6 +638,7 @@ INSERT INTO
 			1),				-- Beifahrerairbag
 
 			((SELECT HId FROM Hersteller WHERE Name='Chevrolet'),
+			1,
 			'Chevrolet Bolt', -- Modellname
 			'Kleinwagen', 	-- Typ
 			'Schuko, CCS Typ2',		-- Stecker
@@ -660,6 +677,7 @@ INSERT INTO
 			1),				-- Beifahrerairbag
 
 			((SELECT HId FROM Hersteller WHERE Name='Mercedes'),
+			1,
 			'Mercedes Benz B250 e', -- Modellname
 			'Kleinwagen', 	-- Typ
 			'Schuko, CCS Typ2',		-- Stecker
@@ -698,6 +716,7 @@ INSERT INTO
 			1),				-- Beifahrerairbag
 
 			((SELECT HId FROM Hersteller WHERE Name='Nissan'),
+			1,
 			'Nissan E-NV 200', -- Modellname
 			'Transporter', 	-- Typ
 			'Schuko, CCS Typ2',		-- Stecker
@@ -736,6 +755,7 @@ INSERT INTO
 			1),				-- Beifahrerairbag
 
 			((SELECT HId FROM Hersteller WHERE Name='Hyundai'),
+			1,
 			'Hyundai Ioniq Elektro', -- Modellname
 			'Limousine', 	-- Typ
 			'CCS Typ2',		-- Stecker
