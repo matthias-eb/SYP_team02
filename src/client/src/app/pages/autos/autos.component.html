@@ -25,13 +25,13 @@
           <h2>Preis: {{auto.price}} €</h2>
 
           <hr>
-          <!--Bewertungen  -->
+          <!--Bewertungen -->
           <p>Bewertungen: <b>{{getRating(auto.id)}}</b></p>
-          <ngb-rating [(rate)]="ratings[auto.id].ratingAverage" max="5">
+          <ngb-rating [(rate)]="ratings[auto.id].ratingAverage">
             <ng-template let-fill="fill" let-index="index">
               <span class="star" [class.filled]="fill === 100" [class.bad]="index == 0">&#9733;</span>
             </ng-template>
-          </ngb-rating>
+          </ngb-rating> 
           <hr>
           <p class="text-center"><a routerLink="/auto/{{auto.id}}" class="btn btn-success" role="button">Details</a></p>
 

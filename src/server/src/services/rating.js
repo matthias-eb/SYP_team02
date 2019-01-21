@@ -83,28 +83,11 @@ function setUserRating(req, res, next) {
     });
   }
 
-  Rating.findAll({
-    where: {
-      ecar_id: req.body.id,
-      user_id: req.body.id
-    }
+  Rating.create({
+    user_id: req.body.userId,
+    ecar_id: req.body.autoId,
+    rating: req.body.rating
   }).then(rating => {
-    if (rating || rating.length > 0) {
-      return res.status(400).json({
-        msg: "Bad data. User already rated this ecar"
-      });
-    }
-    res.status(200).json({
-      'data': rating
-    });
-  }).catch(err => {
-    res.status(500).json({
-      msg: err.message,
-      error: err
-    });
-  });
-
-  Rating.create(req.body).then(rating => {
     res.status(201).json({
       data: rating
     });

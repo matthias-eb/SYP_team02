@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import {NgbRatingConfig} from '@ng-bootstrap/ng-bootstrap';
 
 interface Rating {
   ratingAverage: number;
@@ -8,14 +9,18 @@ interface Rating {
 @Component({
   selector: 'app-autos',
   templateUrl: './autos.component.html',
-  styleUrls: ['./autos.component.scss']
+  styleUrls: ['./autos.component.scss'],
+  providers: [NgbRatingConfig]
 })
 export class AutosComponent implements OnInit, OnChanges {
 
   private ratings: Array<Rating>;
   @Input() autos: Object;
 
-  constructor() { }
+  constructor(ratingConfig: NgbRatingConfig) { 
+    ratingConfig.max=5;
+    ratingConfig.readonly=true;
+  }
 
   ngOnInit() { }
 
@@ -27,11 +32,14 @@ export class AutosComponent implements OnInit, OnChanges {
 
   updateRatings(autos) {
     this.ratings = [];
-
-    for (let i = 0; i < Array(autos).length; i++) {
+    //console.log(autos.length);
+    for (let i = 0; i < autos.length; i++) {
       const average = this.calcAverage(autos[i]);
+      //console.log(autos[i].id);
       this.ratings[autos[i].id] = { ratingAverage: average, ratingCount: autos[i].ratings.length };
     }
+    //console.log(autos);
+    //console.log(this.ratings);
   }
 
   calcAverage(auto): number {
@@ -40,10 +48,13 @@ export class AutosComponent implements OnInit, OnChanges {
       ratingAverage += auto.ratings[n].rating;
     }
     ratingAverage /= auto.ratings.length;
+    ratingAverage = parseInt(String(ratingAverage * 100)) / 100;
     return ratingAverage;
   }
 
   getRating(id) {
-    return this.ratings[id].ratingAverage || 0;
+    const rating = this.ratings[id];
+    if (!rating) return 0; 
+    return rating.ratingAverage || 0;
   }
 }

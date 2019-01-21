@@ -825,7 +825,7 @@ VALUES
 (19, 'Leergewicht', 4, '', 20, 1),
 (20, 'Leistung', 3, '{ "sql": "SELECT DISTINCT Leistung AS ''value'' FROM Elektroautos ORDER BY value ASC"}', 20, 1),
 (21, 'MaxDrehmoment', 4, '', 20, 1),
-(22, 'Modellname', 1, '{ "sql": "SELECT DISTINCT Modellname AS ''id'', Modellname AS ''value'' FROM Elektroautos ORDER BY value ASC"}', 20, 1),
+(22, 'Modellname', 1, '{ "sql": "SELECT DISTINCT Modellname AS ''id'', Modellname AS ''value'' FROM Elektroautos ORDER BY value ASC"}', 20, 0),
 (23, 'Navi', 2, '', 20, 1),
 (24, 'Parkhilfe', 2, '', 20, 1),
 (25, 'Reichweite', 3, '{ "sql": "SELECT DISTINCT Reichweite AS ''value'' FROM Elektroautos ORDER BY value ASC"}', 20, 1),

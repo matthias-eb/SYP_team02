@@ -1,9 +1,9 @@
-<div class="container" *ngFor="let a of auto">
+<div class="container" *ngIf="auto">
 
-  <h1>{{a.modelname}}</h1>
+  <h1>{{auto.modelname}}</h1>
   <p>&nbsp;</p>
 
-  <h2>{{a.type}}</h2>
+  <h2>{{auto.type}}</h2>
 
   <p>&nbsp;</p>
   <p>&nbsp;</p>
@@ -11,22 +11,22 @@
   <div class="row">
     <div class="col-lg-6">
       <img class="img-responsive"
-           src="{{a.image}}"
+           src="{{auto.image}}"
            alt="...">
     </div>
     <div class="col-lg-6">
       <h3>
-        <i class="material-icons md-36">money</i> Preis: {{a.price}} €</h3>
+        <i class="material-icons md-36">money</i> Preis: {{auto.price}} €</h3>
       <hr>
       <h3>
-        <i class="material-icons md-36">date_range</i> Erscheinungsjahr: {{a.pub_year}}
+        <i class="material-icons md-36">date_range</i> Erscheinungsjahr: {{auto.pub_year}}
       </h3>
       <hr>
       <h3>
-        <i class="material-icons md-36">fitness_center</i> Leistung: {{a.capacity}} kW</h3>
+        <i class="material-icons md-36">fitness_center</i> Leistung: {{auto.capacity}} kW</h3>
       <hr>
       <h3>
-        <i class="material-icons md-36">battery_full</i> Reichweite: {{a.reach}} km
+        <i class="material-icons md-36">battery_full</i> Reichweite: {{auto.reach}} km
       </h3>
       <hr>
 
@@ -35,11 +35,11 @@
         <i class="material-icons md-36">stars</i> Bewertungen: <b>{{currentRate}}</b>
 
         <div class="mystars">
-          <ngb-rating [(rate)]="currentRate" max="5">
+          <ngb-rating [(rate)]="currentRate" [readonly]="ratingConfig.readonly">
             <ng-template let-fill="fill" let-index="index">
-              <span class="star" [class.filled]="fill === 100" [class.bad]="index == 0">&#9733;</span>
+              <span class="star" [class.filled]="fill === 100" [class.bad]="index == 0" (click)="onRating(auto.id, index)">&#9733;</span>
             </ng-template>
-          </ngb-rating>
+          </ngb-rating> <small>({{this.auto.ratings.length}})</small>
         </div>
       </h3>
     </div>
@@ -80,16 +80,16 @@
       </div>
 
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <h4>{{a.modelname}}</h4>
-        <h4>{{a.acceleration}} s</h4>
-        <h4>{{a.color}}</h4>
-        <h4>{{a.weight_complete}} kg</h4>
-        <h4>{{a.topSpeed}} km/h</h4>
-        <h4>{{a.storage}} l</h4>
-        <h4>{{a.leasing}} €</h4>
-        <h4>{{a.weight_empty}} kg</h4>
-        <h4>{{a.max_torque}} Nm</h4>
-        <h4>{{a.consumption}} kWh</h4>
+        <h4>{{auto.modelname}}</h4>
+        <h4>{{auto.acceleration}} s</h4>
+        <h4>{{auto.color}}</h4>
+        <h4>{{auto.weight_complete}} kg</h4>
+        <h4>{{auto.topSpeed}} km/h</h4>
+        <h4>{{auto.storage}} l</h4>
+        <h4>{{auto.leasing}} €</h4>
+        <h4>{{auto.weight_empty}} kg</h4>
+        <h4>{{auto.max_torque}} Nm</h4>
+        <h4>{{auto.consumption}} kWh</h4>
 
       </div>
     </div>
@@ -113,11 +113,11 @@
 
 
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <h4>{{a.battery_type}}</h4>
-        <h4>{{a.battery_capacity}} Ah</h4>
+        <h4>{{auto.battery_type}}</h4>
+        <h4>{{auto.battery_capacity}} Ah</h4>
 
 
-        <h4 *ngIf="a.window_lifter; else elseBlock">
+        <h4 *ngIf="auto.window_lifter; else elseBlock">
           <i class="material-icons md-24 grun">check</i>
         </h4>
 
@@ -127,7 +127,7 @@
           </h4>
         </ng-template>
 
-        <h4 *ngIf="a.airCon; else elseBlock">
+        <h4 *ngIf="auto.airCon; else elseBlock">
           <i class="material-icons md-24 grun">check</i>
         </h4>
 
@@ -137,7 +137,7 @@
           </h4>
         </ng-template>
 
-        <h4 *ngIf="a.parkinghelp; else elseBlock">
+        <h4 *ngIf="auto.parkinghelp; else elseBlock">
           <i class="material-icons md-24 grun">check</i>
         </h4>
 
@@ -147,7 +147,7 @@
           </h4>
         </ng-template>
 
-        <h4 *ngIf="a.tirepressure_sensor; else elseBlock">
+        <h4 *ngIf="auto.tirepressure_sensor; else elseBlock">
           <i class="material-icons md-24 grun">check</i>
         </h4>
 
@@ -157,7 +157,7 @@
           </h4>
         </ng-template>
 
-        <h4 *ngIf="a.recuperation; else elseBlock">
+        <h4 *ngIf="auto.recuperation; else elseBlock">
           <i class="material-icons md-24 grun">check</i>
         </h4>
 
@@ -167,7 +167,7 @@
           </h4>
         </ng-template>
 
-        <h4>{{a.plug}}</h4>
+        <h4>{{auto.plug}}</h4>
 
       </div>
     </div>
@@ -187,10 +187,10 @@
 
 
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <h4>{{a.seats}}</h4>
+        <h4>{{auto.seats}}</h4>
 
 
-        <h4 *ngIf="a.seat_radiator; else elseBlock">
+        <h4 *ngIf="auto.seat_radiator; else elseBlock">
           <i class="material-icons md-24 grun">check</i>
         </h4>
 
@@ -201,8 +201,8 @@
         </ng-template>
 
 
-        <h4>{{a.seat_material}}</h4>
-        <h4>{{a.paneling_material}}</h4>
+        <h4>{{auto.seat_material}}</h4>
+        <h4>{{auto.paneling_material}}</h4>
       </div>
     </div>
 
@@ -220,7 +220,7 @@
 
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 
-        <h4 *ngIf="a.bluetooth; else elseBlock">
+        <h4 *ngIf="auto.bluetooth; else elseBlock">
           <i class="material-icons md-24 grun">check</i>
         </h4>
 
@@ -230,7 +230,7 @@
           </h4>
         </ng-template>
 
-        <h4 *ngIf="a.board_computer; else elseBlock">
+        <h4 *ngIf="auto.board_computer; else elseBlock">
           <i class="material-icons md-24 grun">check</i>
         </h4>
 
@@ -241,7 +241,7 @@
         </ng-template>
 
 
-        <h4 *ngIf="a.nav; else elseBlock">
+        <h4 *ngIf="auto.nav; else elseBlock">
           <i class="material-icons md-24 grun">check</i>
         </h4>
 
@@ -269,7 +269,7 @@
 
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 
-        <h4 *ngIf="a.automatic_parking; else elseBlock">
+        <h4 *ngIf="auto.automatic_parking; else elseBlock">
           <i class="material-icons md-24 grun">check</i>
         </h4>
 
@@ -279,7 +279,7 @@
           </h4>
         </ng-template>
 
-        <h4 *ngIf="a.lane_assistant; else elseBlock">
+        <h4 *ngIf="auto.lane_assistant; else elseBlock">
           <i class="material-icons md-24 grun">check</i>
         </h4>
 
@@ -289,7 +289,7 @@
           </h4>
         </ng-template>
 
-        <h4 *ngIf="a.cruisecontrol; else elseBlock">
+        <h4 *ngIf="auto.cruisecontrol; else elseBlock">
           <i class="material-icons md-24 grun">check</i>
         </h4>
 
@@ -318,7 +318,7 @@
 
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 
-        <h4 *ngIf="a.abs; else elseBlock">
+        <h4 *ngIf="auto.abs; else elseBlock">
           <i class="material-icons md-24 grun">check</i>
         </h4>
 
@@ -329,7 +329,7 @@
         </ng-template>
 
 
-        <h4 *ngIf="a.codriver_airbag; else elseBlock">
+        <h4 *ngIf="auto.codriver_airbag; else elseBlock">
           <i class="material-icons md-24 grun">check</i>
         </h4>
 

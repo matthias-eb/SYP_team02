@@ -132,11 +132,12 @@ export class SharedService {
    * @return Authorization header
    */
   getAuthHeaderBase(): HttpHeaders {
-    const authHeader = new HttpHeaders().set('Content-Type', 'application/json');
+    let authHeader = new HttpHeaders().set('Content-Type', 'application/json');
     const lsUserId = this.getUserIdFromCache();
     const lsToken = this.getUserTokenFromCache();
     if (lsUserId && lsToken) {
-      authHeader.set('Authorization', `${lsUserId} ${lsToken}`);
+      const str = '' + lsUserId + ' ' + lsToken;
+      authHeader = authHeader.set('Authorization', str);
     }
     return authHeader;
   }
