@@ -14,6 +14,7 @@ const Filter = require('../filter/_base');
  */
 function getAuto(req, res, next) {
   Auto.findAll({
+    include: [ Rating ],
     where: buildWhereClause(req, res, next)
   }).then(auto => {
     res.status(200).json({
@@ -44,15 +45,53 @@ function getBestAutos(req, res, next) {
     include: [ Rating ],
     order: [ [{ model: Rating }, 'rating', 'DESC'], ['id', 'DESC'] ]
   }).then(autos => {
+    autos = sortByAverageAndRemoveRatingless(autos);
     res.status(200).json({
       'data': autos.slice(0, req.body.limit || DEFAULT_LIMIT)
     });
+    //console.log(JSON.stringify(autos.slice(0, req.body.limit || DEFAULT_LIMIT)));
   }).catch(err => {
+    console.error(err);
     res.status(500).json({
       msg: err.message,
       error: err
     });
   });
+}
+
+/**
+ * Calculate rating average.
+ * 
+ * @param autos Array of auto entites
+ */
+function removeRatingless(autos) {
+  for (let i = 0; i < autos.length; i++) {
+    if (autos[i].ratings.length < 1) {
+      autos.splice(i, 1);
+      i--;
+    }
+  }
+  return autos;
+}
+
+/**
+ * Remove ratingsless autos and sort by rating.
+ * 
+ * @param autos Array of auto entites
+ */
+function sortByAverageAndRemoveRatingless(autos) {
+  autos = removeRatingless(autos);
+  autos.sort((a, b) => calcAverage(a) - calcAverage(b));
+  return autos;
+}
+
+function calcAverage(auto) {
+  let ratingAverage = 0;
+  for (let n = 0; n < auto.ratings.length; n++) {
+    ratingAverage += auto.ratings[n].rating;
+  }
+  ratingAverage /= auto.ratings.length;
+  return ratingAverage;
 }
 
 

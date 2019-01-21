@@ -26,8 +26,8 @@
 
           <hr>
           <!--Bewertungen  -->
-          <p>Bewertungen: <b>{{currentRate}}</b></p>
-          <ngb-rating [(rate)]="currentRate" max="5">
+          <p>Bewertungen: <b>{{getRating(auto.id)}}</b></p>
+          <ngb-rating [(rate)]="ratings[auto.id].ratingAverage" max="5">
             <ng-template let-fill="fill" let-index="index">
               <span class="star" [class.filled]="fill === 100" [class.bad]="index == 0">&#9733;</span>
             </ng-template>
