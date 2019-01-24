@@ -76,13 +76,13 @@ function removeRatingless(autos) {
 }
 
 /**
- * Remove ratingsless autos and sort by rating.
+ * Remove ratingsless autos and sort by rating DESC.
  * 
  * @param autos Array of auto entites
  */
 function sortByAverageAndRemoveRatingless(autos) {
   autos = removeRatingless(autos);
-  autos.sort((a, b) => calcAverage(a) - calcAverage(b));
+  autos.sort((a, b) => calcAverage(b) - calcAverage(a));
   return autos;
 }
 
