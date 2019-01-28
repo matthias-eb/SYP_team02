@@ -67,6 +67,12 @@
   <hr class="hr-menu">
   <div id="collapseExample" [ngbCollapse]="isCollapsed">
     <div class="card">
+      <a *ngIf="authUserId">
+        <hr class="hr-menu">
+        <div class="card-body btn-lg app-authName-card d-flex align-items-center ">
+          Hallo, {{authUserName}}
+        </div>
+      </a>
 
       <a *ngIf="navtitle!='Hauptseite'" routerLink="/">
         <hr class="hr-menu">
@@ -86,13 +92,6 @@
         <hr class="hr-menu">
         <div class="card-body btn-outline-secondary btn-lg">
           Registrieren
-        </div>
-      </a>
-      
-      <a *ngIf="authUserId">
-        <hr class="hr-menu">
-        <div class="card-body btn-lg app-authName-card d-flex align-items-center ">
-          Hallo, {{authUserName}}
         </div>
       </a>
 
