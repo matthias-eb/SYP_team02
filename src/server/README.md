@@ -80,3 +80,9 @@ Do not forget that npm brings many useful tools like e.g.
 - ```npm list -g --depth=0```
 - ```npm outdated```
 - ```npm audit```
+
+
+## Build executable files
+```bash
+pkg --targets=node10 .
+```
