@@ -8,6 +8,7 @@
     "url": "http://gerona.nt.fh-koeln.de/gitlab/syp18/team02/client"
   },
   "private": true,
+  "bin": "./bin.js",
   "main": "electron/electron.js",
   "scripts": {
     "ng": "ng",
